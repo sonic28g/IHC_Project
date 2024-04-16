@@ -1,0 +1,102 @@
+[
+    {
+        "title": "Cyberpunk 2077",
+        "price": 59.99,
+        "genre": ["Action-Adventure", "RPG", "FPS"]
+    },
+    {
+        "title": "Grand Theft Auto 5",
+        "price": 54.97,
+        "genre": ["Action-Adventure", "Open World"]
+    },
+    {
+        "title": "Assassin's Creed Valhalla",
+        "price": 59.99,
+        "genre": ["Action-Adventure", "Open World"]
+    },
+    {
+        "title": "HELLDIVERS 2",
+        "price": 39.99,
+        "genre": ["Action", "Co-op"]
+    },
+    {
+        "title": "Fallout 4",
+        "price": 19.99,
+        "genre": ["Action-Adventure", "RPG", "Open World"]
+    },
+    {
+        "title": "Monster Hunter: World",
+        "price": 29.99,
+        "genre": ["Action", "RPG", "Open World"]
+    },
+    {
+        "title": "Red Dead Redemption 2",
+        "price": 59.99,
+        "genre": ["Action-Adventure", "Open World"]
+    },
+    {
+        "title": "Hogwarts Legacy",
+        "price": 59.99,
+        "genre": ["Action-Adventure", "RPG"]
+    },
+    {
+        "title": "Elden Ring",
+        "price": 59.99,
+        "genre": ["Action-Adventure", "RPG"]
+    },
+    {
+        "title": "Resident Evil 4",
+        "price": 39.99,
+        "genre": ["Action", "Survival Horror"]
+    },
+    {
+        "title": "Stardew Valley",
+        "price": 13.99,
+        "genre": ["Simulation", "Farming", "RPG"]
+    },
+    {
+        "title": "Palworld",
+        "price": 28.99,
+        "genre": ["Open World", "Simulation", "Adventure"]
+    },
+    {
+        "title": "Dragon's Dogma 2",
+        "price": 64.99,
+        "genre": ["Action-Adventure", "RPG","Open World"]
+    },
+    {
+        "title": "DayZ",
+        "price": 39.99,
+        "genre": ["Survival", "Open World", "Zombies", "Action"]
+    },
+    {
+        "title": "Dead by Daylight",
+        "price": 19.99,
+        "genre": ["Survival", "Horror", "Multiplayer"]
+    },
+    {
+        "title": "Far Cry 6",
+        "price": 59.99,
+        "genre": ["Action-Adventure", "Open World", "FPS"]
+    },
+    {
+        "title": "Deep Rock Galactic",
+        "price": 29.99,
+        "genre": ["Action", "Co-op", "FPS"]
+    },
+    {
+        "title": "Borderlands 3",
+        "price": 59.99,
+        "genre": ["Action-Adventure", "RPG", "FPS", "Co-op"]
+    },
+    {
+        "title": "Lies of P",
+        "price": 59.99,
+        "genre": ["Action-Adventure", "RPG", "Open World"]
+    },
+    {
+        "title": "DOOM Eternal",
+        "price": 39.99,
+        "genre": ["Action", "FPS"]
+    }
+]
