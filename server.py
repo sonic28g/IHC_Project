@@ -37,6 +37,14 @@ db.create_table()
 def index():
     return render_template('index.html')
 
+@app.route('/missions')
+def missions():
+    return render_template('missions.html')
+
+@app.route('/livestreams')
+def livestreams():
+    return render_template('livestreams.html')
+
 @app.route('/games')
 def get_games():
     db.cursor.execute("SELECT id, title, price, genre, image FROM games")
