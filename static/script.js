@@ -18,21 +18,28 @@ document.addEventListener("DOMContentLoaded", function () {
   function renderGameCards(games) {
     var container = document.getElementById("gameCardsContainer");
     container.innerHTML = "";
-    games.forEach(function (game) {
+    var row;
+    console.log(games);
+    games.forEach(function (game, index) {
+      if (index % 4 === 0) {
+        row = document.createElement("div");
+        row.classList.add("row", "d-flex", "justify-content-center");
+        container.appendChild(row);
+      }
       var card = document.createElement("div");
-      card.classList.add("col-md-4");
+      card.classList.add("col-md-3", "mb-3");
       console.log(game);
       card.innerHTML = `
-        <div class="card">
-            <img src="${game[3]}" class="card-img-top" alt="${game[1]}">
-            <div class="card-body">
-                <h5 class="card-title">${game[1]}</h5>
-                <p class="card-text">$${game[2]}</p>
-                <a href="#" class="btn btn-primary">Buy Now</a>
-            </div>
-        </div>
-    `;
-      container.appendChild(card);
+      <div class="card">
+          <img src="${game[4]}" class="card-img-top" alt="${game[1]}">
+          <div class="card-body">
+              <h5 class="card-title">${game[1]}</h5>
+              <p class="card-text">${game[2]}€</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+          </div>
+      </div>
+  `;
+      row.appendChild(card);
     });
   }
 

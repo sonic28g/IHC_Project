@@ -2,101 +2,181 @@
     {
         "title": "Cyberpunk 2077",
         "price": 59.99,
-        "genre": ["Action-Adventure", "RPG", "FPS"]
+        "genre": ["Action-Adventure", "RPG", "FPS"],
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/capsule_616x353.jpg?t=1634133667"
     },
     {
         "title": "Grand Theft Auto 5",
         "price": 54.97,
-        "genre": ["Action-Adventure", "Open World", "Multiplayer"]
+        "genre": ["Action-Adventure", "Open World", "Multiplayer"],
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/271590/capsule_616x353.jpg?t=1634133667"
     },
     {
         "title": "Assassin's Creed Valhalla",
         "price": 59.99,
-        "genre": ["Action-Adventure", "Open World"]
+        "genre": ["Action-Adventure", "Open World"],
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1176330/capsule_616x353.jpg?t=1634133667"
     },
     {
         "title": "HELLDIVERS 2",
         "price": 39.99,
-        "genre": ["Action", "Co-op"]
+        "genre": ["Action", "Co-op"],
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1446780/capsule_616x353.jpg?t=1634133667"
     },
     {
         "title": "Fallout 4",
         "price": 19.99,
-        "genre": ["Action-Adventure", "RPG", "Open World"]
+        "genre": ["Action-Adventure", "RPG", "Open World"],
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/377160/capsule_616x353.jpg?t=1634133667"
     },
     {
         "title": "Monster Hunter: World",
         "price": 29.99,
-        "genre": ["Action", "RPG", "Open World"]
+        "genre": ["Action", "RPG", "Open World"],
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/582010/capsule_616x353.jpg?t=1634133667"
     },
     {
         "title": "Red Dead Redemption 2",
         "price": 59.99,
-        "genre": ["Action-Adventure", "Open World"]
+        "genre": ["Action-Adventure", "Open World"],
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/capsule_616x353.jpg?t=1634133667"
     },
     {
         "title": "Hogwarts Legacy",
         "price": 59.99,
-        "genre": ["Action-Adventure", "RPG"]
+        "genre": ["Action-Adventure", "RPG"],
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1554250/capsule_616x353.jpg?t=1634133667"
     },
     {
         "title": "Elden Ring",
         "price": 59.99,
-        "genre": ["Action-Adventure", "RPG"]
+        "genre": ["Action-Adventure", "RPG"],
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1240210/capsule_616x353.jpg?t=1634133667"
     },
     {
         "title": "Resident Evil 4",
         "price": 39.99,
-        "genre": ["Action", "Survival Horror"]
+        "genre": ["Action", "Survival Horror"],
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/254700/capsule_616x353.jpg?t=1634133667"
     },
     {
         "title": "Stardew Valley",
         "price": 13.99,
-        "genre": ["Simulation", "Farming", "RPG"]
-    },
-    {
-        "title": "Palworld",
-        "price": 28.99,
-        "genre": ["Open World", "Simulation", "Adventure"]
+        "genre": ["Simulation", "Farming", "RPG"],
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/413150/capsule_616x353.jpg?t=1634133667"
     },
     {
         "title": "Dragon's Dogma 2",
         "price": 64.99,
-        "genre": ["Action-Adventure", "RPG","Open World"]
+        "genre": ["Action-Adventure", "RPG","Open World"],
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1238840/capsule_616x353.jpg?t=1634133667"
     },
     {
         "title": "DayZ",
         "price": 39.99,
-        "genre": ["Survival", "Open World", "Zombies", "Action"]
+        "genre": ["Survival", "Open World", "Zombies", "Action"],
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/221100/capsule_616x353.jpg?t=1634133667"
     },
     {
         "title": "Dead by Daylight",
         "price": 19.99,
-        "genre": ["Survival", "Horror", "Multiplayer"]
-    },
-    {
-        "title": "Far Cry 6",
-        "price": 59.99,
-        "genre": ["Action-Adventure", "Open World", "FPS"]
+        "genre": ["Survival", "Horror", "Multiplayer"],
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/381210/capsule_616x353.jpg?t=1634133667"
     },
     {
         "title": "Deep Rock Galactic",
         "price": 29.99,
-        "genre": ["Action", "Co-op", "FPS"]
+        "genre": ["Action", "Co-op", "FPS"],
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/548430/capsule_616x353.jpg?t=1634133667"
     },
     {
         "title": "Borderlands 3",
         "price": 59.99,
-        "genre": ["Action-Adventure", "RPG", "FPS", "Co-op"]
+        "genre": ["Action-Adventure", "RPG", "FPS", "Co-op"],
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/397540/capsule_616x353.jpg?t=1634133667"
     },
     {
         "title": "Lies of P",
         "price": 59.99,
-        "genre": ["Action-Adventure", "RPG", "Open World"]
+        "genre": ["Action-Adventure", "RPG", "Open World"],
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1666240/capsule_616x353.jpg?t=1634133667"
     },
     {
         "title": "DOOM Eternal",
         "price": 39.99,
-        "genre": ["Action", "FPS"]
+        "genre": ["Action", "FPS"],
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/782330/capsule_616x353.jpg?t=1634133667"
+    },
+    {
+        "title": "The Witcher 3: Wild Hunt",
+        "price": 39.99,
+        "genre": ["Action-Adventure", "RPG", "Open World"],
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/292030/capsule_616x353.jpg?t=1634133667"
+    },
+    {
+        "title": "The Elder Scrolls V: Skyrim",
+        "price": 19.99,
+        "genre": ["Action-Adventure", "RPG", "Open World"],
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/72850/capsule_616x353.jpg?t=1634133667"
+    },
+    {
+        "title": "The Elder Scrolls Online",
+        "price": 19.99,
+        "genre": ["Action-Adventure", "RPG", "Open World", "Multiplayer"],
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/306130/capsule_616x353.jpg?t=1634133667"
+    },
+    {
+        "title": "The Forest",
+        "price": 19.99,
+        "genre": ["Survival", "Horror", "Open World"],
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/242760/capsule_616x353.jpg?t=1634133667"
+    },
+    {
+        "title": "The Crew 2",
+        "price": 59.99,
+        "genre": ["Racing", "Open World", "Multiplayer"],
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/646910/capsule_616x353.jpg?t=1634133667"
+    },
+    {
+        "title": "The Binding of Isaac: Rebirth",
+        "price": 14.99,
+        "genre": ["Action", "RPG", "Roguelike"],
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/250900/capsule_616x353.jpg?t=1634133667"
+    },
+    {
+        "title": "Subnautica",
+        "price": 24.99,
+        "genre": ["Survival", "Open World", "Adventure"],
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/264710/capsule_616x353.jpg?t=1634133667"
+    },
+    {
+        "title": "Sekiro: Shadows Die Twice",
+        "price": 59.99,
+        "genre": ["Action-Adventure", "RPG"],
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/814380/capsule_616x353.jpg?t=1634133667"
+    },
+    {
+        "title": "Rust",
+        "price": 39.99,
+        "genre": ["Survival", "Open World", "Multiplayer"],
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/252490/capsule_616x353.jpg?t=1634133667"
+    },
+    {
+        "title": "Risk of Rain 2",
+        "price": 24.99,
+        "genre": ["Action", "Roguelike", "Co-op"],
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/632360/capsule_616x353.jpg?t=1634133667"
+    },
+    {
+        "title": "Raft",
+        "price": 19.99,
+        "genre": ["Survival", "Adventure", "Open World"],
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/648800/capsule_616x353.jpg?t=1634133667"
+    },
+    {
+        "title": "Outward",
+        "price": 39.99,
+        "genre": ["Action-Adventure", "RPG", "Open World"],
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/794260/capsule_616x353.jpg?t=1634133667"
     }
 ]
