@@ -45,6 +45,14 @@ def missions():
 def livestreams():
     return render_template('livestreams.html')
 
+@app.route('/cart')
+def cart():
+    return render_template('cart.html')
+
+@app.route('/profile')
+def profile():
+    return render_template('profile.html')
+
 @app.route('/games')
 def get_games():
     db.cursor.execute("SELECT id, title, price, genre, image FROM games")

@@ -13,6 +13,7 @@
       href="{{ url_for('static', filename='style.css') }}"
     />
   </head>
+  
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
@@ -45,12 +46,12 @@
               <a class="nav-link" href="{{ url_for('missions') }}">Missions</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{{ url_for('livestreams') }}">Livestreams</a>
+              <a class="nav-link" href="{{ url_for('livestreams') }}">Livestreams</a>
             </li>
           </ul>
           <ul class="navbar-nav ms-auto">  
             <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('cart') }}">Cart</a>
+              <a class="nav-link active" aria-current="page" href="{{ url_for('cart') }}">Cart</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ url_for('profile') }}">
@@ -71,25 +72,6 @@
       </div>
     </nav>
 
-    <div class="container mt-4">
-      <div class="row">
-        <div class="col-md-4">
-          <h3>Live Streams</h3>
-        </div>
-        <div class="col-md-4 ms-auto">
-          <input
-            type="text"
-            class="form-control"
-            id="searchInput"
-            placeholder="Search Game or Channel"
-          />
-        </div>  
-      </div>
-    </div>
-
-    <div class="container mt-4">
-      <div class="row" id="LiveStreamsContainer"></div>
-    </div>
-
+  
   </body>
 </html>
