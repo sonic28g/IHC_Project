@@ -1,16 +1,32 @@
-import argparse
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, render_template, redirect, url_for, session, jsonify
 import sqlite3
 import os
 import json
 
 DATABASE_NAME = "database.db"
 app = Flask(__name__)
+app.secret_key = os.urandom(24)
 
 class DatabaseWrappers:
     def __init__(self):
         self.conn = sqlite3.connect(DATABASE_NAME, check_same_thread=False)
         self.cursor = self.conn.cursor()
+        
+    def create_user_table(self):
+        self.cursor.execute("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, username TEXT, email TEXT, password TEXT)")
+        
+    def register_user(self, username, email, password):
+        if not self.user_exists(username):
+            self.cursor.execute("INSERT INTO users (username, email, password) VALUES (?, ?, ?)", (username, email, password))
+            self.conn.commit()
+
+    def user_exists(self, username):
+        self.cursor.execute("SELECT 1 FROM users WHERE username = ?", (username,))
+        return self.cursor.fetchone() is not None
+
+    def authenticate_user(self, username, password):
+        self.cursor.execute("SELECT 1 FROM users WHERE username = ? AND password = ?", (username, password))
+        return self.cursor.fetchone() is not None
         
     def create_table(self):
         self.cursor.execute("CREATE TABLE IF NOT EXISTS games (id INTEGER PRIMARY KEY, title TEXT, price REAL, genre TEXT, image TEXT)")
@@ -30,12 +46,14 @@ class DatabaseWrappers:
 
 db = DatabaseWrappers()
 db.create_table()
+db.create_user_table()
 
 # ======================================================================================== #
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    current_user = session.get('username')
+    return render_template('index.html', current_user=current_user)
 
 @app.route('/missions')
 def missions():
@@ -49,9 +67,50 @@ def livestreams():
 def cart():
     return render_template('cart.html')
 
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        if db.authenticate_user(username, password):
+            session['username'] = username
+            return redirect(url_for('profile'))
+        else:
+            return "Invalid username or password"
+    return render_template('login.html')
+
+@app.route('/logout')
+def logout():
+    session.pop('username', None)
+    return redirect(url_for('login'))
+
 @app.route('/profile')
 def profile():
-    return render_template('profile.html')
+    if 'username' in session:
+        return render_template('profile.html', username=session['username'])
+    else:
+        return redirect(url_for('login'))
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if request.method == 'POST':
+        username = request.form['username']
+        email = request.form['email']
+        password = request.form['password']
+        confirm_password = request.form['confirm_password']
+
+        if not email or '@' not in email:
+            return "Invalid email"
+
+        if password != confirm_password:
+            return "Passwords do not match"
+
+        if not db.user_exists(username):
+            db.register_user(username, email, password)
+            return "Registered successfully"
+        else:
+            return "Username already exists"
+    return render_template('register.html')
 
 @app.route('/games')
 def get_games():
@@ -75,4 +134,5 @@ def add_games_to_database():
 
 if __name__ == "__main__":
     add_games_to_database()
+    
     app.run(debug=True)
