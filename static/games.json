@@ -15,13 +15,13 @@
         "title": "Assassin's Creed Valhalla",
         "price": 59.99,
         "genre": ["Action-Adventure", "Open World"],
-        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1176330/capsule_616x353.jpg?t=1634133667"
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2208920/capsule_616x353.jpg?t=1634133667"
     },
     {
         "title": "HELLDIVERS 2",
         "price": 39.99,
         "genre": ["Action", "Co-op"],
-        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1446780/capsule_616x353.jpg?t=1634133667"
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/553850/capsule_616x353.jpg?t=1634133667"
     },
     {
         "title": "Fallout 4",
@@ -45,19 +45,19 @@
         "title": "Hogwarts Legacy",
         "price": 59.99,
         "genre": ["Action-Adventure", "RPG"],
-        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1554250/capsule_616x353.jpg?t=1634133667"
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/990080/capsule_616x353.jpg?t=1634133667"
     },
     {
         "title": "Elden Ring",
         "price": 59.99,
         "genre": ["Action-Adventure", "RPG"],
-        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1240210/capsule_616x353.jpg?t=1634133667"
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/capsule_616x353.jpg?t=1634133667"
     },
     {
         "title": "Resident Evil 4",
         "price": 39.99,
         "genre": ["Action", "Survival Horror"],
-        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/254700/capsule_616x353.jpg?t=1634133667"
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2050650/capsule_616x353.jpg?t=1634133667"
     },
     {
         "title": "Stardew Valley",
@@ -69,7 +69,7 @@
         "title": "Dragon's Dogma 2",
         "price": 64.99,
         "genre": ["Action-Adventure", "RPG","Open World"],
-        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1238840/capsule_616x353.jpg?t=1634133667"
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2054970/capsule_616x353.jpg?t=1634133667"
     },
     {
         "title": "DayZ",
@@ -99,7 +99,7 @@
         "title": "Lies of P",
         "price": 59.99,
         "genre": ["Action-Adventure", "RPG", "Open World"],
-        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1666240/capsule_616x353.jpg?t=1634133667"
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1627720/capsule_616x353.jpg?t=1634133667"
     },
     {
         "title": "DOOM Eternal",
@@ -174,7 +174,7 @@
         "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/648800/capsule_616x353.jpg?t=1634133667"
     },
     {
-        "title": "Outward",
+        "title": "Outward Definitive Edition",
         "price": 39.99,
         "genre": ["Action-Adventure", "RPG", "Open World"],
         "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/794260/capsule_616x353.jpg?t=1634133667"
