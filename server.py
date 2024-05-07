@@ -12,6 +12,10 @@ class DatabaseWrappers:
         self.conn = sqlite3.connect(DATABASE_NAME, check_same_thread=False)
         self.cursor = self.conn.cursor()
         
+    def reset_database(self):
+        self.cursor.execute("DROP TABLE IF EXISTS games")
+        self.conn.commit()
+        
     def create_user_table(self):
         self.cursor.execute("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, username TEXT, email TEXT, password TEXT)")
         
@@ -49,6 +53,7 @@ class DatabaseWrappers:
             self.conn.commit()
 
 db = DatabaseWrappers()
+db.reset_database()
 db.create_table()
 db.create_user_table()
 
@@ -145,3 +150,7 @@ if __name__ == "__main__":
     add_games_to_database()
     
     app.run(debug=True)
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('error.html'), 404
