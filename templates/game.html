@@ -8,10 +8,49 @@
       crossorigin="anonymous"
     />
     <title>Game Vault Keys</title>
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='style.css') }}"
-    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+      }
+      .game-title {
+        text-align: center;
+        font-size: 2em;
+        margin-top: 20px;
+      }
+      .game-image {
+        display: block;
+        margin: 20px auto;
+        max-width: 100%;
+      }
+      .game-details {
+        display: flex;
+        justify-content: space-around;
+        margin: 20px 0;
+      }
+      .game-description {
+        width: 50%;
+      }
+      .game-info {
+        width: 40%;
+      }
+      .game-info p,
+      .game-info h1 {
+        margin: 10px 0;
+      }
+      .add-to-cart {
+        display: block;
+        background-color: #007bff;
+        color: white;
+        text-align: center;
+        padding: 10px 20px;
+        margin: 20px auto;
+        text-decoration: none;
+        width: fit-content;
+      }
+    </style>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -83,17 +122,25 @@
       </div>
     </nav>
 
-    <h1>{{ game.title }}</h1>
-    <img src="{{ game.images[0] }}" alt="{{ game.title }}" />
-    <p>Price: {{ game.price }}€</p>
-    <p>Genre: {{ game.genre }}</p>
-    <h1>{{ game.publisher }}</h1>
-    <h3>Descrição</h3>
-    <p>
-      {{ game.description }}
-    </p>
-    <button>ADD CART</button>
-    <div class="images"></div>
+    <h1 class="game-title">{{ game.title }}</h1>
+    <img class="game-image" src="{{ game.images[0] }}" alt="{{ game.title }}" />
+    <div class="game-details">
+      <div class="game-description">
+        <h3>Descrição</h3>
+        <p>{{ game.description }}</p>
+      </div>
+      <div class="game-info">
+        <p>Price: {{ game.price }}€</p>
+        <p>Genre: {{ game.genre }}</p>
+        <h1>{{ game.publisher }}</h1>
+      </div>
+    </div>
+    <a href="#" class="add-to-cart">ADD CART</a>
+    <div class="game-gallery">
+      {% for image in game.images %}
+      <img src="{{ image }}" alt="{{ game.title }}" />
+      {% endfor %}
+    </div>
     <div class="livestreams"></div>
 
     <script
