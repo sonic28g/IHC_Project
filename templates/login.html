@@ -55,25 +55,6 @@
               >
             </li>
           </ul>
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('cart') }}">Cart</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('profile') }}">
-                <img
-                  src="{{ url_for('static', filename='profile.png') }}"
-                  alt=""
-                  width="40"
-                  height="30"
-                  class="d-inline-block align-text-top"
-                />
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('profile') }}">Gamer123</a>
-            </li>
-          </ul>
         </div>
       </div>
     </nav>
@@ -83,11 +64,9 @@
       <label for="password">Password:</label>
       <input type="password" id="password" name="password" />
       <input type="submit" value="Login" />
-      <input
-        type="submit"
-        value="Register"
-        formaction="{{ url_for('register') }}"
-      />
+      <div style="font-size: 14px" class="register-link">
+        Ainda não tens conta? <a href="/register">Regista-te</a><br />
+      </div>
     </form>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
   </body>

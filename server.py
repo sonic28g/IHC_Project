@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, redirect, url_for, session, jsonify
+from flask import Flask, request, render_template, redirect, url_for, session, jsonify, flash
 import sqlite3
 import os
 import json
@@ -22,6 +22,10 @@ class DatabaseWrappers:
 
     def user_exists(self, username):
         self.cursor.execute("SELECT 1 FROM users WHERE username = ?", (username,))
+        return self.cursor.fetchone() is not None
+    
+    def email_exists(self, email):
+        self.cursor.execute("SELECT 1 FROM users WHERE email = ?", (email,))
         return self.cursor.fetchone() is not None
 
     def authenticate_user(self, username, password):
@@ -100,16 +104,21 @@ def register():
         confirm_password = request.form['confirm_password']
 
         if not email or '@' not in email:
-            return "Invalid email"
+            flash('Invalid email')
+            return redirect(url_for('register'))
 
         if password != confirm_password:
-            return "Passwords do not match"
+            flash('Passwords do not match')
+            return redirect(url_for('register'))
 
-        if not db.user_exists(username):
-            db.register_user(username, email, password)
-            return "Registered successfully"
-        else:
-            return "Username already exists"
+        if db.user_exists(username) or db.email_exists(email):
+            flash('Username or email already exists')
+            return redirect(url_for('register'))
+
+        db.register_user(username, email, password)
+        flash('Registered successfully')
+        return redirect(url_for('login'))
+
     return render_template('register.html')
 
 @app.route('/games')
