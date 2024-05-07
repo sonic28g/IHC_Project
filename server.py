@@ -37,20 +37,46 @@ class DatabaseWrappers:
         return self.cursor.fetchone() is not None
         
     def create_table(self):
-        self.cursor.execute("CREATE TABLE IF NOT EXISTS games (id INTEGER PRIMARY KEY, title TEXT, price REAL, genre TEXT, image TEXT)")
+        self.cursor.execute("""
+            CREATE TABLE IF NOT EXISTS games (
+                id INTEGER PRIMARY KEY, 
+                title TEXT, 
+                price REAL, 
+                genre TEXT, 
+                images TEXT,
+                publisher TEXT,
+                description TEXT
+            )
+        """)
         self.cursor.execute("PRAGMA table_info(games)")
-        columns = [column[1] for column in self.cursor.fetchall()]
-        if 'image' not in columns:
-            self.cursor.execute("ALTER TABLE games ADD COLUMN image TEXT")
                     
     def game_exists(self, title):
         self.cursor.execute("SELECT 1 FROM games WHERE title = ?", (title,))
         return self.cursor.fetchone() is not None
 
-    def add_game(self, title, price, genre, image):
+    def add_game(self, title, price, genre, images, publisher, description):
         if not self.game_exists(title):
-            self.cursor.execute("INSERT INTO games (title, price, genre, image) VALUES (?, ?, ?, ?)", (title, price, genre, image))
+            self.cursor.execute("""
+                INSERT INTO games (title, price, genre, images, publisher, description) 
+                VALUES (?, ?, ?, ?, ?, ?)
+            """, (title, price, genre, images, publisher, description))
             self.conn.commit()
+            
+    def get_game_details(self, game_id):
+        self.cursor.execute("SELECT * FROM games WHERE id = ?", (game_id,))
+        game = self.cursor.fetchone()
+        if game is not None:
+            return {
+                'id': game[0], 
+                'title': game[1], 
+                'price': game[2], 
+                'genre': game[3], 
+                'images': game[4].split(", "),
+                'publisher': game[5],
+                'description': game[6]
+            }
+        else:
+            return None
 
 db = DatabaseWrappers()
 db.reset_database()
@@ -74,7 +100,8 @@ def livestreams():
 
 @app.route('/cart')
 def cart():
-    return render_template('cart.html')
+    if 'username' not in session:
+        return redirect(url_for('login'))
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -128,14 +155,19 @@ def register():
 
 @app.route('/games')
 def get_games():
-    db.cursor.execute("SELECT id, title, price, genre, image FROM games")
+    db.cursor.execute("SELECT id, title, price, genre, images FROM games")
     games = db.cursor.fetchall()
-    games = [[game[0], game[1], game[2], game[3].split(", "), game[4]] for game in games]
+    games = [[game[0], game[1], game[2], game[3].split(", "), game[4].split(", ")] for game in games]
     return jsonify(games)
+
+@app.route('/game/<game_id>')
+def game(game_id):
+    game_details = db.get_game_details(game_id)
+    return render_template('game.html', game=game_details)
 
 @app.route('/search/<title>')
 def search_games(title):
-    db.cursor.execute("SELECT id, title, price, genre, image FROM games WHERE title LIKE ?", ('%' + title + '%',))
+    db.cursor.execute("SELECT id, title, price, genre, images FROM games WHERE title LIKE ?", ('%' + title + '%',))
     games = db.cursor.fetchall()
     games = [[game[0], game[1], game[2], game[3].split(", "), game[4]] for game in games]
     return jsonify(games)
@@ -144,7 +176,7 @@ def add_games_to_database():
     with open('static/games.json') as f:
         games = json.load(f)
         for game in games:
-            db.add_game(game['title'], game['price'], ', '.join(game['genre']), game.get('image', ''))
+            db.add_game(game['title'], game['price'], ', '.join(game['genre']), ', '.join(game['images']), game['publisher'], game['description'])
 
 if __name__ == "__main__":
     add_games_to_database()

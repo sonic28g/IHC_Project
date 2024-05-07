@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <div class="card-body">
               <h5 class="card-title">${game[1]}</h5>
               <p class="card-text">${game[2]}€</p>
-              <a href="#" class="btn btn-primary">Buy Now</a>
+              <a href="/game/${game[0]}" class="btn btn-primary">Buy Now</a>
           </div>
       </div>
   `;
