@@ -49,3 +49,38 @@ input[type="text"], input[type="password"], input[type="submit"] {
     transition: transform 0.3s ease;
   }
   
+.quizz_bar {
+    border: #333 2px solid;
+    border-radius: 5px;
+    margin-right: 60%;
+    margin-left: 5%;
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    justify-content: center; /* Isso distribuirá o conteúdo horizontalmente */
+    align-items: center; /* Isso centralizará verticalmente o conteúdo */
+    background-color: #f0f0f0;
+}
+
+.quizz_bar p {
+    margin: 0;
+    padding: 10px 0;
+}
+  
+.play_button {
+    margin-left: auto; /* Alinha o botão à direita */
+    font-size: 18px;
+    color: #ffffff;
+    background-color: rgb(29, 134, 29);
+    border-radius: 5px;
+    border: 1px solid;
+    border-color: rgb(36, 115, 36);
+    transition: 0.3s;
+    opacity: 0.6;
+}
+
+
+.play_button:hover{
+    opacity: 1;
+}
