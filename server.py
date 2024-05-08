@@ -92,18 +92,21 @@ def index():
 
 @app.route('/missions')
 def missions():
-    return render_template('missions.html')
+    current_user = session.get('username')
+    return render_template('missions.html', current_user=current_user)
 
 @app.route('/livestreams')
 def livestreams():
-    return render_template('livestreams.html')
+    current_user = session.get('username')
+    return render_template('livestreams.html', current_user=current_user)
 
 @app.route('/cart')
 def cart():
     if 'username' not in session:
         return redirect(url_for('login'))
     else:
-        return render_template('cart.html')
+        current_user = session.get('username')
+    return render_template('cart.html', current_user=current_user)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -125,7 +128,8 @@ def logout():
 @app.route('/profile')
 def profile():
     if 'username' in session:
-        return render_template('profile.html', username=session['username'])
+        current_user = session.get('username')
+        return render_template('profile.html', current_user=current_user, username=session['username'])
     else:
         return redirect(url_for('login'))
 
@@ -165,7 +169,8 @@ def get_games():
 @app.route('/game/<game_id>')
 def game(game_id):
     game_details = db.get_game_details(game_id)
-    return render_template('game.html', game=game_details)
+    current_user = session.get('username')
+    return render_template('game.html', current_user=current_user, game=game_details)
 
 @app.route('/search/<title>')
 def search_games(title):

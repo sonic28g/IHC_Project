@@ -35,36 +35,47 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        
+
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('index') }}">Store</a>
+              <a
+                class="nav-link"
+                href="{{ url_for('index') }}"
+                >Store</a
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ url_for('missions') }}">Missions</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{{ url_for('livestreams') }}">Livestreams</a>
+              <a class="nav-link active" aria-current="page" href="{{ url_for('livestreams') }}"
+                >Livestreams</a
+              >
             </li>
           </ul>
-          <ul class="navbar-nav ms-auto">  
+          <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('cart') }}">Cart</a>
+              <a class="nav-link d-inline-block" href="{{ url_for('cart') }}"
+                >Cart</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('profile') }}">
-                <img
-                  src="{{ url_for('static', filename='profile.png') }}"
-                  alt=""
-                  width="40"
-                  height="30"
-                  class="d-inline-block align-text-top"
-                />
+              {% if current_user %}
+              <a
+                class="nav-link d-inline-block"
+                href="{{ url_for('profile') }}"
+              >
+                Profile
               </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('profile') }}">Gamer123</a>
+              <a class="nav-link d-inline-block" href="{{ url_for('logout') }}"
+                >Logout</a
+              >
+              {% else %}
+              <a class="nav-link d-inline-block" href="{{ url_for('login') }}"
+                >Login</a
+              >
+              {% endif %}
             </li>
           </ul>
         </div>
