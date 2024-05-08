@@ -72,6 +72,62 @@
       </div>
     </nav>
 
-  
+      <div class ="row mt-4 ms-4">
+        <div class="col-6">
+          <div class="col border border-3 pb-5">  
+            <div class="row">
+              <div class="col-md-4">Game Title</div>
+              <div class="col-md-4">Quantity</div>
+              <div class="col-md-4">Price</div>   
+            </div>
+          </div> 
+          <button type="button" class="btn btn-outline-dark mt-2">
+            Add promo code
+          </button>  
+        </div> 
+        
+        <div class="col-4 mx-4">
+          <div class="d-flex col border border-3 pb-5">
+            <div class="col align-content-end">
+              Total
+            </div>
+          </div>
+          <div type="button" class="btn btn-outline-dark mt-2">
+            Check-out
+          </div>
+        </div> 
+      </div>  
+      <script>
+        // Função para exibir itens adicionados ao carrinho
+        function displayCartItems(cartItems) {
+          var cartContainer = document.getElementById("cartItemsContainer");
+          cartContainer.innerHTML = ""; // Limpa o conteúdo anterior
+
+          cartItems.forEach(function (item) {
+            var cartItemElement = document.createElement("div");
+            cartItemElement.classList.add("row", "mb-3", "border-bottom");
+
+            cartItemElement.innerHTML = `
+              <div class="col-md-4">${item.title}</div>
+              <div class="col-md-4">${item.quantity}</div>
+              <div class="col-md-4">${item.price}€</div>
+            `;
+
+            cartContainer.appendChild(cartItemElement);
+          });
+        }
+
+        // Função para calcular o total da compra
+        function calculateTotal(cartItems) {
+          var total = 0;
+          cartItems.forEach(function (item) {
+            total += item.price * item.quantity;
+          });
+          return total;
+        }
+
+
+      </script>
+
   </body>
 </html>

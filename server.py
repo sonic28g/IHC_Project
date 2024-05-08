@@ -102,6 +102,8 @@ def livestreams():
 def cart():
     if 'username' not in session:
         return redirect(url_for('login'))
+    else:
+        return render_template('cart.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
