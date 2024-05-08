@@ -39,17 +39,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a
-                class="nav-link"
-                href="{{ url_for('index') }}"
-                >Store</a
-              >
+              <a class="nav-link" href="{{ url_for('index') }}">Store</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ url_for('missions') }}">Missions</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{{ url_for('livestreams') }}"
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="{{ url_for('livestreams') }}"
                 >Livestreams</a
               >
             </li>
@@ -92,9 +91,9 @@
             type="text"
             class="form-control"
             id="searchInput"
-            placeholder="Search Game or Channel"
+            placeholder="Search Game"
           />
-        </div>  
+        </div>
       </div>
     </div>
 
@@ -102,5 +101,56 @@
       <div class="row" id="LiveStreamsContainer"></div>
     </div>
 
+    <script>
+      function renderLivestreamCards(livestreams) {
+        var container = document.getElementById("LiveStreamsContainer");
+        container.innerHTML = "";
+        var row;
+        console.log(livestreams);
+        livestreams.forEach(function (livestream, index) {
+          if (index % 4 === 0) {
+            row = document.createElement("div");
+            row.classList.add("row", "d-flex", "justify-content-center");
+            container.appendChild(row);
+          }
+          var card = document.createElement("div");
+          card.classList.add("col-md-3", "mb-3");
+          console.log(livestream);
+          card.innerHTML = `
+      <div class="card">
+          <img src="${livestream.thumbnail}" class="card-img-top" alt="${livestream.title}">
+          <div class="card-body">
+              <h5 class="card-title">${livestream.title}</h5>
+              <a href="${livestream.url}" class="btn btn-primary" target="_blank">Watch</a>
+          </div>
+      </div>
+    `;
+          row.appendChild(card);
+        });
+      }
+
+      var allLivestreams = [];
+
+      window.onload = function () {
+        fetch("/get_livestreams")
+          .then((response) => response.json())
+          .then((data) => {
+            allLivestreams = data;
+            renderLivestreamCards(data);
+          });
+
+        var searchInput = document.getElementById("searchInput");
+        searchInput.addEventListener("input", function () {
+          var filteredLivestreams = allLivestreams.filter(function (
+            livestream
+          ) {
+            return livestream.title
+              .toLowerCase()
+              .includes(searchInput.value.toLowerCase());
+          });
+          renderLivestreamCards(filteredLivestreams);
+        });
+      };
+    </script>
   </body>
 </html>

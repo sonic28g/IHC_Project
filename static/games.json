@@ -3,241 +3,300 @@
         "title": "Cyberpunk 2077",
         "price": 59.99,
         "genre": ["Action-Adventure", "RPG", "FPS"],
-        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/capsule_616x353.jpg?t=1634133667", 
-        "https://upload.wikimedia.org/wikipedia/en/9/9f/Cyberpunk_2077_box_art.jpg"],
+        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/capsule_616x353.jpg?t=1634133667",
+                    "https://www.gamespot.com/a/uploads/original/1574/15747411/4192563-vlcscreenshot2023-09-14-03h17m59s069.jpg"],
         "publisher": "CD Projekt Red",
-        "description": "Cyberpunk 2077 is an open-world, action-adventure story set in Night City, a megalopolis obsessed with power, glamour and body modification. You play as V, a mercenary outlaw going after a one-of-a-kind implant that is the key to immortality. You can customize your character’s cyberware, skillset and playstyle, and explore a vast city where the choices you make shape the story and the world around you."
+        "description": "Cyberpunk 2077 is an open-world, action-adventure story set in Night City, a megalopolis obsessed with power, glamour and body modification. You play as V, a mercenary outlaw going after a one-of-a-kind implant that is the key to immortality. You can customize your character's cyberware, skillset and playstyle, and explore a vast city where the choices you make shape the story and the world around you.",
+        "livestream": "https://www.twitch.tv/directory/game/Cyberpunk%202077"
     },
     {
         "title": "Grand Theft Auto 5",
         "price": 54.97,
         "genre": ["Action-Adventure", "Open World", "Multiplayer"],
-        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/271590/capsule_616x353.jpg?t=1634133667"],
+        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/271590/capsule_616x353.jpg?t=1634133667",
+                    "https://i.ytimg.com/vi/uQIYXqmf3rU/maxresdefault.jpg"],
         "publisher": "Rockstar Games",
-        "description": "When a young street hustler, a retired bank robber and a terrifying psychopath find themselves entangled with some of the most frightening and deranged elements of the criminal underworld, the U.S. government and the entertainment industry, they must pull off a series of dangerous heists to survive in a ruthless city in which they can trust nobody, least of all each other."
+        "description": "When a young street hustler, a retired bank robber and a terrifying psychopath find themselves entangled with some of the most frightening and deranged elements of the criminal underworld, the U.S. government and the entertainment industry, they must pull off a series of dangerous heists to survive in a ruthless city in which they can trust nobody, least of all each other.",
+        "livestream": "https://www.twitch.tv/directory/game/Grand%20Theft%20Auto%20V"
     },
     {
         "title": "Assassin's Creed Valhalla",
         "price": 59.99,
         "genre": ["Action-Adventure", "Open World"],
-        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/2208920/capsule_616x353.jpg?t=1634133667"],
+        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/2208920/capsule_616x353.jpg?t=1634133667",
+                    "https://cdn.vox-cdn.com/thumbor/7Z6VNCuy8Ink2BxJnxC0JcVKkAI=/0x0:3840x2160/1200x675/filters:focal(925x815:1539x1429)/cdn.vox-cdn.com/uploads/chorus_image/image/67630691/ACV_Iconic_Landscape_Stonehenge.0.jpg"],
         "publisher": "Ubisoft",
-        "description": "Become Eivor, a legendary Viking raider on a quest for glory. Explore England's Dark Ages as you raid your enemies, grow your settlement, and build your political power. Lead epic Viking raids against Saxon fortresses throughout England. Dual-wield powerful weapons and relive the visceral fighting style of the Vikings."
+        "description": "Become Eivor, a legendary Viking raider on a quest for glory. Explore England's Dark Ages as you raid your enemies, grow your settlement, and build your political power. Lead epic Viking raids against Saxon fortresses throughout England. Dual-wield powerful weapons and relive the visceral fighting style of the Vikings.",
+        "livestream": "https://www.twitch.tv/directory/category/assassins-creed-valhalla"
     },
     {
         "title": "HELLDIVERS 2",
         "price": 39.99,
         "genre": ["Action", "Co-op"],
-        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/1446780/capsule_616x353.jpg?t=1634133667"],
+        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/1446780/capsule_616x353.jpg?t=1634133667",
+                    "https://images.squarespace-cdn.com/content/v1/55ef0e29e4b099e22cdc9eea/578cceff-f72f-42fc-b216-442cffd493d9/Bugs.jpg"],
         "publisher": "Arrowhead Game Studios",
-        "description": "HELLDIVERS™ is a hardcore, cooperative, twin stick shooter. As part of the elite unit called the HELLDIVERS, players must work together to protect SUPER EARTH and defeat the enemies of mankind in an intense intergalactic war."
+        "description": "HELLDIVERS is a hardcore, cooperative, twin stick shooter. As part of the elite unit called the HELLDIVERS, players must work together to protect SUPER EARTH and defeat the enemies of mankind in an intense intergalactic war.",
+        "livestream": "https://www.twitch.tv/directory/game/HELLDIVERS"
     },
     {
         "title": "Fallout 4",
         "price": 19.99,
         "genre": ["Action-Adventure", "RPG", "Open World"],
-        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/377160/capsule_616x353.jpg?t=1634133667"],
+        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/377160/capsule_616x353.jpg?t=1634133667",
+                    "https://cdn.wccftech.com/wp-content/uploads/2015/06/Fallout-4_Gameplay_1-740x416.jpg"],
         "publisher": "Bethesda Game Studios",
-        "description": "Bethesda Game Studios, the award-winning creators of Fallout 3 and The Elder Scrolls V: Skyrim, welcome you to the world of Fallout 4 – their most ambitious game ever, and the next generation of open-world gaming."
+        "description": "Bethesda Game Studios, the award-winning creators of Fallout 3 and The Elder Scrolls V: Skyrim, welcome you to the world of Fallout 4 - their most ambitious game ever, and the next generation of open-world gaming.",
+        "livestream": "https://www.twitch.tv/directory/game/Fallout%204"
     },
     {
         "title": "Monster Hunter: World",
         "price": 29.99,
         "genre": ["Action", "RPG", "Open World"],
-        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/582010/capsule_616x353.jpg?t=1634133667"],
+        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/582010/capsule_616x353.jpg?t=1634133667",
+                    "https://meups.com.br/wp-content/uploads/2017/06/Monster-Hunter-World.jpg"],
         "publisher": "Capcom",
-        "description": "Welcome to a new world! Take on the role of a hunter and slay ferocious monsters in a living, breathing ecosystem where you can use the landscape and its diverse inhabitants to get the upper hand. Hunt alone or in co-op with up to three other players, and use materials collected from fallen foes to craft new gear and take on even bigger, badder beasts!"
+        "description": "Welcome to a new world! Take on the role of a hunter and slay ferocious monsters in a living, breathing ecosystem where you can use the landscape and its diverse inhabitants to get the upper hand. Hunt alone or in co-op with up to three other players, and use materials collected from fallen foes to craft new gear and take on even bigger, badder beasts!",
+        "livestream": "https://www.twitch.tv/directory/game/Monster%20Hunter%3A%20World"
     },
     {
         "title": "Red Dead Redemption 2",
         "price": 59.99,
         "genre": ["Action-Adventure", "Open World"],
-        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/capsule_616x353.jpg?t=1634133667"],
+        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/capsule_616x353.jpg?t=1634133667",
+                    "https://www.kotaku.com.au/wp-content/uploads/2018/08/10/rxwhmhrxguqcgahnhvzo.png?quality=75"],
         "publisher": "Rockstar Games",
-        "description": "America, 1899. The end of the wild west era has begun as lawmen hunt down the last remaining outlaw gangs. Those who will not surrender or succumb are killed. After a robbery goes badly wrong in the western town of Blackwater, Arthur Morgan and the Van der Linde gang are forced to flee. With federal agents and the best bounty hunters in the nation massing on their heels, the gang must rob, steal and fight their way across the rugged heartland of America in order to survive. As deepening internal divisions threaten to tear the gang apart, Arthur must make a choice between his own ideals and loyalty to the gang who raised him."
+        "description": "America, 1899. The end of the wild west era has begun as lawmen hunt down the last remaining outlaw gangs. Those who will not surrender or succumb are killed. After a robbery goes badly wrong in the western town of Blackwater, Arthur Morgan and the Van der Linde gang are forced to flee. With federal agents and the best bounty hunters in the nation massing on their heels, the gang must rob, steal and fight their way across the rugged heartland of America in order to survive. As deepening internal divisions threaten to tear the gang apart, Arthur must make a choice between his own ideals and loyalty to the gang who raised him.",
+        "livestream": "https://www.twitch.tv/directory/game/Red%20Dead%20Redemption%202"
     },
     {
         "title": "Hogwarts Legacy",
         "price": 59.99,
         "genre": ["Action-Adventure", "RPG"],
-        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/990080/capsule_616x353.jpg?t=1634133667"],
+        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/990080/capsule_616x353.jpg?t=1634133667",
+                    "https://www.gematsu.com/wp-content/uploads/2022/12/Hogwarts-Legacy-Play_12-14-22.jpg"],
         "publisher": "Portkey Games",
-        "description": "Hogwarts Legacy is an immersive, open-world action RPG set in the world first introduced in the Harry Potter books. Now you can take control of the action and be at the center of your own adventure in the wizarding world. Embark on a journey through familiar and new locations as you explore and discover fantastic beasts, customize your character and craft potions, master spell casting, upgrade talents, and become the wizard you want to be."
+        "description": "Hogwarts Legacy is an immersive, open-world action RPG set in the world first introduced in the Harry Potter books. Now you can take control of the action and be at the center of your own adventure in the wizarding world. Embark on a journey through familiar and new locations as you explore and discover fantastic beasts, customize your character and craft potions, master spell casting, upgrade talents, and become the wizard you want to be.",
+        "livestream": "https://www.twitch.tv/directory/game/Hogwarts%20Legacy"
     },
     {
         "title": "Elden Ring",
         "price": 59.99,
         "genre": ["Action-Adventure", "RPG"],
-        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/1240210/capsule_616x353.jpg?t=1634133667"],
+        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/1240210/capsule_616x353.jpg?t=1634133667",
+                    "https://cdn.thewirecutter.com/wp-content/media/2022/03/elden-ring-2048px-0003.jpg?auto=webp&quality=75&crop=1.91:1&width=1200"],
         "publisher": "FromSoftware",
-        "description": "Rise, Tarnished, and be guided by grace to brandish the power of the Elden Ring and become an Elden Lord in the Lands Between. ELDEN RING, developed by FromSoftware, Inc. and BANDAI NAMCO Entertainment Inc., is a fantasy action-RPG adventure set within a world created by Hidetaka Miyazaki – creator of the influential DARK SOULS video game series; and George R.R. Martin – author of The New York Times best-selling fantasy series, A Song of Ice and Fire. Danger and discovery lurk at every corner in FromSoftware’s largest game to-date."
+        "description": "Rise, Tarnished, and be guided by grace to brandish the power of the Elden Ring and become an Elden Lord in the Lands Between. ELDEN RING, developed by FromSoftware, Inc. and BANDAI NAMCO Entertainment Inc., is a fantasy action-RPG adventure set within a world created by Hidetaka Miyazaki - creator of the influential DARK SOULS video game series; and George R.R. Martin - author of The New York Times best-selling fantasy series, A Song of Ice and Fire. Danger and discovery lurk at every corner in FromSoftware's largest game to-date.",
+        "livestream": "https://www.twitch.tv/directory/game/Elden%20Ring"
     },
     {
         "title": "Resident Evil 4",
         "price": 39.99,
         "genre": ["Action", "Survival Horror"],
-        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/254700/capsule_616x353.jpg?t=1634133667"],
+        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/254700/capsule_616x353.jpg?t=1634133667",
+                    "https://static0.gamerantimages.com/wordpress/wp-content/uploads/Resident-Evil-4-Ultimate-HD-Edition-Gameplay.jpg"],
         "publisher": "Capcom",
-        "description": "In resident evil 4, special agent Leon S. Kennedy is sent on a mission to rescue the U.S. President’s daughter who has been kidnapped. Finding his way to a rural village in Europe, he faces new threats that are a departure from the traditional lumbering zombie enemies of the earlier instalments in the series. Leon battles horrific new creatures infested by a new threat called Las Plagas and faces off against an aggressive group of enemies including mind-controlled villagers that are tied to Los Illuminados, the mysterious cult which is behind the abduction."
+        "description": "In Resident Evil 4, special agent Leon S. Kennedy is sent on a mission to rescue the U.S. President's daughter who has been kidnapped. Finding his way to a rural village in Europe, he faces new threats that are a departure from the traditional lumbering zombie enemies of the earlier instalments in the series. Leon battles horrific new creatures infested by a new threat called Las Plagas and faces off against an aggressive group of enemies including mind-controlled villagers that are tied to Los Illuminados, the mysterious cult which is behind the abduction.",
+        "livestream": "https://www.twitch.tv/directory/game/Resident%20Evil%204"
     },
     {
         "title": "Stardew Valley",
         "price": 13.99,
         "genre": ["Simulation", "Farming", "RPG"],
-        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/413150/capsule_616x353.jpg?t=1634133667"],
+        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/413150/capsule_616x353.jpg?t=1634133667",
+                    "https://www.stardewvalley.net/wp-content/uploads/2018/12/1_1screenshot15.png"],
         "publisher": "ConcernedApe",
-        "description": "You've inherited your grandfather's old farm plot in Stardew Valley. Armed with hand-me-down tools and a few coins, you set out to begin your new life. Can you learn to live off the land and turn these overgrown fields into a thriving home? It won't be easy. Ever since Joja Corporation came to town, the old ways of life have all but disappeared. The community center, once the town's most vibrant hub of activity, now lies in shambles. But the valley seems full of opportunity. With a little dedication, you might just be the one to restore Stardew Valley to greatness!"
+        "description": "You've inherited your grandfather's old farm plot in Stardew Valley. Armed with hand-me-down tools and a few coins, you set out to begin your new life. Can you learn to live off the land and turn these overgrown fields into a thriving home? It won't be easy. Ever since Joja Corporation came to town, the old ways of life have all but disappeared. The community center, once the town's most vibrant hub of activity, now lies in shambles. But the valley seems full of opportunity. With a little dedication, you might just be the one to restore Stardew Valley to greatness!",
+        "livestream": "https://www.twitch.tv/directory/game/Stardew%20Valley"
     },
     {
         "title": "Dragon's Dogma 2",
         "price": 64.99,
         "genre": ["Action-Adventure", "RPG","Open World"],
-        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/367500/capsule_616x353.jpg?t=1634133667"],
+        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/367500/capsule_616x353.jpg?t=1634133667",
+                    "https://assets-prd.ignimgs.com/2024/03/07/11mins2-1709772111822.jpg?width=1280"],
         "publisher": "Capcom",
-        "description": "Set in a huge open world, Dragon’s Dogma: Dark Arisen presents a rewarding action combat experience. Players embark on an epic adventure in a rich, living world with three AI companions, known as Pawns. These partners fight independently, demonstrating prowess and ability that they have developed based on traits learned from each player. PC users can share these Pawns online and reap rewards of treasure, tips and strategy hints."
+        "description": "Set in a huge open world, Dragon's Dogma: Dark Arisen presents a rewarding action combat experience. Players embark on an epic adventure in a rich, living world with three AI companions, known as Pawns. These partners fight independently, demonstrating prowess and ability that they have developed based on traits learned from each player. PC users can share these Pawns online and reap rewards of treasure, tips and strategy hints.",
+        "livestream": "https://www.twitch.tv/directory/game/Dragon%27s%20Dogma%3A%20Dark%20Arisen"
     },
     {
         "title": "DayZ",
         "price": 39.99,
         "genre": ["Survival", "Open World", "Zombies", "Action"],
-        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/221100/capsule_616x353.jpg?t=1634133667"],
+        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/221100/capsule_616x353.jpg?t=1634133667",
+                    "https://i.ytimg.com/vi/Y-3SLdXWLiE/maxresdefault.jpg"],
         "publisher": "Bohemia Interactive",
-        "description": "The post-soviet country of Chernarus is struck by an unknown virus, turning the majority population into frenzied infected. Fighting over resources has bred a hostile mentality among survivors, driving what’s left of humanity to collapse. You are one of the few immune to the virus - how far will you go to survive?"
+        "description": "The post-soviet country of Chernarus is struck by an unknown virus, turning the majority population into frenzied infected. Fighting over resources has bred a hostile mentality among survivors, driving what's left of humanity to collapse. You are one of the few immune to the virus - how far will you go to survive?",
+        "livestream": "https://www.twitch.tv/directory/game/DayZ"
     },
     {
         "title": "Dead by Daylight",
         "price": 19.99,
         "genre": ["Survival", "Horror", "Multiplayer"],
-        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/381210/capsule_616x353.jpg?t=1634133667"],
+        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/381210/capsule_616x353.jpg?t=1634133667",
+                    "https://assets.deadbydaylight.com/dbd_screenshot_gamevideo_objective_hook_1a5b326ac9.jpg"],
         "publisher": "Behaviour Interactive",
-        "description": "Dead by Daylight is a multiplayer (4vs1) horror game where one player takes on the role of the savage Killer, and the other four players play as Survivors, trying to escape the Killer and avoid being caught, tortured and killed. Survivors play in third-person and have the advantage of better situational awareness. The Killer plays in first-person and is more focused on their prey."
+        "description": "Dead by Daylight is a multiplayer (4vs1) horror game where one player takes on the role of the savage Killer, and the other four players play as Survivors, trying to escape the Killer and avoid being caught, tortured and killed. Survivors play in third-person and have the advantage of better situational awareness. The Killer plays in first-person and is more focused on their prey.",
+        "livestream": "https://www.twitch.tv/directory/game/Dead%20by%20Daylight"
     },
     {
         "title": "Deep Rock Galactic",
         "price": 29.99,
         "genre": ["Action", "Co-op", "FPS"],
-        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/548430/capsule_616x353.jpg?t=1634133667"],
+        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/548430/capsule_616x353.jpg?t=1634133667",
+                    "https://i.ytimg.com/vi/L04f8-kmC10/maxresdefault.jpg"],
         "publisher": "Ghost Ship Games",
-        "description": "Deep Rock Galactic is a 1-4 player co-op FPS featuring badass space Dwarves, 100% destructible environments, procedurally-generated caves, and endless hordes of alien monsters."
+        "description": "Deep Rock Galactic is a 1-4 player co-op FPS featuring badass space Dwarves, 100% destructible environments, procedurally-generated caves, and endless hordes of alien monsters.",
+        "livestream": "https://www.twitch.tv/directory/game/Deep%20Rock%20Galactic"
     },
     {
         "title": "Borderlands 3",
         "price": 59.99,
         "genre": ["Action-Adventure", "RPG", "FPS", "Co-op"],
-        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/397540/capsule_616x353.jpg?t=1634133667"],
+        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/397540/capsule_616x353.jpg?t=1634133667",
+                    "https://i.ytimg.com/vi/K4zn-LQs7XU/maxresdefault.jpg"],
         "publisher": "Gearbox Software",
-        "description": "The original shooter-looter returns, packing bazillions of guns and an all-new mayhem-fueled adventure! Blast through new worlds and enemies as one of four brand new Vault Hunters – the ultimate treasure-seeking badasses of the Borderlands, each with deep skill trees, abilities, and customization."
+        "description": "The original shooter-looter returns, packing bazillions of guns and an all-new mayhem-fueled adventure! Blast through new worlds and enemies as one of four brand new Vault Hunters - the ultimate treasure-seeking badasses of the Borderlands, each with deep skill trees, abilities, and customization.",
+        "livestream": "https://www.twitch.tv/directory/game/Borderlands%203"
     },
     {
         "title": "Lies of P",
         "price": 59.99,
         "genre": ["Action-Adventure", "RPG", "Open World"],
-        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/1627720/capsule_616x353.jpg?t=1634133667"],
+        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/1627720/capsule_616x353.jpg?t=1634133667",
+                    "https://i.ytimg.com/vi/NH_mJFOQJzE/maxresdefault.jpg"],
         "publisher": "Neowiz",
-        "description": "Lies of P is a story-driven action RPG set in a high fantasy world where you'll encounter terrifying monsters and engage in epic battles. Explore the world to find new stories and new characters to recruit. Immerse yourself in the world of Lies of P and discover the truth behind the lies."
+        "description": "Lies of P is a story-driven action RPG set in a high fantasy world where you'll encounter terrifying monsters and engage in epic battles. Explore the world to find new stories and new characters to recruit. Immerse yourself in the world of Lies of P and discover the truth behind the lies.",
+        "livestream": "https://www.twitch.tv/directory/game/Lies%20of%20P"
     },
     {
         "title": "DOOM Eternal",
         "price": 39.99,
         "genre": ["Action", "FPS"],
-        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/782330/capsule_616x353.jpg?t=1634133667"],
+        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/782330/capsule_616x353.jpg?t=1634133667",
+                    "https://venturebeat.com/wp-content/uploads/2018/08/doom-eternal.jpg?fit=2288%2C1289&strip=all"],
         "publisher": "id Software",
-        "description": "Hell’s armies have invaded Earth. Become the Slayer in an epic single-player campaign to conquer demons across dimensions and stop the final destruction of humanity. The only thing they fear... is you."
+        "description": "Hell's armies have invaded Earth. Become the Slayer in an epic single-player campaign to conquer demons across dimensions and stop the final destruction of humanity. The only thing they fear... is you.",
+        "livestream": "https://www.twitch.tv/directory/game/DOOM%20Eternal"
     },
     {
         "title": "The Witcher 3: Wild Hunt",
         "price": 39.99,
         "genre": ["Action-Adventure", "RPG", "Open World"],
-        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/292030/capsule_616x353.jpg?t=1634133667"],
+        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/292030/capsule_616x353.jpg?t=1634133667",
+                    "https://i.ytimg.com/vi/xx8kQ4s5hCY/maxresdefault.jpg"],
         "publisher": "CD Projekt Red",
-        "description": "The Witcher: Wild Hunt is a story-driven open world RPG set in a visually stunning fantasy universe full of meaningful choices and impactful consequences. In The Witcher, you play as professional monster hunter Geralt of Rivia tasked with finding a child of prophecy in a vast open world rich with merchant cities, pirate islands, dangerous mountain passes, and forgotten caverns to explore."
+        "description": "The Witcher: Wild Hunt is a story-driven open world RPG set in a visually stunning fantasy universe full of meaningful choices and impactful consequences. In The Witcher, you play as professional monster hunter Geralt of Rivia tasked with finding a child of prophecy in a vast open world rich with merchant cities, pirate islands, dangerous mountain passes, and forgotten caverns to explore.",
+        "livestream": "https://www.twitch.tv/directory/game/The%20Witcher%203%3A%20Wild%20Hunt"
     },
     {
         "title": "The Elder Scrolls V: Skyrim",
         "price": 19.99,
         "genre": ["Action-Adventure", "RPG", "Open World"],
-        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/72850/capsule_616x353.jpg?t=1634133667"],
+        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/72850/capsule_616x353.jpg?t=1634133667",
+                    "https://i.ytimg.com/vi/_fctOSzwv_0/maxresdefault.jpg"],
         "publisher": "Bethesda Game Studios",
-        "description": "EPIC FANTASY REBORN The next chapter in the highly anticipated Elder Scrolls saga arrives from the makers of the 2006 and 2008 Games of the Year, Bethesda Game Studios. Skyrim reimagines and revolutionizes the open-world fantasy epic, bringing to life a complete virtual world open for you to explore any way you choose."
+        "description": "EPIC FANTASY REBORN The next chapter in the highly anticipated Elder Scrolls saga arrives from the makers of the 2006 and 2008 Games of the Year, Bethesda Game Studios. Skyrim reimagines and revolutionizes the open-world fantasy epic, bringing to life a complete virtual world open for you to explore any way you choose.",
+        "livestream": "https://www.twitch.tv/directory/game/The%20Elder%20Scrolls%20V%3A%20Skyrim"
     },
     {
         "title": "The Elder Scrolls Online",
         "price": 19.99,
         "genre": ["Action-Adventure", "RPG", "Open World", "Multiplayer"],
-        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/306130/capsule_616x353.jpg?t=1634133667"],
+        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/306130/capsule_616x353.jpg?t=1634133667",
+                    "https://i.ytimg.com/vi/qzzAV9MIX38/maxresdefault.jpg"],
         "publisher": "Bethesda Game Studios",
-        "description": "Experience an ever-expanding story across all of Tamriel in The Elder Scrolls Online, an award-winning online RPG. Explore a rich, living world with friends or embark upon a solo adventure. Enjoy complete control over how your character looks and plays, from the weapons you wield to the skills you learn – the choices you make will shape your destiny. Welcome to a world without limits."
+        "description": "Experience an ever-expanding story across all of Tamriel in The Elder Scrolls Online, an award-winning online RPG. Explore a rich, living world with friends or embark upon a solo adventure. Enjoy complete control over how your character looks and plays, from the weapons you wield to the skills you learn - the choices you make will shape your destiny. Welcome to a world without limits.",
+        "livestream": "https://www.twitch.tv/directory/game/The%20Elder%20Scrolls%20Online"
     },
     {
         "title": "The Forest",
         "price": 19.99,
         "genre": ["Survival", "Horror", "Open World"],
-        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/242760/capsule_616x353.jpg?t=1634133667"],
+        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/242760/capsule_616x353.jpg?t=1634133667",
+                    "https://cdn.akamai.steamstatic.com/steam/apps/242760/ss_e50b7c8bc2f4720859ba13aa32703661192f4d62.1920x1080.jpg?t=1699381053"],
         "publisher": "Endnight Games Ltd",
-        "description": "As the lone survivor of a passenger jet crash, you find yourself in a mysterious forest battling to stay alive against a society of cannibalistic mutants. Build, explore, survive in this terrifying first person survival horror simulator."
+        "description": "As the lone survivor of a passenger jet crash, you find yourself in a mysterious forest battling to stay alive against a society of cannibalistic mutants. Build, explore, survive in this terrifying first person survival horror simulator.",
+        "livestream": "https://www.twitch.tv/directory/game/The%20Forest"
     },
     {
         "title": "The Crew 2",
         "price": 59.99,
         "genre": ["Racing", "Open World", "Multiplayer"],
-        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/646910/capsule_616x353.jpg?t=1634133667"],
+        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/646910/capsule_616x353.jpg?t=1634133667",
+                    "https://cdn.vox-cdn.com/thumbor/zCcoea4s8hj8LVrY_N1Vv_apHoA=/0x0:1908x1072/1200x675/filters:focal(761x493:1065x797)/cdn.vox-cdn.com/uploads/chorus_image/image/60211981/the_crew_2_review.0.png"],
         "publisher": "Ivory Tower",
-        "description": "The newest iteration in the revolutionary franchise, The Crew® 2 captures the thrill of the American motorsports spirit in one of the most exhilarating open worlds ever created. Welcome to Motornation, a huge, varied, action-packed, and beautiful playground built for motorsports throughout the entire US of A. Enjoy unrestrained exploration on ground, sea, and sky. From coast to coast, street and pro racers, off-road explorers, and freestylers gather and compete in all kinds of disciplines. Join them in high-octane contests and share every glorious moment with the world."
+        "description": "The newest iteration in the revolutionary franchise, The Crew® 2 captures the thrill of the American motorsports spirit in one of the most exhilarating open worlds ever created. Welcome to Motornation, a huge, varied, action-packed, and beautiful playground built for motorsports throughout the entire US of A. Enjoy unrestrained exploration on ground, sea, and sky. From coast to coast, street and pro racers, off-road explorers, and freestylers gather and compete in all kinds of disciplines. Join them in high-octane contests and share every glorious moment with the world.",
+        "livestream": "https://www.twitch.tv/directory/game/The%20Crew%202"
     },
     {
         "title": "The Binding of Isaac: Rebirth",
         "price": 14.99,
         "genre": ["Action", "RPG", "Roguelike"],
-        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/250900/capsule_616x353.jpg?t=1634133667"],
+        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/250900/capsule_616x353.jpg?t=1634133667",
+                    "https://i.ytimg.com/vi/_A10s9RhVj8/maxresdefault.jpg"],
         "publisher": "Nicalis, Inc.",
-        "description": "The Binding of Isaac: Rebirth is a randomly generated action RPG shooter with heavy roguelike elements. Players will accompany Isaac on a quest to escape his mother, facing off against droves of mysterious creatures, discovering secrets, and fighting fearsome bosses. Along the way, Isaac can find bizarre treasures that change his form and give him superhuman abilities. But it will not be easy! Isaac’s mother has locked him in the basement and is convinced that he needs to be sacrificed to prove her faith. Isaac must use his wits and abilities to escape and finally find the truth."
+        "description": "The Binding of Isaac: Rebirth is a randomly generated action RPG shooter with heavy roguelike elements. Players will accompany Isaac on a quest to escape his mother, facing off against droves of mysterious creatures, discovering secrets, and fighting fearsome bosses. Along the way, Isaac can find bizarre treasures that change his form and give him superhuman abilities. But it will not be easy! Isaac's mother has locked him in the basement and is convinced that he needs to be sacrificed to prove her faith. Isaac must use his wits and abilities to escape and finally find the truth.",
+        "livestream": "https://www.twitch.tv/directory/game/The%20Binding%20of%20Isaac%3A%20Rebirth"
     },
     {
         "title": "Subnautica",
         "price": 24.99,
         "genre": ["Survival", "Open World", "Adventure"],
-        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/264710/capsule_616x353.jpg?t=1634133667"],
+        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/264710/capsule_616x353.jpg?t=1634133667",
+                    "https://images.squarespace-cdn.com/content/v1/5859d542f7e0ab537e412489/1519245120299-MOYC1NYO81YEWEU3EFW6/subnautica-02.jpeg"],
         "publisher": "Unknown Worlds Entertainment",
-        "description": "Descend into the depths of an alien underwater world filled with wonder and peril. Craft equipment, pilot submarines and out-smart wildlife to explore lush coral reefs, volcanoes, cave systems, and more - all while trying to survive."
+        "description": "Descend into the depths of an alien underwater world filled with wonder and peril. Craft equipment, pilot submarines and out-smart wildlife to explore lush coral reefs, volcanoes, cave systems, and more - all while trying to survive.",
+        "livestream": "https://www.twitch.tv/directory/game/Subnautica"
     },
     {
         "title": "Sekiro: Shadows Die Twice",
         "price": 59.99,
         "genre": ["Action-Adventure", "RPG"],
-        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/814380/capsule_616x353.jpg?t=1634133667"],
+        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/814380/capsule_616x353.jpg?t=1634133667",
+                    "https://i.ytimg.com/vi/Z4k9JD4oeNQ/maxresdefault.jpg"],
         "publisher": "FromSoftware",
-        "description": "Carve your own clever path to vengeance in an all-new adventure from developer FromSoftware, creators of Bloodborne and the Dark Souls series. In Sekiro: Shadows Die Twice you are the 'one-armed wolf', a disgraced and disfigured warrior rescued from the brink of death. Bound to protect a young lord who is the descendant of an ancient bloodline, you become the target of many vicious enemies, including the dangerous Ashina clan. When the young lord is captured, nothing will stop you on a perilous quest to regain your honor, not even death itself."
+        "description": "Carve your own clever path to vengeance in an all-new adventure from developer FromSoftware, creators of Bloodborne and the Dark Souls series. In Sekiro: Shadows Die Twice you are the 'one-armed wolf', a disgraced and disfigured warrior rescued from the brink of death. Bound to protect a young lord who is the descendant of an ancient bloodline, you become the target of many vicious enemies, including the dangerous Ashina clan. When the young lord is captured, nothing will stop you on a perilous quest to regain your honor, not even death itself.",
+        "livestream": "https://www.twitch.tv/directory/game/Sekiro%3A%20Shadows%20Die%20Twice"
     },
     {
         "title": "Rust",
         "price": 39.99,
         "genre": ["Survival", "Open World", "Multiplayer"],
-        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/252490/capsule_616x353.jpg?t=1634133667"],
+        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/252490/capsule_616x353.jpg?t=1634133667",
+                    "https://cdn.mos.cms.futurecdn.net/9LYHPZ22BX6ERzjs9pmyYM.jpg"],
         "publisher": "Facepunch Studios",
-        "description": "The only aim in Rust is to survive. To do this you will need to overcome struggles such as hunger, thirst and cold. Build a fire. Build a shelter. Kill animals for meat. Protect yourself from other players, and kill them for meat. Create alliances with other players and form a town. Whatever it takes to survive."
+        "description": "The only aim in Rust is to survive. To do this you will need to overcome struggles such as hunger, thirst and cold. Build a fire. Build a shelter. Kill animals for meat. Protect yourself from other players, and kill them for meat. Create alliances with other players and form a town. Whatever it takes to survive.",
+        "livestream": "https://www.twitch.tv/directory/game/Rust"
     },
     {
         "title": "Risk of Rain 2",
         "price": 24.99,
         "genre": ["Action", "Roguelike", "Co-op"],
-        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/632360/capsule_616x353.jpg?t=1634133667"],
+        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/632360/capsule_616x353.jpg?t=1634133667",
+                    "https://cdn.akamai.steamstatic.com/steam/apps/632360/ss_2bb49071317f7b241a527cf6e7aabd2cb6af055b.1920x1080.jpg?t=1699992764"],
         "publisher": "Hopoo Games",
-        "description": "The classic multiplayer roguelike, Risk of Rain, returns with an extra dimension and more challenging action. Play solo, or team up with up to four friends to fight your way through hordes of monsters, unlock new loot, and find a way to escape the planet."
+        "description": "The classic multiplayer roguelike, Risk of Rain, returns with an extra dimension and more challenging action. Play solo, or team up with up to four friends to fight your way through hordes of monsters, unlock new loot, and find a way to escape the planet.",
+        "livestream": "https://www.twitch.tv/directory/game/Risk%20of%20Rain%202"
     },
     {
         "title": "Raft",
         "price": 19.99,
         "genre": ["Survival", "Adventure", "Open World"],
-        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/648800/capsule_616x353.jpg?t=1634133667"],
+        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/648800/capsule_616x353.jpg?t=1634133667",
+                    "https://cdn.akamai.steamstatic.com/steam/apps/648800/ss_ce675c9e2bee34a08c6e2f0c8357354bcd4e5f1d.1920x1080.jpg?t=1693638925"],
         "publisher": "Redbeet Interactive",
-        "description": "By yourself or with friends, your mission is to survive an epic oceanic adventure across a perilous sea! Gather debris to survive, expand your raft and be wary of the dangers of the ocean!"
+        "description": "By yourself or with friends, your mission is to survive an epic oceanic adventure across a perilous sea! Gather debris to survive, expand your raft and be wary of the dangers of the ocean!",
+        "livestream": "https://www.twitch.tv/directory/game/Raft"
     },
     {
         "title": "Outward Definitive Edition",
         "price": 39.99,
         "genre": ["Action-Adventure", "RPG", "Open World"],
-        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/794260/capsule_616x353.jpg?t=1634133667"],
+        "images": ["https://cdn.cloudflare.steamstatic.com/steam/apps/794260/capsule_616x353.jpg?t=1634133667",
+                    "https://i.ytimg.com/vi/HwNuLX8RQzg/maxresdefault.jpg"],
         "publisher": "Nine Dots Studio",
-        "description": "You are not a god, nor a chosen one. The path before you is fraught with perils. Outward delivers an immersive RPG experience coupled with survival gameplay, offering a deeply-rewarding challenge for the most avid gamers."
+        "description": "You are not a god, nor a chosen one. The path before you is fraught with perils. Outward delivers an immersive RPG experience coupled with survival gameplay, offering a deeply-rewarding challenge for the most avid gamers.",
+        "livestream": "https://www.twitch.tv/directory/game/Outward"
     }
 ]

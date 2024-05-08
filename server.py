@@ -45,7 +45,8 @@ class DatabaseWrappers:
                 genre TEXT, 
                 images TEXT,
                 publisher TEXT,
-                description TEXT
+                description TEXT,
+                livestream TEXT
             )
         """)
         self.cursor.execute("PRAGMA table_info(games)")
@@ -54,12 +55,12 @@ class DatabaseWrappers:
         self.cursor.execute("SELECT 1 FROM games WHERE title = ?", (title,))
         return self.cursor.fetchone() is not None
 
-    def add_game(self, title, price, genre, images, publisher, description):
+    def add_game(self, title, price, genre, images, publisher, description, livestream):
         if not self.game_exists(title):
             self.cursor.execute("""
-                INSERT INTO games (title, price, genre, images, publisher, description) 
-                VALUES (?, ?, ?, ?, ?, ?)
-            """, (title, price, genre, images, publisher, description))
+                INSERT INTO games (title, price, genre, images, publisher, description, livestream) 
+                VALUES (?, ?, ?, ?, ?, ?, ?)
+            """, (title, price, genre, images, publisher, description, livestream))
             self.conn.commit()
             
     def get_game_details(self, game_id):
@@ -73,10 +74,21 @@ class DatabaseWrappers:
                 'genre': game[3], 
                 'images': game[4].split(", "),
                 'publisher': game[5],
-                'description': game[6]
+                'description': game[6],
+                'livestream': game[7]
             }
         else:
             return None
+        
+    def get_all_livestreams(self):
+        self.cursor.execute("SELECT id, title, images, livestream FROM games")
+        livestreams = self.cursor.fetchall()
+        return [{'id': livestream[0], "thumbnail": livestream[2].split(", ")[1], 'title': livestream[1], 'url': livestream[3]} for livestream in livestreams]
+    
+    def get_livestreams_for_game(self, game_id):
+        self.cursor.execute("SELECT id, title, images, livestream FROM games  WHERE id = ?", (game_id,))
+        livestreams = self.cursor.fetchall()
+        return [{'id': livestream[0], "thumbnail": livestream[2].split(", ")[1], 'title': livestream[1], 'url': livestream[3]} for livestream in livestreams]
 
 db = DatabaseWrappers()
 db.reset_database()
@@ -99,6 +111,19 @@ def missions():
 def livestreams():
     current_user = session.get('username')
     return render_template('livestreams.html', current_user=current_user)
+
+@app.route('/get_livestreams')
+def get_livestreams():
+    livestreams = db.get_all_livestreams()
+    return jsonify(livestreams)
+
+@app.route('/get_livestreams_for_game/<game_id>')
+def get_livestreams_for_game(game_id):
+    livestream = db.get_livestreams_for_game(game_id)
+    if livestream is not None:
+        return jsonify(livestream)
+    else:
+        return jsonify({'error': 'No livestream found for this game'}), 404
 
 @app.route('/cart')
 def cart():
@@ -188,7 +213,7 @@ def add_games_to_database():
     with open('static/games.json') as f:
         games = json.load(f)
         for game in games:
-            db.add_game(game['title'], game['price'], ', '.join(game['genre']), ', '.join(game['images']), game['publisher'], game['description'])
+            db.add_game(game['title'], game['price'], ', '.join(game['genre']), ', '.join(game['images']), game['publisher'], game['description'], game['livestream'])
 
 if __name__ == "__main__":
     add_games_to_database()
