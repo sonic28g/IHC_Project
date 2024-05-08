@@ -84,59 +84,72 @@
     </nav>
 
       <div class ="row mt-4 ms-4">
-        <div class="col-6">
-          <div class="col border border-3 pb-5">  
-            <div class="row">
-              <div class="col-md-4">Game Title</div>
-              <div class="col-md-4">Quantity</div>
-              <div class="col-md-4">Price</div>   
-            </div>
+        <div class="col">
+          <h3>Payment Method</h3>
+          <div class="col-7 mt-4">  
+            <ul type="circle">
+                <li>
+                    Cartão
+                </li>
+                <div class="row mt-4">
+                    <div class="col-5 mx-2">
+                        <div class="row">
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="searchInput"
+                                placeholder="Nº Cartão"
+                            />
+                        </div>
+                        <div class="row">
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="searchInput"
+                                placeholder="Nome do Titular"
+                            />
+                        </div>    
+                    </div>
+                    <div class="col-5 mx-2">
+                        <div class="row">
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="searchInput"
+                                placeholder="Data de validade"
+                            />
+                        </div>
+                        <div class="row">
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="searchInput"
+                                placeholder="CVC"
+                            />
+                        </div>    
+                    </div>
+                    <li>
+                        MBWay
+                    </li>
+                    <div class="col-4">
+                        <div class="row">
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="searchInput"
+                                placeholder="Nº telemóvel"
+                            />
+                        </div>
+                    </div>    
+
+                </div>
+            </ul>
           </div> 
           <button type="button" class="btn btn-outline-dark mt-2">
-            Add promo code
+            Confirm Payment
           </button>  
         </div> 
-        
-        <div class="col-4 mx-4">
-          <div class="d-flex col border border-3 pb-5">
-            <div class="col align-content-end">
-              Total
-            </div>
-          </div>
-          <a href="{{ url_for('payment') }}" class="btn btn-outline-dark mt-2">Check Out</a>
-        </div> 
-      </div>  
-      <script>
-        // Função para exibir itens adicionados ao carrinho
-        function displayCartItems(cartItems) {
-          var cartContainer = document.getElementById("cartItemsContainer");
-          cartContainer.innerHTML = ""; // Limpa o conteúdo anterior
-
-          cartItems.forEach(function (item) {
-            var cartItemElement = document.createElement("div");
-            cartItemElement.classList.add("row", "mb-3", "border-bottom");
-
-            cartItemElement.innerHTML = `
-              <div class="col-md-4">${item.title}</div>
-              <div class="col-md-4">${item.quantity}</div>
-              <div class="col-md-4">${item.price}€</div>
-            `;
-
-            cartContainer.appendChild(cartItemElement);
-          });
-        }
-
-        // Função para calcular o total da compra
-        function calculateTotal(cartItems) {
-          var total = 0;
-          cartItems.forEach(function (item) {
-            total += item.price * item.quantity;
-          });
-          return total;
-        }
-
-
-      </script>
+         
 
   </body>
 </html>

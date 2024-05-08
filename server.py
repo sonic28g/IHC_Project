@@ -166,6 +166,11 @@ def get_games():
     games = [[game[0], game[1], game[2], game[3].split(", "), game[4].split(", ")] for game in games]
     return jsonify(games)
 
+@app.route('/payment')
+def payment():
+    current_user = session.get('username')
+    return render_template('payment.html', current_user=current_user)
+
 @app.route('/game/<game_id>')
 def game(game_id):
     game_details = db.get_game_details(game_id)
