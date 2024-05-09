@@ -97,7 +97,7 @@
                             <input
                                 type="text"
                                 class="form-control"
-                                id="searchInput"
+                                id="cardNumber"
                                 placeholder="Nº Cartão"
                             />
                         </div>
@@ -105,7 +105,7 @@
                             <input
                                 type="text"
                                 class="form-control"
-                                id="searchInput"
+                                id="cardName"
                                 placeholder="Nome do Titular"
                             />
                         </div>    
@@ -115,7 +115,7 @@
                             <input
                                 type="text"
                                 class="form-control"
-                                id="searchInput"
+                                id="cardExpiration"
                                 placeholder="Data de validade"
                             />
                         </div>
@@ -123,33 +123,64 @@
                             <input
                                 type="text"
                                 class="form-control"
-                                id="searchInput"
+                                id="cardCVC"
                                 placeholder="CVC"
                             />
                         </div>    
                     </div>
-                    <li>
-                        MBWay
-                    </li>
-                    <div class="col-4">
-                        <div class="row">
-                            <input
-                                type="text"
-                                class="form-control"
-                                id="searchInput"
-                                placeholder="Nº telemóvel"
-                            />
-                        </div>
-                    </div>    
-
                 </div>
+                <li>
+                    MBWay
+                </li>
+                <div class="col-4">
+                    <div class="row">
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="mbWayNumber"
+                            placeholder="Nº telemóvel"
+                        />
+                    </div>
+                </div>    
             </ul>
           </div> 
-          <button type="button" class="btn btn-outline-dark mt-2">
+          <button type="button" class="btn btn-outline-dark mt-2" id="confirmPaymentBtn">
             Confirm Payment
-          </button>  
+          </button>            
         </div> 
-         
+      </div>
+
+
+      <script>
+          document.getElementById('confirmPaymentBtn').addEventListener('click', function() {
+            var cardNumber = document.getElementById('cardNumber').value;
+            var cardName = document.getElementById('cardName').value;
+            var cardExpiration = document.getElementById('cardExpiration').value;
+            var cardCVC = document.getElementById('cardCVC').value;
+            var mbWayNumber = document.getElementById('mbWayNumber').value;
+
+            if (cardNumber !== '' && cardName !== '' && cardExpiration !== '' && cardCVC !== '') {
+              showAlert('Pagamento completo!', 'alert-success');
+            }
+            else if (mbWayNumber !== '') {
+              showAlert('Pagamento completo!', 'alert-success');
+            }
+            else {
+              showAlert('Preencha os campos necessários para concluir o pagamento.', 'alert-danger');
+            }
+          });
+
+          function showAlert(message, alertClass) {
+            var alertDiv = document.createElement('div');
+            alertDiv.textContent = message;
+            alertDiv.classList.add('alert', 'position-fixed', 'top-1', 'start-50', 'translate-middle-x', alertClass);
+            alertDiv.setAttribute('role', 'alert');
+
+            document.body.appendChild(alertDiv);
+
+            setTimeout(function() {alertDiv.remove();}, 3000);
+          }
+      </script>
 
   </body>
 </html>

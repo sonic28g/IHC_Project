@@ -215,6 +215,36 @@ def add_games_to_database():
         for game in games:
             db.add_game(game['title'], game['price'], ', '.join(game['genre']), ', '.join(game['images']), game['publisher'], game['description'], game['livestream'])
 
+@app.route('/add_to_cart/<game_id>', methods=['POST'])
+def add_to_cart(game_id):
+    if 'cart' not in session:
+        session['cart'] = []
+
+    game_details = db.get_game_details(game_id)
+    if game_details:
+        for item in session['cart']:
+            if item['id'] == game_details['id']:
+                item['quantity'] += 1
+                break
+        else:
+            game_details['quantity'] = 1
+            session['cart'].append(game_details)
+        
+        return "Item adicionado ao carrinho com sucesso!", 200
+    else:
+        flash('Falha ao adicionar item ao carrinho!', 'error')
+
+    return redirect(url_for('game', game_id=game_id))
+
+
+@app.route('/get_cart_items')
+def get_cart_items():
+    if 'cart' in session:
+        cartItem = session['cart']
+        return jsonify(cartItem)
+    else:
+        return jsonify([])
+
 if __name__ == "__main__":
     add_games_to_database()
     

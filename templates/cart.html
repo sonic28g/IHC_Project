@@ -91,8 +91,12 @@
               <div class="col-md-4">Quantity</div>
               <div class="col-md-4">Price</div>   
             </div>
+            <div class="row mt-2" id="cartItemsContainer">
+              <!-- Cart items will be displayed here -->
+            </div>
           </div> 
-          <button type="button" class="btn btn-outline-dark mt-2">
+          
+          <button type="button" class="btn btn-primary mt-2">
             Add promo code
           </button>  
         </div> 
@@ -103,18 +107,31 @@
               Total
             </div>
           </div>
-          <a href="{{ url_for('payment') }}" class="btn btn-outline-dark mt-2">Check Out</a>
+          <a href="{{ url_for('payment') }}" class="btn btn-primary mt-2">Check Out</a>
         </div> 
       </div>  
-      <script>
-        // Função para exibir itens adicionados ao carrinho
-        function displayCartItems(cartItems) {
-          var cartContainer = document.getElementById("cartItemsContainer");
-          cartContainer.innerHTML = ""; // Limpa o conteúdo anterior
 
-          cartItems.forEach(function (item) {
+      <script>
+
+        window.onload = function() {
+        fetch('/get_cart_items')
+            .then(response => response.json())
+            .then(data => {
+                displaycartItems(data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        };
+
+
+        function displaycartItems(cartItem) {
+          var cartContainer = document.getElementById("cartItemsContainer");
+          cartContainer.innerHTML = "";
+
+          cartItem.forEach(function (item) {
             var cartItemElement = document.createElement("div");
-            cartItemElement.classList.add("row", "mb-3", "border-bottom");
+            cartItemElement.classList.add("row", "mb-3", "mt-3");
 
             cartItemElement.innerHTML = `
               <div class="col-md-4">${item.title}</div>
@@ -126,10 +143,9 @@
           });
         }
 
-        // Função para calcular o total da compra
-        function calculateTotal(cartItems) {
+        function calculateTotal(cartItem) {
           var total = 0;
-          cartItems.forEach(function (item) {
+          cartItem.forEach(function (item) {
             total += item.price * item.quantity;
           });
           return total;
