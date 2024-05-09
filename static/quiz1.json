@@ -1,0 +1,105 @@
+{
+    "quiz": [
+      {
+        "pergunta": "Qual foi o primeiro console de videogame doméstico lançado?",
+        "opcoes": {
+          "a": "Nintendo Entertainment System (NES)",
+          "b": "Atari 2600",
+          "c": "Magnavox Odyssey",
+          "d": "Sega Genesis"
+        },
+        "resposta_correta": "c"
+      },
+      {
+        "pergunta": "Qual destes consoles foi lançado pela Sony?",
+        "opcoes": {
+          "a": "Xbox One",
+          "b": "PlayStation 4",
+          "c": "Nintendo Switch",
+          "d": "Atari Jaguar"
+        },
+        "resposta_correta": "b"
+      },
+      {
+        "pergunta": "O Nintendo 64 ficou famoso por introduzir qual inovação nos jogos?",
+        "opcoes": {
+          "a": "Gráficos 3D",
+          "b": "Controles sem fio",
+          "c": "Leitor de CDs",
+          "d": "Realidade Virtual"
+        },
+        "resposta_correta": "a"
+      },
+      {
+        "pergunta": "O console Game Boy foi lançado por qual empresa?",
+        "opcoes": {
+          "a": "Sega",
+          "b": "Sony",
+          "c": "Nintendo",
+          "d": "Microsoft"
+        },
+        "resposta_correta": "c"
+      },
+      {
+        "pergunta": "O Dreamcast foi o último console lançado por qual empresa?",
+        "opcoes": {
+          "a": "Sega",
+          "b": "Sony",
+          "c": "Nintendo",
+          "d": "Microsoft"
+        },
+        "resposta_correta": "a"
+      },
+      {
+        "pergunta": "Qual destes consoles é conhecido por sua capacidade de reproduzir jogos em alta definição (HD)?",
+        "opcoes": {
+          "a": "PlayStation 2",
+          "b": "Xbox 360",
+          "c": "Super Nintendo (SNES)",
+          "d": "Sega Saturn"
+        },
+        "resposta_correta": "b"
+      },
+      {
+        "pergunta": "Qual desses consoles foi lançado pela Microsoft?",
+        "opcoes": {
+          "a": "PlayStation 3",
+          "b": "Xbox 360",
+          "c": "GameCube",
+          "d": "Wii U"
+        },
+        "resposta_correta": "b"
+      },
+      {
+        "pergunta": "O console portátil PSP foi desenvolvido por qual empresa?",
+        "opcoes": {
+          "a": "Sega",
+          "b": "Sony",
+          "c": "Nintendo",
+          "d": "Microsoft"
+        },
+        "resposta_correta": "b"
+      },
+      {
+        "pergunta": "Qual desses consoles é conhecido por sua inovadora tecnologia de detecção de movimento?",
+        "opcoes": {
+          "a": "PlayStation 3",
+          "b": "Xbox 360",
+          "c": "Nintendo Wii",
+          "d": "Sega Dreamcast"
+        },
+        "resposta_correta": "c"
+      },
+      {
+        "pergunta": "O console Xbox One foi lançado em que ano?",
+        "opcoes": {
+          "a": "2010",
+          "b": "2013",
+          "c": "2016",
+          "d": "2019"
+        },
+        "resposta_correta": "b"
+      }
+    ]
+  }
+  

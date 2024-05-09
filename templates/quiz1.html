@@ -40,13 +40,14 @@
           <ul class="navbar-nav">
             <li class="nav-item">
               <a
-                class="nav-link"
+                class="nav-link active"
+                aria-current="page"
                 href="{{ url_for('index') }}"
                 >Store</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{{ url_for('missions') }}">Missions</a>
+              <a class="nav-link" href="{{ url_for('missions') }}">Missions</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ url_for('livestreams') }}"
@@ -81,19 +82,17 @@
         </div>
       </div>
     </nav>
-
-    <div class="quizz_bar">
-      <p>QUIZZ 1.0 xpto</p>
-      <a href="{{ url_for('quiz1') }}">
-        <button class="play_button">Play</button>
-      </a>
-    </div>
-
-    <div class="quizz_bar">
-      <p>QUIZZ 2.0 xpto</p>
-      <button class="play_button">Play</button>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
+    <div id="quiz-container">
+        <h2 id="question"></h2>
+        <div id="options-container"></div>
+        <button id="next-button" onclick="nextQuestion()">Próxima Pergunta</button>
+      </div>
+      <div id="score-container" style="display: none;">
+        <h2>Sua Pontuação</h2>
+        <p id="score"></p>
+      </div>
+    
+    <script src="{{ url_for('static', filename='quiz1.js') }}"></script>
   </body>
 </html>

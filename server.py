@@ -107,6 +107,11 @@ def missions():
     current_user = session.get('username')
     return render_template('missions.html', current_user=current_user)
 
+@app.route('/quiz1')
+def quiz1():
+    current_user = session.get('username')
+    return render_template('quiz1.html', current_user=current_user)
+
 @app.route('/livestreams')
 def livestreams():
     current_user = session.get('username')
