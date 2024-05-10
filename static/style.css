@@ -90,3 +90,15 @@ input[type="text"], input[type="password"], input[type="submit"] {
 #quiz-container, #score-container {
     margin: 20px;
 }
+
+.option-button {
+    width: 300px; /* Define o comprimento fixo dos botões */
+    margin-right: 10px; /* Adiciona espaçamento entre os botões */
+}
+
+#options-container {
+    display: flex; /* Permite que os botões sejam exibidos em uma linha */
+    flex-wrap: wrap; /* Permite que os botões quebrem para a próxima linha se não houver espaço suficiente */
+    justify-content: center; /* Centraliza os botões horizontalmente */
+}
+
