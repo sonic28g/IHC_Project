@@ -84,3 +84,9 @@ input[type="text"], input[type="password"], input[type="submit"] {
 .play_button:hover{
     opacity: 1;
 }
+
+/* QUIZ */
+
+#quiz-container, #score-container {
+    margin: 20px;
+}
