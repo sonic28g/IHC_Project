@@ -251,11 +251,20 @@
   
           if (existingItemIndex !== -1) {
               cart[existingItemIndex].quantity += cartItem.quantity;
+              updateCartItemQuantity(existingItemIndex, cart[existingItemIndex].quantity);
           } else {
               cart.push(cartItem);
           }
   
           localStorage.setItem('cart', JSON.stringify(cart));
+      }
+
+      function removeFromCart(index) {
+        var cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.splice(index, 1);
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // Remove o item do HTML aqui
       }
   
       function showAlert(message, alertClass) {

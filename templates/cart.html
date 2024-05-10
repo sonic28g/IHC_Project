@@ -93,6 +93,13 @@
             </div>
             <div class="row mt-2" id="cartItemsContainer">
               <!-- Cart items will be displayed here -->
+              {% for cart_item in cart_items %}
+                <div class="row mb-3 mt-3">
+                    <div class="col-md-4">{{ cart_item.title }}</div>
+                    <div class="col-md-4">{{ cart_item.quantity }}</div>
+                    <div class="col-md-4">{{ cart_item.price }}€</div>
+                </div>
+                {% endfor %}
             </div>
           </div> 
           
@@ -106,6 +113,10 @@
             <div class="col align-content-end">
               Total
             </div>
+            <div class="col align-content-end">
+              <span id="totalPrice">0€</span>
+            </div>
+            
           </div>
           <a href="{{ url_for('payment') }}" class="btn btn-primary mt-2">Check Out</a>
         </div> 
@@ -124,6 +135,13 @@
             });
         };
 
+        function updateCartItemQuantity(index, quantity) {
+        var quantityElement = document.getElementById("quantity_" + index);
+        if (quantityElement) {
+            quantityElement.textContent = quantity;
+        }
+    }
+
 
         function displaycartItems(cartItem) {
           var cartContainer = document.getElementById("cartItemsContainer");
@@ -140,6 +158,10 @@
             `;
 
             cartContainer.appendChild(cartItemElement);
+
+            var totalPrice = calculateTotal(cartItem);
+            var totalElement = document.getElementById("totalPrice");
+            totalElement.textContent = totalPrice + "€";
           });
         }
 

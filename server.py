@@ -136,7 +136,9 @@ def cart():
         return redirect(url_for('login'))
     else:
         current_user = session.get('username')
-    return render_template('cart.html', current_user=current_user)
+        cart_item = session.get('cart', [])
+        print("Cart Items:", cart_item)
+    return render_template('cart.html', current_user=current_user, cart_item=cart_item)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -227,10 +229,10 @@ def add_to_cart(game_id):
 
     game_details = db.get_game_details(game_id)
     if game_details:
-        for item in session['cart']:
-            if item['id'] == game_details['id']:
-                item['quantity'] += 1
-                break
+        cart = session['cart']
+        existing_item = next((item for item in cart if item['id'] == game_details['id']), None)
+        if existing_item:
+            existing_item['quantity'] += 1
         else:
             game_details['quantity'] = 1
             session['cart'].append(game_details)
@@ -240,6 +242,8 @@ def add_to_cart(game_id):
         flash('Falha ao adicionar item ao carrinho!', 'error')
 
     return redirect(url_for('game', game_id=game_id))
+
+
 
 
 @app.route('/get_cart_items')
