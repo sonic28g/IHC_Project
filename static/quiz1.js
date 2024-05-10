@@ -26,7 +26,8 @@ function displayQuestion() {
   const optionsContainer = document.getElementById("options-container");
   const errorMessage = document.getElementById("error-message");
 
-  questionElement.textContent = currentQuestion.pergunta;
+  // Adiciona o número da pergunta antes do texto da pergunta
+  questionElement.textContent = `Pergunta ${currentQuestionIndex + 1}/${quizQuestions.length}: ${currentQuestion.pergunta}`;
   optionsContainer.innerHTML = "";
   errorMessage.style.display = "none";
 
@@ -39,6 +40,7 @@ function displayQuestion() {
     optionsContainer.appendChild(button);
   });
 }
+
 
 // Função para selecionar uma opção
 function selectOption(selectedAnswer) {

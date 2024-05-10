@@ -102,3 +102,19 @@ input[type="text"], input[type="password"], input[type="submit"] {
     justify-content: center; /* Centraliza os botões horizontalmente */
 }
 
+#error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+#next-button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
