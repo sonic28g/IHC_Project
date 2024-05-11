@@ -13,7 +13,7 @@
       href="{{ url_for('static', filename='style.css') }}"
     />
   </head>
-  
+
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
@@ -40,11 +40,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a
-                class="nav-link"
-                href="{{ url_for('index') }}"
-                >Store</a
-              >
+              <a class="nav-link" href="{{ url_for('index') }}">Store</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ url_for('missions') }}">Missions</a>
@@ -74,7 +70,10 @@
                 >Logout</a
               >
               {% else %}
-              <a class="nav-link d-inline-block active" aria-current="page" href="{{ url_for('login') }}"
+              <a
+                class="nav-link d-inline-block active"
+                aria-current="page"
+                href="{{ url_for('login') }}"
                 >Login</a
               >
               {% endif %}
@@ -84,23 +83,20 @@
       </div>
     </nav>
 
-    <div class="container mt-4">
-      <div class="row">
-        <div class="col-md-1">
-          <img
-            src="{{ url_for('static', filename='profile.png') }}"
-            alt=""
-            width="120"
-            height="120"
-            class="d-inline-block align-text-top"
-        />
-        </div>
-        <div class="col-md-4 py-5 me-auto">
-          <h4>Gamer123</h4>
-        </div>
-      </div>
-    </div>
+    <p>Nome de usuário: {{ current_user.username }}</p>
+    <p>Email: {{ current_user.email }}</p>
+    <img src="{{ current_user.image }}" alt="Imagem do perfil" />
 
-  
+    <form
+      method="POST"
+      action="{{ url_for('update_profile') }}"
+      enctype="multipart/form-data"
+    >
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" value="{{ email }}" />
+      <label for="image">Imagem:</label>
+      <input type="file" id="image" name="image" />
+      <input type="submit" value="Atualizar perfil" />
+    </form>
   </body>
 </html>

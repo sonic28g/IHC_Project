@@ -14,11 +14,16 @@ class DatabaseWrappers:
         
     def reset_database(self):
         self.cursor.execute("DROP TABLE IF EXISTS games")
+        self.cursor.execute("DROP TABLE IF EXISTS users")
         self.conn.commit()
         
     def create_user_table(self):
-        self.cursor.execute("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, username TEXT, email TEXT, password TEXT)")
+        self.cursor.execute("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, username TEXT, email TEXT, password TEXT, image TEXT)")
         
+    def update_user(self, username, email, image):
+        self.cursor.execute("UPDATE users SET email = ?, image = ? WHERE username = ?", (email, image, username))
+        self.conn.commit()
+            
     def register_user(self, username, email, password):
         if not self.user_exists(username):
             self.cursor.execute("INSERT INTO users (username, email, password) VALUES (?, ?, ?)", (username, email, password))
@@ -89,6 +94,10 @@ class DatabaseWrappers:
         self.cursor.execute("SELECT id, title, images, livestream FROM games  WHERE id = ?", (game_id,))
         livestreams = self.cursor.fetchall()
         return [{'id': livestream[0], "thumbnail": livestream[2].split(", ")[1], 'title': livestream[1], 'url': livestream[3]} for livestream in livestreams]
+    
+    def get_user(self, username):
+        self.cursor.execute("SELECT * FROM users WHERE username = ?", (username,))
+        return self.cursor.fetchone()
 
 db = DatabaseWrappers()
 db.reset_database()
@@ -160,8 +169,28 @@ def logout():
 @app.route('/profile')
 def profile():
     if 'username' in session:
-        current_user = session.get('username')
-        return render_template('profile.html', current_user=current_user, username=session['username'])
+        username = session['username']
+        current_user = db.get_user(username)
+        return render_template('profile.html', current_user=current_user)
+    else:
+        return redirect(url_for('login'))
+    
+@app.route('/update_profile', methods=['POST'])
+def update_profile():
+    if 'username' in session:
+        username = session['username']
+        email = request.form['email']
+        image = request.files['image']
+        
+        if not image.filename.lower().endswith('.png'):
+            flash('Apenas imagens PNG são permitidas')
+            return redirect(url_for('profile'))
+
+        image_path = os.path.join('static/images', image.filename)
+        image.save(image_path)
+        db.update_user(username, email, image_path)
+        flash('Perfil atualizado com sucesso')
+        return redirect(url_for('profile'))
     else:
         return redirect(url_for('login'))
 
