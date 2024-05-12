@@ -83,20 +83,84 @@
       </div>
     </nav>
 
-    <p>Nome de usuário: {{ current_user.username }}</p>
-    <p>Email: {{ current_user.email }}</p>
-    <img src="{{ current_user.image }}" alt="Imagem do perfil" />
-
     <form
       method="POST"
       action="{{ url_for('update_profile') }}"
       enctype="multipart/form-data"
     >
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" value="{{ email }}" />
-      <label for="image">Imagem:</label>
-      <input type="file" id="image" name="image" />
-      <input type="submit" value="Atualizar perfil" />
+      <div class="mb-3 mt-3">
+        <label for="email" class="form-label">Email:</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+      </div>
+      <div class="mb-3">
+        <label for="pwd" class="form-label">Password:</label>
+        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+      </div>
+      <div class="mb-3">
+        <label for="image" class="form-label">Choose file</label>
+        <input type="file" class="form-control" id="image" onchange="displaySelectedImage(event, 'selectedImage')" />
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-md-1">
+          <img
+            src="{{ url_for('static', filename='profile.png') }}"
+            alt=""
+            width="120"
+            height="120"
+            class="d-inline-block align-text-top"
+        />
+        </div>
+          <div class="col-md-4 py-5 me-auto">
+            <h4>Username</h4>
+          </div>
+          <div class="col-md-4 py-5 me-auto">
+            <a class="btn btn-primary">Edit Profile</a>
+          </div>           
+      </div>  
+      <hr />
+      <div class="col">
+        <div class="row mt-3">
+          Name: {{ current_user.username }}
+        </div>
+        <div class="row mt-3">
+          Email: {{ current_user.email }}
+        </div>
+      </div>  
+      <hr />
+      <div class="col-2 mt-4">  
+        <div class="row">
+          <a class="btn btn-primary text-start">
+            Purchase History
+          </a>
+        </div>
+        <div class="row mt-3">
+          <a class="btn btn-primary text-start">
+            Friend list
+          </a>
+        </div>
+      </div>  
+    </div>  
+
+    <script>
+      function displaySelectedImage(event, elementId) {
+        const selectedImage = document.getElementById(elementId);
+        const fileInput = event.target;
+
+        if (fileInput.files && fileInput.files[0]) {
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                selectedImage.src = e.target.result;
+            };
+
+            reader.readAsDataURL(fileInput.files[0]);
+        }
+      } 
+    </script>
+    
   </body>
 </html>
