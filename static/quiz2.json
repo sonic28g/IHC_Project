@@ -1,0 +1,105 @@
+{
+    "quiz": [
+      {
+        "pergunta": "In the game \"The Legend of Zelda: Ocarina of Time,\" what is the name of the protagonist?",
+        "opcoes": {
+          "a": "Link",
+          "b": "Zelda",
+          "c": "Ganondorf",
+          "d": "Navi"
+        },
+        "resposta_correta": "a"
+      },
+      {
+        "pergunta": "Which of the following is NOT a playable character in the game \"Overwatch\"?",
+        "opcoes": {
+          "a": "Tracer",
+          "b": "Reinhardt",
+          "c": "Mercy",
+          "d": "Scout"
+        },
+        "resposta_correta": "d"
+      },
+      {
+        "pergunta": "What year was the first \"Minecraft\" game officially released?",
+        "opcoes": {
+          "a": "2008",
+          "b": "2010",
+          "c": "2011",
+          "d": "2013"
+        },
+        "resposta_correta": "c"
+      },
+      {
+        "pergunta": "In the \"Assassin's Creed\" series, what is the name of the fictional device that allows characters to relive the memories of their ancestors?",
+        "opcoes": {
+          "a": "Animus",
+          "b": "Helix",
+          "c": "Abstergo",
+          "d": "Animus Prime"
+        },
+        "resposta_correta": "a"
+      },
+      {
+        "pergunta": "Which of the following is NOT a character class in \"World of Warcraft\"?",
+        "opcoes": {
+          "a": "Paladin",
+          "b": "Sorcerer",
+          "c": "Rogue",
+          "d": "Warlock"
+        },
+        "resposta_correta": "b"
+      },
+      {
+        "pergunta": "Who is the creator of the \"Metal Gear\" series?",
+        "opcoes": {
+          "a": "Hideo Kojima",
+          "b": "Shigeru Miyamoto",
+          "c": "Ken Levine",
+          "d": "Todd Howard"
+        },
+        "resposta_correta": "a"
+      },
+      {
+        "pergunta": "Which game features the character Nathan Drake as its protagonist?",
+        "opcoes": {
+          "a": "Uncharted",
+          "b": "Tomb Raider",
+          "c": "Gears of War",
+          "d": "Halo"
+        },
+        "resposta_correta": "a"
+      },
+      {
+        "pergunta": "What is the name of the primary antagonist in the \"Half-Life\" series?",
+        "opcoes": {
+          "a": "GLaDOS",
+          "b": "The Combine",
+          "c": "Dr. Breen",
+          "d": "The G-Man"
+        },
+        "resposta_correta": "c"
+      },
+      {
+        "pergunta": "Which of the following is NOT a starter Pokémon in the original \"Pokémon Red and Blue\" games?",
+        "opcoes": {
+          "a": "Bulbasaur",
+          "b": "Squirtle",
+          "c": "Pikachu",
+          "d": "Cyndaquil"
+        },
+        "resposta_correta": "c"
+      },
+      {
+        "pergunta": "What is the highest-selling video game of all time?",
+        "opcoes": {
+          "a": "Tetris",
+          "b": "Minecraft",
+          "c": "Grand Theft Auto V",
+          "d": "Wii Sports"
+        },
+        "resposta_correta": "b"
+      }
+    ]
+  }
+  

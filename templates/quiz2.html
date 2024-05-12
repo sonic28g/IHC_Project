@@ -12,8 +12,6 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='style.css') }}"
     />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</head>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -42,13 +40,14 @@
           <ul class="navbar-nav">
             <li class="nav-item">
               <a
-                class="nav-link"
+                class="nav-link active"
+                aria-current="page"
                 href="{{ url_for('index') }}"
                 >Store</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{{ url_for('missions') }}">Missions</a>
+              <a class="nav-link" href="{{ url_for('missions') }}">Missions</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ url_for('livestreams') }}"
@@ -84,32 +83,21 @@
       </div>
     </nav>
     
-    <div class="container mt-4">
-      <div class="missions_menu">
-          <h3>Missions</h3>
-          <div class="quizz_bar">
-            <p>Gaming Consoles</p>
-            <a href="{{ url_for('quiz1') }}" style="margin-left: auto;">
-              <button class="play_button">Play</button>
-            </a>
-          </div>
-      
-          <div class="quizz_bar">
-            <p>Video Games</p>
-            <a href="{{ url_for('quiz2') }}" style="margin-left: auto;">
-              <button class="play_button">Play</button>
-            </a>
-          </div>
-
-          <div class="quizz_bar" style="background-color: rgb(80, 80, 80); color: rgb(208, 208, 208);">
-            <p>New Quiz coming soon...</p>
-            <i class="material-icons" style="margin-left: auto;">&#xe192;</i>
-          </div>
+    <div id="quiz-container">
+        <h3 id="question"></h3>
+        <div id="options-container"></div>
+        <button id="next-button" onclick="nextQuestion()">Next Question >></button>
+        <p id="error-message" style="color: red; display: none;">You must select an option!</p>
       </div>
-    </div>
-
+      <div id="score-container" style="display: none;">
+        <h3>Your Score:</h3>
+        <h4 id="score"></h4>
+        <p id="message">/<p>
+        <a href="{{ url_for('missions') }}">
+          <button id="missions_back" >Missions</button>
+        </a>
+      </div>
     
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='quiz2.js') }}"></script>
   </body>
 </html>
