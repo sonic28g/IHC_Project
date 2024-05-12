@@ -2,6 +2,7 @@ from flask import Flask, request, render_template, redirect, url_for, session, j
 import sqlite3
 import os
 import json
+import argparse
 
 DATABASE_NAME = "database.db"
 app = Flask(__name__)
@@ -100,7 +101,6 @@ class DatabaseWrappers:
         return self.cursor.fetchone()
 
 db = DatabaseWrappers()
-db.reset_database()
 db.create_table()
 db.create_user_table()
 
@@ -161,15 +161,17 @@ def login():
         password = request.form['password']
         if db.authenticate_user(username, password):
             session['username'] = username
-            return redirect(url_for('profile'))
+            return redirect(url_for('index'))
         else:
-            return "Invalid username or password"
+            flash('Invalid username or password')
+            return redirect(url_for('login'))
+            
     return render_template('login.html')
 
 @app.route('/logout')
 def logout():
     session.pop('username', None)
-    return redirect(url_for('login'))
+    return redirect(url_for('index'))
 
 @app.route('/profile')
 def profile():
@@ -220,7 +222,6 @@ def register():
             return redirect(url_for('register'))
 
         db.register_user(username, email, password)
-        flash('Registered successfully')
         return redirect(url_for('login'))
 
     return render_template('register.html')
@@ -277,9 +278,6 @@ def add_to_cart(game_id):
 
     return redirect(url_for('game', game_id=game_id))
 
-
-
-
 @app.route('/get_cart_items')
 def get_cart_items():
     if 'cart' in session:
@@ -287,9 +285,19 @@ def get_cart_items():
         return jsonify(cartItem)
     else:
         return jsonify([])
+    
+# ======================================================================================== #
 
 if __name__ == "__main__":
-    add_games_to_database()
+    parser = argparse.ArgumentParser(description='Run the server')
+    parser.add_argument('--reset', action='store_true', help='Reset the database')
+    args = parser.parse_args()
+    
+    if args.reset:
+        db.reset_database()
+        db.create_table()
+        db.create_user_table()
+        add_games_to_database()
     
     app.run(debug=True)
 
