@@ -90,17 +90,6 @@ function showAlert(message, alertClass) {
   alertDiv.classList.add('alert', alertClass);
   alertDiv.setAttribute('role', 'alert');
 
-  // Adiciona um botão para fechar o alerta
-  var closeButton = document.createElement('button');
-  closeButton.classList.add('btn-close');
-  closeButton.setAttribute('type', 'button');
-  closeButton.setAttribute('data-bs-dismiss', 'alert');
-  closeButton.setAttribute('aria-label', 'Close');
-  closeButton.addEventListener('click', function() {
-    alertDiv.remove(); // Remove o alerta quando o botão de fechar é clicado
-  });
-  alertDiv.appendChild(closeButton);
-
   // Adiciona o alerta ao corpo do documento
   document.body.appendChild(alertDiv);
 }
@@ -124,9 +113,8 @@ function showScore() {
   if (finalScore < 10) {
     messageElement.textContent = "Better luck next time!";
   } else {
-    messageElement.textContent = "Your Promotional Code has been sent to you by email.";
     if (finalScore === 10) {
-     showAlert("Promotional Code sent to email: C39N-Q8YB-Q37B", "alert-success");
+     showAlert("Promotional Code: C39N-Q8YB-Q37B", "alert-success");
 }
   }
 }
