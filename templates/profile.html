@@ -87,18 +87,24 @@
       method="POST"
       action="{{ url_for('update_profile') }}"
       enctype="multipart/form-data"
+      style="display: none;"
+      id="profileForm"
     >
       <div class="mb-3 mt-3">
-        <label for="email" class="form-label">Email:</label>
+        <label for="username" class="form-label">Change Username:</label>
+        <input type="text" class="form-control" id="username" placeholder="Enter new Username" name="username">
+      </div>
+      <div class="mb-3 mt-3">
+        <label for="email" class="form-label">Change Email:</label>
         <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
       </div>
       <div class="mb-3">
-        <label for="pwd" class="form-label">Password:</label>
+        <label for="pwd" class="form-label">Change Password:</label>
         <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
       </div>
       <div class="mb-3">
         <label for="image" class="form-label">Choose file</label>
-        <input type="file" class="form-control" id="image" onchange="displaySelectedImage(event, 'selectedImage')" />
+        <input type="file" class="form-control" name="image" id="image" onchange="displaySelectedImage(event)" />
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
@@ -107,27 +113,29 @@
       <div class="row">
         <div class="col-md-1">
           <img
-            src="{{ url_for('static', filename='profile.png') }}"
-            alt=""
-            width="120"
-            height="120"
-            class="d-inline-block align-text-top"
-        />
+              id="ProfileImage"
+              src="{{ url_for('profile_image', filename=current_user.profile_image) }}"
+              alt=""
+              width="120"
+              height="120"
+              class="rounded-circle"
+          />
+
         </div>
-          <div class="col-md-4 py-5 me-auto">
-            <h4>Username</h4>
+          <div class="col-md-4 py-5 ms-4">
+            <h4>{{ session['username'] }}</h4>
           </div>
           <div class="col-md-4 py-5 me-auto">
-            <a class="btn btn-primary">Edit Profile</a>
+            <a class="btn btn-primary" id="editProfileBtn">Edit Profile</a>
           </div>           
       </div>  
       <hr />
       <div class="col">
         <div class="row mt-3">
-          Name: {{ current_user.username }}
+          Name: {{ session['username'] }}
         </div>
         <div class="row mt-3">
-          Email: {{ current_user.email }}
+          Email: {{ session['email'] }}
         </div>
       </div>  
       <hr />
@@ -146,8 +154,8 @@
     </div>  
 
     <script>
-      function displaySelectedImage(event, elementId) {
-        const selectedImage = document.getElementById(elementId);
+      function displaySelectedImage(event) {
+        const selectedImage = document.getElementById('ProfileImage');
         const fileInput = event.target;
 
         if (fileInput.files && fileInput.files[0]) {
@@ -160,6 +168,11 @@
             reader.readAsDataURL(fileInput.files[0]);
         }
       } 
+
+      document.getElementById('editProfileBtn').addEventListener('click', function() {
+        document.getElementById('profileForm').style.display = 'block';
+      });
+
     </script>
     
   </body>

@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, redirect, url_for, session, jsonify, flash
+from flask import Flask, request, render_template, redirect, url_for, session, jsonify, flash, send_from_directory
 import sqlite3
 import os
 import json
@@ -224,6 +224,10 @@ def register():
         return redirect(url_for('login'))
 
     return render_template('register.html')
+
+@app.route('/profile_images/<path:filename>')
+def profile_image(filename):
+    return send_from_directory(app.config['profile_images'], filename)
 
 @app.route('/games')
 def get_games():
