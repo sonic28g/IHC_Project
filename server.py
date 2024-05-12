@@ -151,7 +151,6 @@ def cart():
     else:
         current_user = session.get('username')
         cart_item = session.get('cart', [])
-        print("Cart Items:", cart_item)
     return render_template('cart.html', current_user=current_user, cart_item=cart_item)
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -261,22 +260,20 @@ def add_games_to_database():
 def add_to_cart(game_id):
     if 'cart' not in session:
         session['cart'] = []
-
     game_details = db.get_game_details(game_id)
     if game_details:
         cart = session['cart']
-        existing_item = next((item for item in cart if item['id'] == game_details['id']), None)
-        if existing_item:
-            existing_item['quantity'] += 1
-        else:
-            game_details['quantity'] = 1
-            session['cart'].append(game_details)
-        
+        for i in cart:
+            if i['id'] == int(game_id):
+                i['quantity'] += 1
+                session['cart'] = cart
+                return "Item already in cart. Increased quantity", 200
+        game_details['quantity'] = 1
+        cart.append(game_details)
+        session['cart'] = cart
         return "Item adicionado ao carrinho com sucesso!", 200
     else:
         flash('Falha ao adicionar item ao carrinho!', 'error')
-
-    return redirect(url_for('game', game_id=game_id))
 
 @app.route('/get_cart_items')
 def get_cart_items():
