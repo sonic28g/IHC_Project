@@ -27,7 +27,7 @@ function displayQuestion() {
   const errorMessage = document.getElementById("error-message");
 
   // Adiciona o número da pergunta antes do texto da pergunta
-  questionElement.textContent = `Pergunta ${currentQuestionIndex + 1}/${quizQuestions.length}: ${currentQuestion.pergunta}`;
+  questionElement.textContent = `Question ${currentQuestionIndex + 1}/${quizQuestions.length}: ${currentQuestion.pergunta}`;
   optionsContainer.innerHTML = "";
   errorMessage.style.display = "none";
 
@@ -83,11 +83,34 @@ function nextQuestion() {
   }
 }
 
+function showAlert(message, alertClass) {
+  // Cria um elemento de div para o alerta
+  var alertDiv = document.createElement('div');
+  alertDiv.textContent = message;
+  alertDiv.classList.add('alert', alertClass);
+  alertDiv.setAttribute('role', 'alert');
+
+  // Adiciona um botão para fechar o alerta
+  var closeButton = document.createElement('button');
+  closeButton.classList.add('btn-close');
+  closeButton.setAttribute('type', 'button');
+  closeButton.setAttribute('data-bs-dismiss', 'alert');
+  closeButton.setAttribute('aria-label', 'Close');
+  closeButton.addEventListener('click', function() {
+    alertDiv.remove(); // Remove o alerta quando o botão de fechar é clicado
+  });
+  alertDiv.appendChild(closeButton);
+
+  // Adiciona o alerta ao corpo do documento
+  document.body.appendChild(alertDiv);
+}
+
 // Função para exibir a pontuação final
 function showScore() {
   const quizContainer = document.getElementById("quiz-container");
   const scoreContainer = document.getElementById("score-container");
   const scoreElement = document.getElementById("score");
+  const messageElement = document.getElementById("message");
 
   quizContainer.style.display = "none";
   scoreContainer.style.display = "block";
@@ -96,7 +119,16 @@ function showScore() {
   const percentage = (score / totalQuestions) * 100;
   const finalScore = Math.round((percentage / 100) * 10);
 
-  scoreElement.textContent = `Você marcou ${finalScore} de 10.`;
+  scoreElement.textContent = `${finalScore} out of 10`;
+
+  if (finalScore < 10) {
+    messageElement.textContent = "Better luck next time!";
+  } else {
+    messageElement.textContent = "Your Promotional Code has been sent to you by email.";
+    if (finalScore === 10) {
+     showAlert("Promotional Code sent to email: C39N-Q8YB-Q37B", "alert-success");
+}
+  }
 }
 
 // Inicialização do quiz
