@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
     var container = document.getElementById("gameCardsContainer");
     container.innerHTML = "";
     var row;
-    console.log(games);
     games.forEach(function (game, index) {
       if (index % 4 === 0) {
         row = document.createElement("div");
@@ -28,7 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       var card = document.createElement("div");
       card.classList.add("col-md-3", "mb-3");
-      console.log(game);
       card.innerHTML = `
       <div class="card">
           <img src="${game[4]}" class="card-img-top" alt="${game[1]}">
@@ -47,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
   loadJSON(function (response) {
     gamesData = response;
     renderGameCards(gamesData);
+    showAllGenres();
   });
 
   // Search games
@@ -54,7 +53,6 @@ document.addEventListener("DOMContentLoaded", function () {
     var xobj = new XMLHttpRequest();
     xobj.overrideMimeType("application/json");
     xobj.open("GET", "/search/" + title, true);
-    console.log(xobj);
     xobj.onreadystatechange = function () {
       if (xobj.readyState == 4 && xobj.status == "200") {
         callback(JSON.parse(xobj.responseText));
@@ -73,11 +71,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Sort games
-  function sortGames(sortOption) {
+  // Filter and sort games by genre and price
+  function filterAndSortGames(genre, sortOption) {
+    var filteredGames;
+    
+    if (genre && genre !== "Show All Genres") {
+      filteredGames = gamesData.filter(function (game) {
+        return game[3].includes(genre);
+      });
+    } else {
+      filteredGames = gamesData.slice(); // Copy all games
+    }
+
     if (sortOption === "1") {
       // Sort by title (alphabetical order)
-      gamesData.sort(function (a, b) {
+      filteredGames.sort(function (a, b) {
         var titleA = a[1].toUpperCase();
         var titleB = b[1].toUpperCase();
         if (titleA < titleB) {
@@ -90,17 +98,28 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     } else if (sortOption === "2") {
       // Sort by price
-      gamesData.sort(function (a, b) {
+      filteredGames.sort(function (a, b) {
         return a[2] - b[2];
       });
     }
-    renderGameCards(gamesData);
+
+    renderGameCards(filteredGames);
   }
+
+  // Add event listener to genreSelect
+  var genreSelect = document.getElementById("genreSelect");
+  genreSelect.addEventListener("change", function () {
+    var selectedGenre = this.value;
+    var selectedSortOption = sortSelect.value;
+    filterAndSortGames(selectedGenre, selectedSortOption);
+  });
 
   // Add event listener to sort select
   var sortSelect = document.getElementById("sortSelect");
   sortSelect.addEventListener("change", function () {
-    sortGames(this.value);
+    var selectedGenre = genreSelect.value;
+    var selectedSortOption = this.value;
+    filterAndSortGames(selectedGenre, selectedSortOption);
   });
 
   // Extract all unique genres from the games data
@@ -126,26 +145,4 @@ document.addEventListener("DOMContentLoaded", function () {
       genreSelect.appendChild(option);
     });
   }
-
-  // Load the games data
-  loadJSON(function (response) {
-    gamesData = response;
-    renderGameCards(gamesData);
-    showAllGenres();
-  });
-
-  // Filter games by genre
-  function filterGamesByGenre(genre) {
-    var filteredGames = gamesData.filter(function (game) {
-      return game[3].includes(genre);
-    });
-    renderGameCards(filteredGames);
-  }
-
-  // Add event listener to genreSelect
-  var genreSelect = document.getElementById("genreSelect");
-  genreSelect.addEventListener("change", function () {
-    filterGamesByGenre(this.value);
-  });
 });
-
