@@ -89,9 +89,9 @@
           <div class="col-7 mt-4">  
             <ul type="circle">
                 <li>
-                    Cartão
+                  <input type="checkbox" id="cardCheckbox"> Cartão
                 </li>
-                <div class="row mt-4">
+                <div class="row mt-4 cardFields">
                     <div class="col-5 mx-2">
                         <div class="row">
                             <input
@@ -116,7 +116,7 @@
                                 type="text"
                                 class="form-control"
                                 id="cardExpiration"
-                                placeholder="Data de validade"
+                                placeholder="Data de validade (MM/YY)"
                             />
                         </div>
                         <div class="row">
@@ -130,16 +130,18 @@
                     </div>
                 </div>
                 <li>
-                    MBWay
+                  <input type="checkbox" id="mbWayCheckbox"> MBWay
                 </li>
-                <div class="col-4">
-                    <div class="row">
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="mbWayNumber"
-                            placeholder="Nº telemóvel"
-                        />
+                <div class="row mt-4 mbWayFields">
+                    <div class="col-4 mx-2">
+                        <div class="row">
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="mbWayNumber"
+                                placeholder="Nº telemóvel"
+                            />
+                        </div>
                     </div>
                 </div>    
             </ul>
@@ -152,6 +154,37 @@
 
 
       <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          const cardCheckbox = document.getElementById("cardCheckbox");
+          const mbWayCheckbox = document.getElementById("mbWayCheckbox");
+          const cardFields = document.querySelector(".cardFields");
+          const mbWayFields = document.querySelector(".mbWayFields");
+          
+          // Ocultar campos de cartão e MBWay por padrão
+          cardFields.style.display = "none";
+          mbWayFields.style.display = "none";
+          
+          // Adicionar eventos de clique às checkboxes
+          cardCheckbox.addEventListener("click", function() {
+              if (cardCheckbox.checked) {
+                  cardFields.style.display = "block";
+                  mbWayFields.style.display = "none";
+                  mbWayCheckbox.checked = false; // Desmarcar a opção de MBWay se o cartão estiver selecionado
+              } else {
+                  cardFields.style.display = "none";
+              }
+          });
+          
+          mbWayCheckbox.addEventListener("click", function() {
+              if (mbWayCheckbox.checked) {
+                  mbWayFields.style.display = "block";
+                  cardFields.style.display = "none";
+                  cardCheckbox.checked = false; // Desmarcar a opção de cartão se o MBWay estiver selecionado
+              } else {
+                  mbWayFields.style.display = "none";
+              }
+          });
+          
           document.getElementById('confirmPaymentBtn').addEventListener('click', function() {
             var cardNumber = document.getElementById('cardNumber').value;
             var cardName = document.getElementById('cardName').value;
@@ -159,27 +192,54 @@
             var cardCVC = document.getElementById('cardCVC').value;
             var mbWayNumber = document.getElementById('mbWayNumber').value;
 
-            if (cardNumber !== '' && cardName !== '' && cardExpiration !== '' && cardCVC !== '') {
-              showAlert('Pagamento completo!', 'alert-success');
+            // Expressões regulares para validação
+            var cardNumberRegex = /^\d{16}$/; // Aceita exatamente 16 dígitos
+            var cardExpirationRegex = /^(0[1-9]|1[0-2])\/\d{2}$/; // Aceita MM/YY
+            var cardNameRegex = /^[a-zA-Z\s]+$/; // Aceita apenas letras e espaços
+            var mbWayNumberRegex = /^\d{9}$/; 
+
+
+
+            if (cardCheckbox.checked) {
+              // Validar número do cartão
+              if (!cardNumber.match(cardNumberRegex)) {
+                showAlert('Número do cartão inválido!', 'alert-danger');
+                return;
+              }
+              // Validar nome do titular
+              if (!cardName.match(cardNameRegex)) {
+                showAlert('Nome do titular inválido!', 'alert-danger');
+                return;
+              }
+              // Validar data de validade
+              if (!cardExpiration.match(cardExpirationRegex)) {
+                showAlert('Data de validade inválida!', 'alert-danger');
+                return;
+              }
+              // Validar CVC (pode adicionar validações adicionais se necessário)
+              if (cardCVC === '') {
+                showAlert('Por favor, insira o CVC!', 'alert-danger');
+                return;
+              }
+            } else if (mbWayCheckbox.checked && !mbWayNumber.match(mbWayNumberRegex)) {
+              showAlert('Por favor, insira o número de telemóvel MBWay!', 'alert-danger');
+              return;
             }
-            else if (mbWayNumber !== '') {
-              showAlert('Pagamento completo!', 'alert-success');
-            }
-            else {
-              showAlert('Preencha os campos necessários para concluir o pagamento.', 'alert-danger');
-            }
+
+            showAlert('Pagamento completo!', 'alert-success');
           });
 
           function showAlert(message, alertClass) {
             var alertDiv = document.createElement('div');
             alertDiv.textContent = message;
-            alertDiv.classList.add('alert', 'position-fixed', 'top-1', 'start-50', 'translate-middle-x', alertClass);
+            alertDiv.classList.add('alert', 'position-fixed', 'top-0', 'start-50', 'translate-middle-x', alertClass);
             alertDiv.setAttribute('role', 'alert');
 
             document.body.appendChild(alertDiv);
 
             setTimeout(function() {alertDiv.remove();}, 3000);
           }
+      });
       </script>
 
   </body>
