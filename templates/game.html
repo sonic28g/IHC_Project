@@ -73,25 +73,25 @@
         left: 50%;
         transform: translateX(-50%);
         z-index: 1000;
-        width: 300px; 
+        width: 300px;
         padding: 15px;
         border-radius: 5px;
-        background-color: #f8d7da; 
-        color: #721c24; 
-        border: 1px solid #f5c6cb; 
-    }
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+      }
 
-    .alert-success {
-        background-color: #d4edda; 
-        color: #155724; 
-        border-color: #c3e6cb; 
-    }
+      .alert-success {
+        background-color: #d4edda;
+        color: #155724;
+        border-color: #c3e6cb;
+      }
 
-    .alert-dismissible {
+      .alert-dismissible {
         position: relative;
-    }
+      }
 
-    .btn-close {
+      .btn-close {
         position: absolute;
         top: 0;
         right: 0;
@@ -100,7 +100,7 @@
         background-color: transparent;
         border: 0;
         cursor: pointer;
-    }
+      }
     </style>
   </head>
   <body>
@@ -177,17 +177,28 @@
     <img class="game-image" src="{{ game.images[0] }}" alt="{{ game.title }}" />
     <div class="game-details">
       <div class="game-description">
-        <h3>Descrição</h3>
+        <h3>Description</h3>
         <p>{{ game.description }}</p>
       </div>
       <div class="game-info">
         <p>Price: {{ game.price }}€</p>
         <p>Genre: {{ game.genre }}</p>
+        <p>Age Rating: {{ game.agerating }}</p>
+        <p>Platform: {{ game.platform }}</p>
+        <p>Rating: {{ game.rating }}</p>
         <h1>{{ game.publisher }}</h1>
       </div>
     </div>
+    <div class="game-requirements">
+      <h3>Requirements</h3>
+      <p>{{ game.requirements }}</p>
+    </div>
+    <div class="game-specialist">
+      <h3>Specialist Analysis</h3>
+      <p>{{ game.specialistanalysis }}</p>
+    </div>
     <div class="text-center">
-      <a class="btn btn-primary id" id="addToCartBtn">ADD TO CART</a>      
+      <a class="btn btn-primary id" id="addToCartBtn">ADD TO CART</a>
     </div>
     <div class="row">
       <div class="col-md-6">
@@ -243,63 +254,69 @@
     </script>
     <script>
       function addToCart(cartItem) {
-          var cart = JSON.parse(localStorage.getItem('cart')) || [];
-  
-          var existingItemIndex = cart.findIndex(function(item) {
-              return item.title === cartItem.title;
-          });
-  
-          if (existingItemIndex !== -1) {
-              cart[existingItemIndex].quantity += cartItem.quantity;
-              updateCartItemQuantity(existingItemIndex, cart[existingItemIndex].quantity);
-          } else {
-              cart.push(cartItem);
-          }
-  
-          localStorage.setItem('cart', JSON.stringify(cart));
+        var cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        var existingItemIndex = cart.findIndex(function (item) {
+          return item.title === cartItem.title;
+        });
+
+        if (existingItemIndex !== -1) {
+          cart[existingItemIndex].quantity += cartItem.quantity;
+          updateCartItemQuantity(
+            existingItemIndex,
+            cart[existingItemIndex].quantity
+          );
+        } else {
+          cart.push(cartItem);
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
       }
 
       function removeFromCart(index) {
-        var cart = JSON.parse(localStorage.getItem('cart')) || [];
+        var cart = JSON.parse(localStorage.getItem("cart")) || [];
         cart.splice(index, 1);
-        localStorage.setItem('cart', JSON.stringify(cart));
+        localStorage.setItem("cart", JSON.stringify(cart));
 
         // Remove o item do HTML aqui
       }
-  
+
       function showAlert(message, alertClass) {
-          var alertDiv = document.createElement('div');
-          alertDiv.textContent = message;
-          alertDiv.classList.add('alert',alertClass);
-          alertDiv.setAttribute('role', 'alert');
-  
-          // Adiciona um botão para fechar o alerta
-          var closeButton = document.createElement('button');
-          closeButton.classList.add('btn-close');
-          closeButton.setAttribute('type', 'button');
-          closeButton.setAttribute('data-bs-dismiss', 'alert');
-          closeButton.setAttribute('aria-label', 'Close');
-          alertDiv.appendChild(closeButton);
-  
-          document.body.appendChild(alertDiv);
-  
-          setTimeout(function() {alertDiv.remove();}, 3000);
+        var alertDiv = document.createElement("div");
+        alertDiv.textContent = message;
+        alertDiv.classList.add("alert", alertClass);
+        alertDiv.setAttribute("role", "alert");
+
+        // Adiciona um botão para fechar o alerta
+        var closeButton = document.createElement("button");
+        closeButton.classList.add("btn-close");
+        closeButton.setAttribute("type", "button");
+        closeButton.setAttribute("data-bs-dismiss", "alert");
+        closeButton.setAttribute("aria-label", "Close");
+        alertDiv.appendChild(closeButton);
+
+        document.body.appendChild(alertDiv);
+
+        setTimeout(function () {
+          alertDiv.remove();
+        }, 3000);
       }
-  
-     document.getElementById('addToCartBtn').addEventListener('click', function() {
-        var gameId = "{{ game.id }}";
-        fetch(`/add_to_cart/${gameId}`, {
-            method: 'POST'
-        })
-        .then(response => response.text())
-        .then(data => {
-            showAlert(data, 'alert-success');
-        })
-        .catch(error => {
-            console.error('Error:', error);
+
+      document
+        .getElementById("addToCartBtn")
+        .addEventListener("click", function () {
+          var gameId = "{{ game.id }}";
+          fetch(`/add_to_cart/${gameId}`, {
+            method: "POST",
+          })
+            .then((response) => response.text())
+            .then((data) => {
+              showAlert(data, "alert-success");
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+            });
         });
-    });
-  </script>
-  
+    </script>
   </body>
 </html>

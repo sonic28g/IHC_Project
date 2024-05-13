@@ -52,7 +52,12 @@ class DatabaseWrappers:
                 images TEXT,
                 publisher TEXT,
                 description TEXT,
-                livestream TEXT
+                livestream TEXT,
+                requirements TEXT,
+                agerating TEXT,
+                platform TEXT,
+                specialistanalysis TEXT,
+                rating REAL
             )
         """)
         self.cursor.execute("PRAGMA table_info(games)")
@@ -61,17 +66,18 @@ class DatabaseWrappers:
         self.cursor.execute("SELECT 1 FROM games WHERE title = ?", (title,))
         return self.cursor.fetchone() is not None
 
-    def add_game(self, title, price, genre, images, publisher, description, livestream):
+    def add_game(self, title, price, genre, images, publisher, description, livestream, requirements, agerating, platform, specialistanalysis, rating):
         if not self.game_exists(title):
             self.cursor.execute("""
-                INSERT INTO games (title, price, genre, images, publisher, description, livestream) 
-                VALUES (?, ?, ?, ?, ?, ?, ?)
-            """, (title, price, genre, images, publisher, description, livestream))
+                INSERT INTO games (title, price, genre, images, publisher, description, livestream, requirements, agerating, platform, specialistanalysis, rating) 
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """, (title, price, ', '.join(genre), ', '.join(images), publisher, description, livestream, str(requirements), agerating, platform, specialistanalysis, rating))
             self.conn.commit()
             
     def get_game_details(self, game_id):
         self.cursor.execute("SELECT * FROM games WHERE id = ?", (game_id,))
         game = self.cursor.fetchone()
+        print(game)
         if game is not None:
             return {
                 'id': game[0], 
@@ -81,7 +87,12 @@ class DatabaseWrappers:
                 'images': game[4].split(", "),
                 'publisher': game[5],
                 'description': game[6],
-                'livestream': game[7]
+                'livestream': game[7],
+                'requirements': game[8].split(", "),
+                'agerating': game[9],
+                'platform': game[10],
+                'specialistanalysis': game[11],
+                'rating': game[12]
             }
         else:
             return None
@@ -254,12 +265,6 @@ def search_games(title):
     games = [[game[0], game[1], game[2], game[3].split(", "), game[4]] for game in games]
     return jsonify(games)
 
-def add_games_to_database():
-    with open('static/games.json') as f:
-        games = json.load(f)
-        for game in games:
-            db.add_game(game['title'], game['price'], ', '.join(game['genre']), ', '.join(game['images']), game['publisher'], game['description'], game['livestream'])
-
 @app.route('/add_to_cart/<game_id>', methods=['POST'])
 def add_to_cart(game_id):
     if 'cart' not in session:
@@ -289,17 +294,25 @@ def get_cart_items():
     
 # ======================================================================================== #
 
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='Run the server')
-    parser.add_argument('--reset', action='store_true', help='Reset the database')
-    args = parser.parse_args()
-    
-    if args.reset:
-        db.reset_database()
-        db.create_table()
-        db.create_user_table()
-        add_games_to_database()
-    
+if __name__ == "__main__":    
+    with open('static/games.json', 'r', encoding='utf-8') as f:
+        games = json.load(f)
+        for game in games:
+            db.add_game(
+                game['title'], 
+                game['price'], 
+                ', '.join(game['genre']),
+                game['images'], 
+                game['publisher'], 
+                game['description'], 
+                game['livestream'], 
+                game['requirements'], 
+                game['agerating'], 
+                game['plataform'], 
+                game['specialistanalysis'], 
+                game['rating']
+            )
+            
     app.run(debug=True)
 
 @app.errorhandler(404)

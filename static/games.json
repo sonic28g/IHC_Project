@@ -7,7 +7,19 @@
                     "https://www.gamespot.com/a/uploads/original/1574/15747411/4192563-vlcscreenshot2023-09-14-03h17m59s069.jpg"],
         "publisher": "CD Projekt Red",
         "description": "Cyberpunk 2077 is an open-world, action-adventure story set in Night City, a megalopolis obsessed with power, glamour and body modification. You play as V, a mercenary outlaw going after a one-of-a-kind implant that is the key to immortality. You can customize your character's cyberware, skillset and playstyle, and explore a vast city where the choices you make shape the story and the world around you.",
-        "livestream": "https://www.twitch.tv/directory/game/Cyberpunk%202077"
+        "livestream": "https://www.twitch.tv/directory/game/Cyberpunk%202077",
+        "requirements": [
+            "OS: Windows 7 or 10",
+            "Processor: Intel Core i5-3570K or AMD FX-8310",
+            "Memory: 8 GB RAM",
+            "Graphics: NVIDIA GeForce GTX 780 or AMD Radeon RX 470",
+            "DirectX: Version 12",
+            "Storage: 70 GB available space"
+        ],
+        "agerating": "Mature 17+",
+        "plataform": "PC, PS4, PS5, Xbox One, Xbox Series X/S, Stadia",
+        "specialistanalysis": "Cyberpunk 2077 is a game that has been in development for a long time, and it shows. The game is a masterpiece of storytelling, world-building, and character development. The game is set in a dystopian future where technology has taken over the world, and the player must navigate this world to uncover the truth behind a conspiracy that threatens to destroy everything. The game is a must-play for fans of the genre, and it is sure to be a classic for years to come.",
+        "rating": "9.5/10"
     },
     {
         "title": "Grand Theft Auto 5",
@@ -17,7 +29,18 @@
                     "https://i.ytimg.com/vi/uQIYXqmf3rU/maxresdefault.jpg"],
         "publisher": "Rockstar Games",
         "description": "When a young street hustler, a retired bank robber and a terrifying psychopath find themselves entangled with some of the most frightening and deranged elements of the criminal underworld, the U.S. government and the entertainment industry, they must pull off a series of dangerous heists to survive in a ruthless city in which they can trust nobody, least of all each other.",
-        "livestream": "https://www.twitch.tv/directory/game/Grand%20Theft%20Auto%20V"
+        "livestream": "https://www.twitch.tv/directory/game/Grand%20Theft%20Auto%20V",
+        "requirements": [
+            "OS: Windows 10 64 Bit, Windows 8.1 64 Bit, Windows 8 64 Bit, Windows 7 64 Bit Service Pack 1",
+            "Processor: Intel Core 2 Quad CPU Q6600 @ 2.40GHz (4 CPUs) / AMD Phenom 9850 Quad-Core Processor (4 CPUs) @ 2.5GHz",
+            "Memory: 4 GB RAM",
+            "Graphics: NVIDIA 9800 GT 1GB / AMD HD 4870 1GB (DX 10, 10.1, 11)",
+            "Storage: 72 GB available space"
+        ],
+        "agerating": "Mature 17+",
+        "plataform": "PC, PS3, PS4, Xbox 360, Xbox One",
+        "specialistanalysis": "Anyone concerned that this was just another money-spinning “definitive edition” can rest easy. As ever, Rockstar don’t do things by halves, and Grand Theft Auto V on PS4 feels truly next-gen. It’s not just a remake, it’s a testament to the quality of the original that GTA V can effortlessly stand among the best titles so far available on the new consoles and, in many cases, surpass them.",
+        "rating": "9.5/10"
     },
     {
         "title": "Assassin's Creed Valhalla",
@@ -27,7 +50,19 @@
                     "https://cdn.vox-cdn.com/thumbor/7Z6VNCuy8Ink2BxJnxC0JcVKkAI=/0x0:3840x2160/1200x675/filters:focal(925x815:1539x1429)/cdn.vox-cdn.com/uploads/chorus_image/image/67630691/ACV_Iconic_Landscape_Stonehenge.0.jpg"],
         "publisher": "Ubisoft",
         "description": "Become Eivor, a legendary Viking raider on a quest for glory. Explore England's Dark Ages as you raid your enemies, grow your settlement, and build your political power. Lead epic Viking raids against Saxon fortresses throughout England. Dual-wield powerful weapons and relive the visceral fighting style of the Vikings.",
-        "livestream": "https://www.twitch.tv/directory/category/assassins-creed-valhalla"
+        "livestream": "https://www.twitch.tv/directory/category/assassins-creed-valhalla",
+        "requirements": [
+            "OS: Windows 10 (64-bit only)",
+            "Processor: AMD Ryzen 3 1200 / Intel Core i5-4460",
+            "Memory: 8 GB RAM",
+            "Graphics: AMD Radeon R9 380 / NVIDIA GeForce GTX 960",
+            "DirectX: Version 12",
+            "Storage: 50 GB available space"
+        ],
+        "agerating": "Mature 17+",
+        "plataform": "PC, PS4, PS5, Xbox One, Xbox Series X/S",
+        "specialistanalysis": "Assassin's Creed Valhalla is everything I hoped it would be, and more. It sells the Viking fantasy flawlessly, is brimming gorgeous locations, vistas and interesting characters, and will keep you busy for 100 or so hours if you want to grab everything on offer. It's buggy in places, and the grinding is overwhelming at times to the point where it spoils the feeling of exploration and progression. However, these shortcomings can be overlooked if you're willing to stick with it. And you should, because Eivor's journey is one worth soaking up.",
+        "rating": "9/10"
     },
     {
         "title": "HELLDIVERS 2",
@@ -37,7 +72,19 @@
                     "https://images.squarespace-cdn.com/content/v1/55ef0e29e4b099e22cdc9eea/578cceff-f72f-42fc-b216-442cffd493d9/Bugs.jpg"],
         "publisher": "Arrowhead Game Studios",
         "description": "HELLDIVERS is a hardcore, cooperative, twin stick shooter. As part of the elite unit called the HELLDIVERS, players must work together to protect SUPER EARTH and defeat the enemies of mankind in an intense intergalactic war.",
-        "livestream": "https://www.twitch.tv/directory/game/HELLDIVERS"
+        "livestream": "https://www.twitch.tv/directory/game/HELLDIVERS",
+        "requirements": [
+            "OS: Windows Vista / Windows 7",
+            "Processor: 2.4GHz Dual Core",
+            "Memory: 4 GB RAM",
+            "Graphics: 512 MB NVIDIA GeForce 9800 / ATI Radeon HD 2600 XT",
+            "DirectX: Version 10",
+            "Storage: 7 GB available space"
+        ],
+        "agerating": "Teen 13+",
+        "plataform": "PC, PS4, PS5, Xbox One, Xbox Series X/S",
+        "specialistanalysis": "HELLDIVERS is a fantastic game that is a must-play for anyone who enjoys cooperative games. The game is challenging, fun, and has a great sense of humor. The game is also very well balanced, and the difficulty scales nicely as you progress through the game. The game is also very well optimized, and runs smoothly on most systems. Overall, HELLIVERS is a great game that is well worth the price of admission.",
+        "rating": "8.5/10"
     },
     {
         "title": "Fallout 4",
@@ -47,7 +94,18 @@
                     "https://cdn.wccftech.com/wp-content/uploads/2015/06/Fallout-4_Gameplay_1-740x416.jpg"],
         "publisher": "Bethesda Game Studios",
         "description": "Bethesda Game Studios, the award-winning creators of Fallout 3 and The Elder Scrolls V: Skyrim, welcome you to the world of Fallout 4 - their most ambitious game ever, and the next generation of open-world gaming.",
-        "livestream": "https://www.twitch.tv/directory/game/Fallout%204"
+        "livestream": "https://www.twitch.tv/directory/game/Fallout%204",
+        "requirements": [
+            "OS: Windows 7/8/10 (64-bit OS required)",
+            "Processor: Intel Core i5-2300 2.8 GHz/AMD Phenom II X4 945 3.0 GHz or equivalent",
+            "Memory: 8 GB RAM",
+            "Graphics: NVIDIA GTX 550 Ti 2GB/AMD Radeon HD 7870 2GB or equivalent",
+            "Storage: 30 GB available space"
+        ],
+        "agerating": "Mature 17+",
+        "plataform": "PC, PS4, PS5, Xbox One, Xbox Series X/S",
+        "specialistanalysis": "Fallout 4 is a game that is well worth the price of admission. The game is a masterpiece of storytelling, world-building, and character development. The game is set in a post-apocalyptic world where the player must navigate the wasteland to uncover the truth behind a conspiracy that threatens to destroy everything. The game is a must-play for fans of the genre, and it is sure to be a classic for years to come.",
+        "rating": "9/10"
     },
     {
         "title": "Monster Hunter: World",
@@ -57,7 +115,19 @@
                     "https://meups.com.br/wp-content/uploads/2017/06/Monster-Hunter-World.jpg"],
         "publisher": "Capcom",
         "description": "Welcome to a new world! Take on the role of a hunter and slay ferocious monsters in a living, breathing ecosystem where you can use the landscape and its diverse inhabitants to get the upper hand. Hunt alone or in co-op with up to three other players, and use materials collected from fallen foes to craft new gear and take on even bigger, badder beasts!",
-        "livestream": "https://www.twitch.tv/directory/game/Monster%20Hunter%3A%20World"
+        "livestream": "https://www.twitch.tv/directory/game/Monster%20Hunter%3A%20World",
+        "requirements": [
+            "OS: WINDOWS® 7, 8, 8.1, 10 (64-bit required)",
+            "Processor: Intel® Core™ i5-4460, 3.20GHz or AMD FX™-6300",
+            "Memory: 8 GB RAM",
+            "Graphics: NVIDIA® GeForce® GTX 760 or AMD Radeon™ R7 260x (VRAM 2GB)",
+            "DirectX: Version 11",
+            "Storage: 48 GB available space"
+        ],
+        "agerating": "Teen 13+",
+        "plataform": "PC, PS4, PS5, Xbox One, Xbox Series X/S",
+        "specialistanalysis": "Monster Hunter: World is a game that is well worth the price of admission. The game is a masterpiece of storytelling, world-building, and character development. The game is set in a fantasy world where the player must navigate the world to uncover the truth behind a conspiracy that threatens to destroy everything. The game is a must-play for fans of the genre, and it is sure to be a classic for years to come.",
+        "rating": "9/10"
     },
     {
         "title": "Red Dead Redemption 2",
@@ -67,7 +137,19 @@
                     "https://www.kotaku.com.au/wp-content/uploads/2018/08/10/rxwhmhrxguqcgahnhvzo.png?quality=75"],
         "publisher": "Rockstar Games",
         "description": "America, 1899. The end of the wild west era has begun as lawmen hunt down the last remaining outlaw gangs. Those who will not surrender or succumb are killed. After a robbery goes badly wrong in the western town of Blackwater, Arthur Morgan and the Van der Linde gang are forced to flee. With federal agents and the best bounty hunters in the nation massing on their heels, the gang must rob, steal and fight their way across the rugged heartland of America in order to survive. As deepening internal divisions threaten to tear the gang apart, Arthur must make a choice between his own ideals and loyalty to the gang who raised him.",
-        "livestream": "https://www.twitch.tv/directory/game/Red%20Dead%20Redemption%202"
+        "livestream": "https://www.twitch.tv/directory/game/Red%20Dead%20Redemption%202",
+        "requirements": [
+            "OS: Windows 7 - Service Pack 1 (6.1.7601)",
+            "Processor: Intel® Core™ i5-2500K / AMD FX-6300",
+            "Memory: 8 GB RAM",
+            "Graphics: Nvidia GeForce GTX 770 2GB / AMD Radeon R9 280 3GB",
+            "DirectX: Version 11",
+            "Storage: 150 GB available space"
+        ],
+        "agerating": "Mature 17+",
+        "plataform": "PC, PS4, PS5, Xbox One, Xbox Series X/S",
+        "specialistanalysis": "Whether I'm hunting a legendary animal, participating in a story mission, playing a game of poker, or just exploring the world I've absolutely adored every moment I've spent with the game. It more than fulfills every hope and desire I'd garnered as my anticipation for it grew over the last several years. The phenomenal narrative and performances are emotionally impactful, and the depth of interactivity embedded into the pristinely polished gameplay is nothing short of groundbreaking. Rockstar have outdone themselves with Red Dead Redemption 2 as it ushers in a new era of what the medium is capable of achieving. At this point, I can't wait to start again to explore a different playstyle and especially jump into Red Dead Online.",
+        "rating": "10/10"
     },
     {
         "title": "Hogwarts Legacy",
@@ -77,7 +159,19 @@
                     "https://www.gematsu.com/wp-content/uploads/2022/12/Hogwarts-Legacy-Play_12-14-22.jpg"],
         "publisher": "Portkey Games",
         "description": "Hogwarts Legacy is an immersive, open-world action RPG set in the world first introduced in the Harry Potter books. Now you can take control of the action and be at the center of your own adventure in the wizarding world. Embark on a journey through familiar and new locations as you explore and discover fantastic beasts, customize your character and craft potions, master spell casting, upgrade talents, and become the wizard you want to be.",
-        "livestream": "https://www.twitch.tv/directory/game/Hogwarts%20Legacy"
+        "livestream": "https://www.twitch.tv/directory/game/Hogwarts%20Legacy",
+        "requirements": [
+            "OS: Windows 10",
+            "Processor: Intel Core i5-3570K / AMD FX-8310",
+            "Memory: 8 GB RAM",
+            "Graphics: NVIDIA GTX 780 3GB / AMD Radeon R9 290 4GB",
+            "DirectX: Version 11",
+            "Storage: 75 GB available space"
+        ],
+        "agerating": "Teen 13+",
+        "plataform": "PC, PS4, PS5, Xbox One, Xbox Series X/S",
+        "specialistanalysis": "Hogwarts Legacy is the Wizarding World game that fans have dreamt of for years. It offers a dense and rich open-world to explore complemented perfectly by a surprisingly robust and engaging combat system unlike anything else. While the story does live in the shadow of its predecessors, and managing gear can be repetitive, Hogwarts Legacy is a truly magical experience and utterly bewitching from beginning to end.",
+        "rating": "9/10"
     },
     {
         "title": "Elden Ring",
@@ -87,7 +181,19 @@
                     "https://cdn.thewirecutter.com/wp-content/media/2022/03/elden-ring-2048px-0003.jpg?auto=webp&quality=75&crop=1.91:1&width=1200"],
         "publisher": "FromSoftware",
         "description": "Rise, Tarnished, and be guided by grace to brandish the power of the Elden Ring and become an Elden Lord in the Lands Between. ELDEN RING, developed by FromSoftware, Inc. and BANDAI NAMCO Entertainment Inc., is a fantasy action-RPG adventure set within a world created by Hidetaka Miyazaki - creator of the influential DARK SOULS video game series; and George R.R. Martin - author of The New York Times best-selling fantasy series, A Song of Ice and Fire. Danger and discovery lurk at every corner in FromSoftware's largest game to-date.",
-        "livestream": "https://www.twitch.tv/directory/game/Elden%20Ring"
+        "livestream": "https://www.twitch.tv/directory/game/Elden%20Ring",
+        "requirements": [
+            "OS: Windows 10",
+            "Processor: Intel Core i5-3570K / AMD FX-8310",
+            "Memory: 8 GB RAM",
+            "Graphics: NVIDIA GTX 780 3GB / AMD Radeon R9 290 4GB",
+            "DirectX: Version 11",
+            "Storage: 75 GB available space"
+        ],
+        "agerating": "Mature 17+",
+        "plataform": "PC, PS4, PS5, Xbox One, Xbox Series X/S",
+        "specialistanalysis": "Elden Ring is a game that is well worth the price of admission. The game is a masterpiece of storytelling, world-building, and character development. The game is set in a fantasy world where the player must navigate the world to uncover the truth behind a conspiracy that threatens to destroy everything. The game is a must-play for fans of the genre, and it is sure to be a classic for years to come.",
+        "rating": "9.5/10"
     },
     {
         "title": "Resident Evil 4",
@@ -97,7 +203,19 @@
                     "https://static0.gamerantimages.com/wordpress/wp-content/uploads/Resident-Evil-4-Ultimate-HD-Edition-Gameplay.jpg"],
         "publisher": "Capcom",
         "description": "In Resident Evil 4, special agent Leon S. Kennedy is sent on a mission to rescue the U.S. President's daughter who has been kidnapped. Finding his way to a rural village in Europe, he faces new threats that are a departure from the traditional lumbering zombie enemies of the earlier instalments in the series. Leon battles horrific new creatures infested by a new threat called Las Plagas and faces off against an aggressive group of enemies including mind-controlled villagers that are tied to Los Illuminados, the mysterious cult which is behind the abduction.",
-        "livestream": "https://www.twitch.tv/directory/game/Resident%20Evil%204"
+        "livestream": "https://www.twitch.tv/directory/game/Resident%20Evil%204",
+        "requirements": [
+            "OS: Windows XP / 2000",
+            "Processor: 1.4 GHz Pentium 4 or AMD Athlon",
+            "Memory: 256 MB RAM",
+            "Graphics: 128 MB DirectX 9.0c-compliant AGP / PCI Express w/ Shader 2.0 or higher (NVIDIA GeForce 6/7 families+ /ATI Radeon X Series+)",
+            "DirectX: Version 9.0c",
+            "Storage: 7 GB available space"
+        ],
+        "agerating": "Mature 17+",
+        "plataform": "PC, PS2, PS3, PS4, PS5, Xbox 360, Xbox One, Xbox Series X/S",
+        "specialistanalysis": "Resident Evil 4 is a game that is well worth the price of admission. The game is a masterpiece of storytelling, world-building, and character development. The game is set in a post-apocalyptic world where the player must navigate the wasteland to uncover the truth behind a conspiracy that threatens to destroy everything. The game is a must-play for fans of the genre, and it is sure to be a classic for years to come.",
+        "rating": "9/10"
     },
     {
         "title": "Stardew Valley",
@@ -107,7 +225,19 @@
                     "https://www.stardewvalley.net/wp-content/uploads/2018/12/1_1screenshot15.png"],
         "publisher": "ConcernedApe",
         "description": "You've inherited your grandfather's old farm plot in Stardew Valley. Armed with hand-me-down tools and a few coins, you set out to begin your new life. Can you learn to live off the land and turn these overgrown fields into a thriving home? It won't be easy. Ever since Joja Corporation came to town, the old ways of life have all but disappeared. The community center, once the town's most vibrant hub of activity, now lies in shambles. But the valley seems full of opportunity. With a little dedication, you might just be the one to restore Stardew Valley to greatness!",
-        "livestream": "https://www.twitch.tv/directory/game/Stardew%20Valley"
+        "livestream": "https://www.twitch.tv/directory/game/Stardew%20Valley",
+        "requirements": [
+            "OS: Windows Vista or greater",
+            "Processor: 2 Ghz",
+            "Memory: 2 GB RAM",
+            "Graphics: 256 mb video memory, shader model 3.0+",
+            "DirectX: Version 10",
+            "Storage: 500 MB available space"
+        ],
+        "agerating": "Everyone 10+",
+        "plataform": "PC, PS4, PS5, Xbox One, Xbox Series X/S, Nintendo Switch",
+        "specialistanalysis": "Stardew Valley is a game that is well worth the price of admission. The game is a masterpiece of storytelling, world-building, and character development. The game is set in a post-apocalyptic world where the player must navigate the wasteland to uncover the truth behind a conspiracy that threatens to destroy everything. The game is a must-play for fans of the genre, and it is sure to be a classic for years to come.",
+        "rating": "9/10"
     },
     {
         "title": "Dragon's Dogma 2",
@@ -117,7 +247,19 @@
                     "https://assets-prd.ignimgs.com/2024/03/07/11mins2-1709772111822.jpg?width=1280"],
         "publisher": "Capcom",
         "description": "Set in a huge open world, Dragon's Dogma: Dark Arisen presents a rewarding action combat experience. Players embark on an epic adventure in a rich, living world with three AI companions, known as Pawns. These partners fight independently, demonstrating prowess and ability that they have developed based on traits learned from each player. PC users can share these Pawns online and reap rewards of treasure, tips and strategy hints.",
-        "livestream": "https://www.twitch.tv/directory/game/Dragon%27s%20Dogma%3A%20Dark%20Arisen"
+        "livestream": "https://www.twitch.tv/directory/game/Dragon%27s%20Dogma%3A%20Dark%20Arisen",
+        "requirements": [
+            "OS: Windows Vista or greater",
+            "Processor: 2.4 Ghz",
+            "Memory: 2 GB RAM",
+            "Graphics: 256 mb video memory, shader model 3.0+",
+            "DirectX: Version 10",
+            "Storage: 20 GB available space"
+        ],
+        "agerating": "Mature 17+",
+        "plataform": "PC, PS4, PS5, Xbox One, Xbox Series X/S",
+        "specialistanalysis": "Dragon's Dogma 2 is a game that is well worth the price of admission. The game is a masterpiece of storytelling, world-building, and character development. The game is set in a post-apocalyptic world where the player must navigate the wasteland to uncover the truth behind a conspiracy that threatens to destroy everything. The game is a must-play for fans of the genre, and it is sure to be a classic for years to come.",
+        "rating": "9/10"
     },
     {
         "title": "DayZ",
@@ -127,7 +269,19 @@
                     "https://i.ytimg.com/vi/Y-3SLdXWLiE/maxresdefault.jpg"],
         "publisher": "Bohemia Interactive",
         "description": "The post-soviet country of Chernarus is struck by an unknown virus, turning the majority population into frenzied infected. Fighting over resources has bred a hostile mentality among survivors, driving what's left of humanity to collapse. You are one of the few immune to the virus - how far will you go to survive?",
-        "livestream": "https://www.twitch.tv/directory/game/DayZ"
+        "livestream": "https://www.twitch.tv/directory/game/DayZ",
+        "requirements": [
+            "OS: Windows 7/8.1 64-bit",
+            "Processor: Intel Core i5-4430",
+            "Memory: 8 GB RAM",
+            "Graphics: NVIDIA GeForce GTX 760 or AMD R9 270X",
+            "DirectX: Version 11",
+            "Storage: 16 GB available space"
+        ],
+        "agerating": "Mature 17+",
+        "plataform": "PC, PS4, PS5, Xbox One, Xbox Series X/S",
+        "specialistanalysis": "DayZ is a game that is well worth the price of admission. The game is a masterpiece of storytelling, world-building, and character development. The game is set in a post-apocalyptic world where the player must navigate the wasteland to uncover the truth behind a conspiracy that threatens to destroy everything. The game is a must-play for fans of the genre, and it is sure to be a classic for years to come.",
+        "rating": "8/10"
     },
     {
         "title": "Dead by Daylight",
@@ -137,7 +291,19 @@
                     "https://assets.deadbydaylight.com/dbd_screenshot_gamevideo_objective_hook_1a5b326ac9.jpg"],
         "publisher": "Behaviour Interactive",
         "description": "Dead by Daylight is a multiplayer (4vs1) horror game where one player takes on the role of the savage Killer, and the other four players play as Survivors, trying to escape the Killer and avoid being caught, tortured and killed. Survivors play in third-person and have the advantage of better situational awareness. The Killer plays in first-person and is more focused on their prey.",
-        "livestream": "https://www.twitch.tv/directory/game/Dead%20by%20Daylight"
+        "livestream": "https://www.twitch.tv/directory/game/Dead%20by%20Daylight",
+        "requirements": [
+            "OS: 64-bit Operating Systems (Windows 7, Windows 8.1)",
+            "Processor: Intel Core i3-4170 or AMD FX-8300 or higher",
+            "Memory: 8 GB RAM",
+            "Graphics: DX11 Compatible GeForce 760 or AMD HD 8800 or higher with 4GB of RAM",
+            "DirectX: Version 11",
+            "Storage: 25 GB available space"
+        ],
+        "agerating": "Mature 17+",
+        "plataform": "PC, PS4, PS5, Xbox One, Xbox Series X/S, Nintendo Switch",
+        "specialistanalysis": "Dead by Daylight is a game that is well worth the price of admission. The game is a masterpiece of storytelling, world-building, and character development. The game is set in a post-apocalyptic world where the player must navigate the wasteland to uncover the truth behind a conspiracy that threatens to destroy everything. The game is a must-play for fans of the genre, and it is sure to be a classic for years to come.",
+        "rating": "8.5/10"
     },
     {
         "title": "Deep Rock Galactic",
@@ -147,7 +313,19 @@
                     "https://i.ytimg.com/vi/L04f8-kmC10/maxresdefault.jpg"],
         "publisher": "Ghost Ship Games",
         "description": "Deep Rock Galactic is a 1-4 player co-op FPS featuring badass space Dwarves, 100% destructible environments, procedurally-generated caves, and endless hordes of alien monsters.",
-        "livestream": "https://www.twitch.tv/directory/game/Deep%20Rock%20Galactic"
+        "livestream": "https://www.twitch.tv/directory/game/Deep%20Rock%20Galactic",
+        "requirements": [
+            "OS: Windows 7 64 Bit",
+            "Processor: 2.4 GHz Dual Core",
+            "Memory: 6 GB RAM",
+            "Graphics: NVIDIA GeForce GTX 460 or AMD Radeon HD 5770 /w 1GB VRAM",
+            "DirectX: Version 11",
+            "Storage: 3 GB available space"
+        ],
+        "agerating": "Teen 13+",
+        "plataform": "PC, PS4, PS5, Xbox One, Xbox Series X/S",
+        "specialistanalysis": "Deep Rock Galactic is a game that is well worth the price of admission. The game is a masterpiece of storytelling, world-building, and character development. The game is set in a post-apocalyptic world where the player must navigate the wasteland to uncover the truth behind a conspiracy that threatens to destroy everything. The game is a must-play for fans of the genre, and it is sure to be a classic for years to come.",
+        "rating": "8.5/10"
     },
     {
         "title": "Borderlands 3",
@@ -157,7 +335,19 @@
                     "https://i.ytimg.com/vi/K4zn-LQs7XU/maxresdefault.jpg"],
         "publisher": "Gearbox Software",
         "description": "The original shooter-looter returns, packing bazillions of guns and an all-new mayhem-fueled adventure! Blast through new worlds and enemies as one of four brand new Vault Hunters - the ultimate treasure-seeking badasses of the Borderlands, each with deep skill trees, abilities, and customization.",
-        "livestream": "https://www.twitch.tv/directory/game/Borderlands%203"
+        "livestream": "https://www.twitch.tv/directory/game/Borderlands%203",
+        "requirements": [
+            "OS: Windows 7/8/10 (latest service pack)",
+            "Processor: AMD FX-8350 (Intel i5-3570)",
+            "Memory: 6 GB RAM",
+            "Graphics: AMD Radeon™ HD 7970 (NVIDIA GeForce GTX 680 2GB)",
+            "DirectX: Version 11",
+            "Storage: 75 GB available space"
+        ],
+        "agerating": "Mature 17+",
+        "plataform": "PC, PS4, PS5, Xbox One, Xbox Series X/S",
+        "specialistanalysis": "Borderlands 3 is a game that is well worth the price of admission. The game is a masterpiece of storytelling, world-building, and character development. The game is set in a post-apocalyptic world where the player must navigate the wasteland to uncover the truth behind a conspiracy that threatens to destroy everything. The game is a must-play for fans of the genre, and it is sure to be a classic for years to come.",
+        "rating": "9/10"
     },
     {
         "title": "Lies of P",
@@ -167,7 +357,19 @@
                     "https://i.ytimg.com/vi/NH_mJFOQJzE/maxresdefault.jpg"],
         "publisher": "Neowiz",
         "description": "Lies of P is a story-driven action RPG set in a high fantasy world where you'll encounter terrifying monsters and engage in epic battles. Explore the world to find new stories and new characters to recruit. Immerse yourself in the world of Lies of P and discover the truth behind the lies.",
-        "livestream": "https://www.twitch.tv/directory/game/Lies%20of%20P"
+        "livestream": "https://www.twitch.tv/directory/game/Lies%20of%20P",
+        "requirements": [
+            "OS: Windows 7/8/10 (64-bit OS required)",
+            "Processor: AMD Ryzen 3 1200 / Intel Core i5-4460",
+            "Memory: 8 GB RAM",
+            "Graphics: AMD Radeon R9 380 / NVIDIA GeForce GTX 960",
+            "DirectX: Version 12",
+            "Storage: 50 GB available space"
+        ],
+        "agerating": "Mature 17+",
+        "plataform": "PC, PS4, PS5, Xbox One, Xbox Series X/S",
+        "specialistanalysis": "Lies of P is a game that is well worth the price of admission. The game is a masterpiece of storytelling, world-building, and character development. The game is set in a post-apocalyptic world where the player must navigate the wasteland to uncover the truth behind a conspiracy that threatens to destroy everything. The game is a must-play for fans of the genre, and it is sure to be a classic for years to come.",
+        "rating": "9/10"
     },
     {
         "title": "DOOM Eternal",
@@ -177,7 +379,19 @@
                     "https://venturebeat.com/wp-content/uploads/2018/08/doom-eternal.jpg?fit=2288%2C1289&strip=all"],
         "publisher": "id Software",
         "description": "Hell's armies have invaded Earth. Become the Slayer in an epic single-player campaign to conquer demons across dimensions and stop the final destruction of humanity. The only thing they fear... is you.",
-        "livestream": "https://www.twitch.tv/directory/game/DOOM%20Eternal"
+        "livestream": "https://www.twitch.tv/directory/game/DOOM%20Eternal",
+        "requirements": [
+            "OS: 64-bit Windows 7 / 64-Bit Windows 10",
+            "Processor: Intel Core i5 @ 3.3 GHz or better, or AMD Ryzen 3 @ 3.1 GHz or better",
+            "Memory: 8 GB RAM",
+            "Graphics: NVIDIA GeForce GTX 1050Ti (4GB), GTX 1060 (3GB), GTX 1650 (4GB) or AMD Radeon R9 280(3GB), AMD Radeon R9 290 (4GB), RX 470 (4GB)",
+            "DirectX: Version 11",
+            "Storage: 50 GB available space"
+        ],
+        "agerating": "Mature 17+",
+        "plataform": "PC, PS4, PS5, Xbox One, Xbox Series X/S",
+        "specialistanalysis": "DOOM Eternal is a game that is well worth the price of admission. The game is a masterpiece of storytelling, world-building, and character development. The game is set in a post-apocalyptic world where the player must navigate the wasteland to uncover the truth behind a conspiracy that threatens to destroy everything. The game is a must-play for fans of the genre, and it is sure to be a classic for years to come.",
+        "rating": "9/10"
     },
     {
         "title": "The Witcher 3: Wild Hunt",
@@ -187,7 +401,18 @@
                     "https://i.ytimg.com/vi/xx8kQ4s5hCY/maxresdefault.jpg"],
         "publisher": "CD Projekt Red",
         "description": "The Witcher: Wild Hunt is a story-driven open world RPG set in a visually stunning fantasy universe full of meaningful choices and impactful consequences. In The Witcher, you play as professional monster hunter Geralt of Rivia tasked with finding a child of prophecy in a vast open world rich with merchant cities, pirate islands, dangerous mountain passes, and forgotten caverns to explore.",
-        "livestream": "https://www.twitch.tv/directory/game/The%20Witcher%203%3A%20Wild%20Hunt"
+        "livestream": "https://www.twitch.tv/directory/game/The%20Witcher%203%3A%20Wild%20Hunt",
+        "requirements": [
+            "OS: 64-bit Windows 7, 64-bit Windows 8 (8.1) or 64-bit Windows 10",
+            "Processor: Intel CPU Core i5-2500K 3.3GHz / AMD CPU Phenom II X4 940",
+            "Memory: 6 GB RAM",
+            "Graphics: Nvidia GPU GeForce GTX 660 / AMD GPU Radeon HD 7870",
+            "Storage: 35 GB available space"
+        ],
+        "agerating": "Mature 17+",
+        "plataform": "PC, PS4, PS5, Xbox One, Xbox Series X/S",
+        "specialistanalysis": "The Witcher 3: Wild Hunt is a game that is well worth the price of admission. The game is a masterpiece of storytelling, world-building, and character development. The game is set in a post-apocalyptic world where the player must navigate the wasteland to uncover the truth behind a conspiracy that threatens to destroy everything. The game is a must-play for fans of the genre, and it is sure to be a classic for years to come.",
+        "rating": "9/10"
     },
     {
         "title": "The Elder Scrolls V: Skyrim",
@@ -197,7 +422,19 @@
                     "https://i.ytimg.com/vi/_fctOSzwv_0/maxresdefault.jpg"],
         "publisher": "Bethesda Game Studios",
         "description": "EPIC FANTASY REBORN The next chapter in the highly anticipated Elder Scrolls saga arrives from the makers of the 2006 and 2008 Games of the Year, Bethesda Game Studios. Skyrim reimagines and revolutionizes the open-world fantasy epic, bringing to life a complete virtual world open for you to explore any way you choose.",
-        "livestream": "https://www.twitch.tv/directory/game/The%20Elder%20Scrolls%20V%3A%20Skyrim"
+        "livestream": "https://www.twitch.tv/directory/game/The%20Elder%20Scrolls%20V%3A%20Skyrim",
+        "requirements": [
+            "OS: Windows 7/Vista/XP PC (32 or 64 bit)",
+            "Processor: Dual Core 2.0GHz or equivalent processor",
+            "Memory: 2 GB RAM",
+            "Graphics: Direct X 9.0c compliant video card with 512 MB of RAM",
+            "DirectX: Version 9.0c",
+            "Storage: 6 GB available space"
+        ],
+        "agerating": "Mature 17+",
+        "plataform": "PC, PS4, PS5, Xbox One, Xbox Series X/S",
+        "specialistanalysis": "The Elder Scrolls V: Skyrim is a game that is well worth the price of admission. The game is a masterpiece of storytelling, world-building, and character development. The game is set in a post-apocalyptic world where the player must navigate the wasteland to uncover the truth behind a conspiracy that threatens to destroy everything. The game is a must-play for fans of the genre, and it is sure to be a classic for years to come.",
+        "rating": "9/10"
     },
     {
         "title": "The Elder Scrolls Online",
@@ -207,7 +444,19 @@
                     "https://i.ytimg.com/vi/qzzAV9MIX38/maxresdefault.jpg"],
         "publisher": "Bethesda Game Studios",
         "description": "Experience an ever-expanding story across all of Tamriel in The Elder Scrolls Online, an award-winning online RPG. Explore a rich, living world with friends or embark upon a solo adventure. Enjoy complete control over how your character looks and plays, from the weapons you wield to the skills you learn - the choices you make will shape your destiny. Welcome to a world without limits.",
-        "livestream": "https://www.twitch.tv/directory/game/The%20Elder%20Scrolls%20Online"
+        "livestream": "https://www.twitch.tv/directory/game/The%20Elder%20Scrolls%20Online",
+        "requirements": [
+            "OS: Windows 7 64-bit",
+            "Processor: Intel® Core i3 540 or AMD A6-3620",
+            "Memory: 4 GB RAM",
+            "Graphics: DirectX 11 compliant video card with 1 GB of RAM (NVIDIA GeForce 460 / AMD Radeon 6850)",
+            "DirectX: Version 11",
+            "Storage: 85 GB available space"
+        ],
+        "agerating": "Mature 17+",
+        "plataform": "PC, PS4, PS5, Xbox One, Xbox Series X/S",
+        "specialistanalysis": "The Elder Scrolls Online is a game that is well worth the price of admission. The game is a masterpiece of storytelling, world-building, and character development. The game is set in a post-apocalyptic world where the player must navigate the wasteland to uncover the truth behind a conspiracy that threatens to destroy everything. The game is a must-play for fans of the genre, and it is sure to be a classic for years to come.",
+        "rating": "9/10"
     },
     {
         "title": "The Forest",
@@ -217,7 +466,19 @@
                     "https://cdn.akamai.steamstatic.com/steam/apps/242760/ss_e50b7c8bc2f4720859ba13aa32703661192f4d62.1920x1080.jpg?t=1699381053"],
         "publisher": "Endnight Games Ltd",
         "description": "As the lone survivor of a passenger jet crash, you find yourself in a mysterious forest battling to stay alive against a society of cannibalistic mutants. Build, explore, survive in this terrifying first person survival horror simulator.",
-        "livestream": "https://www.twitch.tv/directory/game/The%20Forest"
+        "livestream": "https://www.twitch.tv/directory/game/The%20Forest",
+        "requirements": [
+            "OS: Windows 7",
+            "Processor: Intel Dual-Core 2.4 GHz",
+            "Memory: 4 GB RAM",
+            "Graphics: NVIDIA GeForce 8800GT",
+            "DirectX: Version 9.0",
+            "Storage: 5 GB available space"
+        ],
+        "agerating": "Mature 17+",
+        "plataform": "PC, PS4, PS5, Xbox One, Xbox Series X/S",
+        "specialistanalysis": "The Forest is a game that is well worth the price of admission. The game is a masterpiece of storytelling, world-building, and character development. The game is set in a post-apocalyptic world where the player must navigate the wasteland to uncover the truth behind a conspiracy that threatens to destroy everything. The game is a must-play for fans of the genre, and it is sure to be a classic for years to come.",
+        "rating": "8/10"
     },
     {
         "title": "The Crew 2",
@@ -227,7 +488,19 @@
                     "https://cdn.vox-cdn.com/thumbor/zCcoea4s8hj8LVrY_N1Vv_apHoA=/0x0:1908x1072/1200x675/filters:focal(761x493:1065x797)/cdn.vox-cdn.com/uploads/chorus_image/image/60211981/the_crew_2_review.0.png"],
         "publisher": "Ivory Tower",
         "description": "The newest iteration in the revolutionary franchise, The Crew® 2 captures the thrill of the American motorsports spirit in one of the most exhilarating open worlds ever created. Welcome to Motornation, a huge, varied, action-packed, and beautiful playground built for motorsports throughout the entire US of A. Enjoy unrestrained exploration on ground, sea, and sky. From coast to coast, street and pro racers, off-road explorers, and freestylers gather and compete in all kinds of disciplines. Join them in high-octane contests and share every glorious moment with the world.",
-        "livestream": "https://www.twitch.tv/directory/game/The%20Crew%202"
+        "livestream": "https://www.twitch.tv/directory/game/The%20Crew%202",
+        "requirements": [
+            "OS: Windows 7 SP1, Windows 8.1, Windows 10 (64-bit versions only)",
+            "Processor: Intel Core i5-2400s @ 2.5 GHz or AMD FX-6100 @ 3.3 GHz or equivalent",
+            "Memory: 8 GB RAM",
+            "Graphics: NVIDIA GeForce GTX 660 or AMD HD 7870 (2GB VRAM with Shader Model 5.0 or better)",
+            "DirectX: Version 11",
+            "Storage: 25 GB available space"
+        ],
+        "agerating": "Teen 13+",
+        "plataform": "PC, PS4, PS5, Xbox One, Xbox Series X/S",
+        "specialistanalysis": "The Crew 2 is a game that is well worth the price of admission. The game is a masterpiece of storytelling, world-building, and character development. The game is set in a post-apocalyptic world where the player must navigate the wasteland to uncover the truth behind a conspiracy that threatens to destroy everything. The game is a must-play for fans of the genre, and it is sure to be a classic for years to come.",
+        "rating": "8/10"
     },
     {
         "title": "The Binding of Isaac: Rebirth",
@@ -237,7 +510,19 @@
                     "https://i.ytimg.com/vi/_A10s9RhVj8/maxresdefault.jpg"],
         "publisher": "Nicalis, Inc.",
         "description": "The Binding of Isaac: Rebirth is a randomly generated action RPG shooter with heavy roguelike elements. Players will accompany Isaac on a quest to escape his mother, facing off against droves of mysterious creatures, discovering secrets, and fighting fearsome bosses. Along the way, Isaac can find bizarre treasures that change his form and give him superhuman abilities. But it will not be easy! Isaac's mother has locked him in the basement and is convinced that he needs to be sacrificed to prove her faith. Isaac must use his wits and abilities to escape and finally find the truth.",
-        "livestream": "https://www.twitch.tv/directory/game/The%20Binding%20of%20Isaac%3A%20Rebirth"
+        "livestream": "https://www.twitch.tv/directory/game/The%20Binding%20of%20Isaac%3A%20Rebirth",
+        "requirements": [
+            "OS: Windows XP, Vista, 7",
+            "Processor: 2.5 GHz",
+            "Memory: 1 GB RAM",
+            "Graphics: Direct X9.0c Compatible Card",
+            "DirectX: Version 9.0c",
+            "Storage: 449 MB available space"
+        ],
+        "agerating": "Teen 13+",
+        "plataform": "PC, PS4, PS5, Xbox One, Xbox Series X/S, Nintendo Switch",
+        "specialistanalysis": "The Binding of Isaac: Rebirth is a game that is well worth the price of admission. The game is a masterpiece of storytelling, world-building, and character development. The game is set in a post-apocalyptic world where the player must navigate the wasteland to uncover the truth behind a conspiracy that threatens to destroy everything. The game is a must-play for fans of the genre, and it is sure to be a classic for years to come.",
+        "rating": "8/10"
     },
     {
         "title": "Subnautica",
@@ -247,7 +532,19 @@
                     "https://images.squarespace-cdn.com/content/v1/5859d542f7e0ab537e412489/1519245120299-MOYC1NYO81YEWEU3EFW6/subnautica-02.jpeg"],
         "publisher": "Unknown Worlds Entertainment",
         "description": "Descend into the depths of an alien underwater world filled with wonder and peril. Craft equipment, pilot submarines and out-smart wildlife to explore lush coral reefs, volcanoes, cave systems, and more - all while trying to survive.",
-        "livestream": "https://www.twitch.tv/directory/game/Subnautica"
+        "livestream": "https://www.twitch.tv/directory/game/Subnautica",
+        "requirements": [
+            "OS: Windows Vista SP2 or newer, 64-bit",
+            "Processor: Intel Haswell 2 cores / 4 threads @ 2.5Ghz or equivalent",
+            "Memory: 4 GB RAM",
+            "Graphics: Intel HD 4600 or equivalent - This includes most GPUs scoring greater than 950pts in the 3DMark Fire Strike benchmark",
+            "DirectX: Version 11",
+            "Storage: 20 GB available space"
+        ],
+        "agerating": "Teen 13+",
+        "plataform": "PC, PS4, PS5, Xbox One, Xbox Series X/S, Nintendo Switch",
+        "specialistanalysis": "Subnautica is a game that is well worth the price of admission. The game is a masterpiece of storytelling, world-building, and character development. The game is set in a post-apocalyptic world where the player must navigate the wasteland to uncover the truth behind a conspiracy that threatens to destroy everything. The game is a must-play for fans of the genre, and it is sure to be a classic for years to come.",
+        "rating": "8/10"
     },
     {
         "title": "Sekiro: Shadows Die Twice",
@@ -257,7 +554,19 @@
                     "https://i.ytimg.com/vi/Z4k9JD4oeNQ/maxresdefault.jpg"],
         "publisher": "FromSoftware",
         "description": "Carve your own clever path to vengeance in an all-new adventure from developer FromSoftware, creators of Bloodborne and the Dark Souls series. In Sekiro: Shadows Die Twice you are the 'one-armed wolf', a disgraced and disfigured warrior rescued from the brink of death. Bound to protect a young lord who is the descendant of an ancient bloodline, you become the target of many vicious enemies, including the dangerous Ashina clan. When the young lord is captured, nothing will stop you on a perilous quest to regain your honor, not even death itself.",
-        "livestream": "https://www.twitch.tv/directory/game/Sekiro%3A%20Shadows%20Die%20Twice"
+        "livestream": "https://www.twitch.tv/directory/game/Sekiro%3A%20Shadows%20Die%20Twice",
+        "requirements": [
+            "OS: Windows 7 64-bit | Windows 8 64-bit | Windows 10 64-bit",
+            "Processor: Intel Core i3-2100 | AMD FX-6300",
+            "Memory: 4 GB RAM",
+            "Graphics: NVIDIA GeForce GTX 760 | AMD Radeon HD 7950",
+            "DirectX: Version 11",
+            "Storage: 25 GB available space"
+        ],
+        "agerating": "Mature 17+",
+        "plataform": "PC, PS4, PS5, Xbox One, Xbox Series X/S",
+        "specialistanalysis": "Sekiro: Shadows Die Twice is a game that is well worth the price of admission. The game is a masterpiece of storytelling, world-building, and character development. The game is set in a post-apocalyptic world where the player must navigate the wasteland to uncover the truth behind a conspiracy that threatens to destroy everything. The game is a must-play for fans of the genre, and it is sure to be a classic for years to come.",
+        "rating": "9/10"
     },
     {
         "title": "Rust",
@@ -267,7 +576,19 @@
                     "https://cdn.mos.cms.futurecdn.net/9LYHPZ22BX6ERzjs9pmyYM.jpg"],
         "publisher": "Facepunch Studios",
         "description": "The only aim in Rust is to survive. To do this you will need to overcome struggles such as hunger, thirst and cold. Build a fire. Build a shelter. Kill animals for meat. Protect yourself from other players, and kill them for meat. Create alliances with other players and form a town. Whatever it takes to survive.",
-        "livestream": "https://www.twitch.tv/directory/game/Rust"
+        "livestream": "https://www.twitch.tv/directory/game/Rust",
+        "requirements": [
+            "OS: Windows 8.1 64bit",
+            "Processor: Intel Core i7-3770 / AMD FX-9590 or better",
+            "Memory: 10 GB RAM",
+            "Graphics: GTX 670 2GB / AMD R9 280 better",
+            "DirectX: Version 11",
+            "Storage: 20 GB available space"
+        ],
+        "agerating": "Mature 17+",
+        "plataform": "PC, PS4, PS5, Xbox One, Xbox Series X/S",
+        "specialistanalysis": "Rust is a game that is well worth the price of admission. The game is a masterpiece of storytelling, world-building, and character development. The game is set in a post-apocalyptic world where the player must navigate the wasteland to uncover the truth behind a conspiracy that threatens to destroy everything. The game is a must-play for fans of the genre, and it is sure to be a classic for years to come.",
+        "rating": "8/10"
     },
     {
         "title": "Risk of Rain 2",
@@ -277,7 +598,19 @@
                     "https://cdn.akamai.steamstatic.com/steam/apps/632360/ss_2bb49071317f7b241a527cf6e7aabd2cb6af055b.1920x1080.jpg?t=1699992764"],
         "publisher": "Hopoo Games",
         "description": "The classic multiplayer roguelike, Risk of Rain, returns with an extra dimension and more challenging action. Play solo, or team up with up to four friends to fight your way through hordes of monsters, unlock new loot, and find a way to escape the planet.",
-        "livestream": "https://www.twitch.tv/directory/game/Risk%20of%20Rain%202"
+        "livestream": "https://www.twitch.tv/directory/game/Risk%20of%20Rain%202",
+        "requirements": [
+            "OS: Windows 7 or newer, 64-bit",
+            "Processor: Intel Core i3-6100 / AMD FX-8350",
+            "Memory: 8 GB RAM",
+            "Graphics: GTX 580 / AMD HD 7870",
+            "DirectX: Version 11",
+            "Storage: 4 GB available space"
+        ],
+        "agerating": "Teen 13+",
+        "plataform": "PC, PS4, PS5, Xbox One, Xbox Series X/S, Nintendo Switch",
+        "specialistanalysis": "Risk of Rain 2 is a game that is well worth the price of admission. The game is a masterpiece of storytelling, world-building, and character development. The game is set in a post-apocalyptic world where the player must navigate the wasteland to uncover the truth behind a conspiracy that threatens to destroy everything. The game is a must-play for fans of the genre, and it is sure to be a classic for years to come.",
+        "rating": "8/10"
     },
     {
         "title": "Raft",
@@ -287,7 +620,19 @@
                     "https://cdn.akamai.steamstatic.com/steam/apps/648800/ss_ce675c9e2bee34a08c6e2f0c8357354bcd4e5f1d.1920x1080.jpg?t=1693638925"],
         "publisher": "Redbeet Interactive",
         "description": "By yourself or with friends, your mission is to survive an epic oceanic adventure across a perilous sea! Gather debris to survive, expand your raft and be wary of the dangers of the ocean!",
-        "livestream": "https://www.twitch.tv/directory/game/Raft"
+        "livestream": "https://www.twitch.tv/directory/game/Raft",
+        "requirements": [
+            "OS: Windows 7 or later",
+            "Processor: 2.6 GHz Dual Core or similar",
+            "Memory: 4 GB RAM",
+            "Graphics: GeForce GTX 500 series or similar",
+            "DirectX: Version 11",
+            "Storage: 6 GB available space"
+        ],
+        "agerating": "Teen 13+",
+        "plataform": "PC, PS4, PS5, Xbox One, Xbox Series X/S, Nintendo Switch",
+        "specialistanalysis": "Raft is a game that is well worth the price of admission. The game is a masterpiece of storytelling, world-building, and character development. The game is set in a post-apocalyptic world where the player must navigate the wasteland to uncover the truth behind a conspiracy that threatens to destroy everything. The game is a must-play for fans of the genre, and it is sure to be a classic for years to come.",
+        "rating": "8/10"
     },
     {
         "title": "Outward Definitive Edition",
@@ -297,6 +642,18 @@
                     "https://i.ytimg.com/vi/HwNuLX8RQzg/maxresdefault.jpg"],
         "publisher": "Nine Dots Studio",
         "description": "You are not a god, nor a chosen one. The path before you is fraught with perils. Outward delivers an immersive RPG experience coupled with survival gameplay, offering a deeply-rewarding challenge for the most avid gamers.",
-        "livestream": "https://www.twitch.tv/directory/game/Outward"
+        "livestream": "https://www.twitch.tv/directory/game/Outward",
+        "requirements": [
+            "OS: Windows 7 (64 Bit) / 8 (64 Bit) / 10 (64 Bit)",
+            "Processor: Intel Core i5-750 or equivalent",
+            "Memory: 4 GB RAM",
+            "Graphics: Nvidia GTS 450 or equivalent",
+            "DirectX: Version 11",
+            "Storage: 15 GB available space"
+        ],
+        "agerating": "Teen 13+",
+        "plataform": "PC, PS4, PS5, Xbox One, Xbox Series X/S",
+        "specialistanalysis": "Outward Definitive Edition is a game that is well worth the price of admission. The game is a masterpiece of storytelling, world-building, and character development. The game is set in a post-apocalyptic world where the player must navigate the wasteland to uncover the truth behind a conspiracy that threatens to destroy everything. The game is a must-play for fans of the genre, and it is sure to be a classic for years to come.",
+        "rating": "8/10"
     }
 ]
