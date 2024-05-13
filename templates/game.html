@@ -25,15 +25,18 @@
         margin: 20px auto;
         max-width: 100%;
       }
-      .game-details {
+      .game-details,
+      .game-gallery {
         display: flex;
         justify-content: space-around;
         margin: 20px 0;
       }
-      .game-description {
+      .game-description,
+      .game-requirements {
         width: 50%;
       }
-      .game-info {
+      .game-info,
+      .game-specialist {
         width: 40%;
       }
       .game-info p,
@@ -66,7 +69,9 @@
         height: 100px;
         object-fit: cover;
       }
-
+      .game-details p {
+        text-align: justify;
+      }
       .alert {
         position: fixed;
         top: 10px;
@@ -175,6 +180,9 @@
 
     <h1 class="game-title">{{ game.title }}</h1>
     <img class="game-image" src="{{ game.images[0] }}" alt="{{ game.title }}" />
+    <div class="text-center">
+      <a class="btn btn-primary id" id="addToCartBtn">ADD TO CART</a>
+    </div>
     <div class="game-details">
       <div class="game-description">
         <h3>Description</h3>
@@ -186,32 +194,34 @@
         <p>Age Rating: {{ game.agerating }}</p>
         <p>Platform: {{ game.platform }}</p>
         <p>Rating: {{ game.rating }}</p>
-        <h1>{{ game.publisher }}</h1>
+        <p>Publisher: {{ game.publisher }}</p>
       </div>
     </div>
-    <div class="game-requirements">
-      <h3>Requirements</h3>
-      <p>{{ game.requirements }}</p>
+    <div class="game-details">
+      <div class="game-requirements">
+        <h3>Requirements</h3>
+        {% for requirement in game.requirements %} {{ requirement }}<br />
+        {% endfor %}
+      </div>
+      <div class="game-specialist">
+        <h3>Specialist Analysis</h3>
+        <p>{{ game.specialistanalysis }}</p>
+      </div>
     </div>
-    <div class="game-specialist">
-      <h3>Specialist Analysis</h3>
-      <p>{{ game.specialistanalysis }}</p>
-    </div>
-    <div class="text-center">
-      <a class="btn btn-primary id" id="addToCartBtn">ADD TO CART</a>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="game-gallery">
-          {% for image in game.images %}
-          <img src="{{ image }}" alt="{{ game.title }}" />
-          {% endfor %}
+    <div class="game-details">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="game-gallery">
+            {% for image in game.images %}
+            <img src="{{ image }}" alt="{{ game.title }}" />
+            {% endfor %}
+          </div>
         </div>
-      </div>
-      <div class="col-md-6">
-        <div
-          class="livestreams d-flex justify-content-center align-items-center flex-wrap"
-        ></div>
+        <div class="col-md-6">
+          <div
+            class="livestreams d-flex justify-content-center align-items-center flex-wrap"
+          ></div>
+        </div>
       </div>
     </div>
 

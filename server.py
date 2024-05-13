@@ -2,7 +2,6 @@ from flask import Flask, request, render_template, redirect, url_for, session, j
 import sqlite3
 import os
 import json
-import argparse
 
 DATABASE_NAME = "database.db"
 app = Flask(__name__)
@@ -71,7 +70,7 @@ class DatabaseWrappers:
             self.cursor.execute("""
                 INSERT INTO games (title, price, genre, images, publisher, description, livestream, requirements, agerating, platform, specialistanalysis, rating) 
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-            """, (title, price, ', '.join(genre), ', '.join(images), publisher, description, livestream, str(requirements), agerating, platform, specialistanalysis, rating))
+            """, (title, price, genre, ', '.join(images), publisher, description, livestream, str(requirements), agerating, platform, specialistanalysis, rating))
             self.conn.commit()
             
     def get_game_details(self, game_id):
