@@ -169,7 +169,7 @@
 
           var totalPrice = calculateTotal(cartItem);
           var totalElement = document.getElementById("totalPrice");
-          totalElement.textContent = totalPrice + "€";
+          totalElement.textContent = totalPrice.toFixed(2) + "€";
         });
       }
 
