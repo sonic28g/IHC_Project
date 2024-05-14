@@ -113,24 +113,29 @@
       </div>
 
       <div class="col-4 mx-4">
-        <div class="d-flex col border border-3 pb-5">
-          <div class="col align-content-end">Discount</div>
-          <div class="col align-content-end">
-            <span id="discount">0%</span>
-            <span id="discountAmount"> (0€)</span>
+        <div class="border border-3 pb-5">
+          <div class="row mb-3">
+            <div class="col align-content-end"></div>
+            <div class="col align-content-end">
+              <span id="basePrice">0€</span>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col align-content-end">Discount</div>
+            <div class="col align-content-end">
+              <span id="discountAmount">- 0€</span>
+              <span id="discount"> (0%)</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col align-content-end">Total</div>
+            <div class="col align-content-end">
+              <span id="totalPrice">0€</span>
+            </div>
           </div>
         </div>
-        <div class="d-flex col border border-3 pb-5">
-          <div class="col align-content-end">Total</div>
-          <div class="col align-content-end">
-            <span id="totalPrice">0€</span>
-          </div>
-        </div>
-        <a href="{{ url_for('payment') }}" class="btn btn-primary mt-2"
-          >Check Out</a
-        >
+        <a href="{{ url_for('payment') }}" class="btn btn-primary mt-2">Check Out</a>
       </div>
-    </div>
 
     <script>
       window.onload = function () {
@@ -178,6 +183,8 @@
         cartItem.forEach(function (item) {
           total += item.price * item.quantity;
         });
+        var basePriceElement = document.getElementById("basePrice");
+        basePriceElement.textContent = total.toFixed(2) + "€";
         return total;
       }
 
@@ -199,22 +206,27 @@
         var promoCodes = ["C39N-Q8YB-Q37B", "B45D-C7GH-M5EW"];
         if (promoCodes.includes(promoCode) && !promoCodeApplied) {
           var totalElement = document.getElementById("totalPrice");
-          var total = parseFloat(totalElement.textContent);
-          var discount = total * 0.2;
-          total -= discount;
+          var basePrice = parseFloat(
+            document.getElementById("basePrice").textContent
+          );
+          var discount = basePrice * 0.2;
+          var total = basePrice - discount;
           totalElement.textContent = total.toFixed(2) + "€";
           promoCodeInput.value = "";
 
           var discountElement = document.getElementById("discount");
-          discountElement.textContent = "20%";
+          discountElement.textContent = "(20%)";
 
           var discountAmountElement = document.getElementById("discountAmount");
-          discountAmountElement.textContent = " (" + discount.toFixed(2) + "€)";
+          discountAmountElement.textContent = "-" + discount.toFixed(2) + "€";
 
           promoCodeApplied = true;
         } else {
           if (promoCodeApplied) {
-            showAlert("A promo code has already been applied.", "alert-warning");
+            showAlert(
+              "A promo code has already been applied.",
+              "alert-warning"
+            );
           } else {
             showAlert("Invalid promo code.", "alert-danger");
           }
