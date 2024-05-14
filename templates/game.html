@@ -15,34 +15,80 @@
         padding: 0;
         background-color: #f0f0f0;
       }
+
+      .game-header {
+        display: flex;
+        align-items: center;
+        margin: 20px 0;
+      }
+
+      .game-header .game-title-image {
+        width: 50%;
+      }
+
+      .game-header .game-title-image img {
+        max-width: 100%;
+      }
+
+      .game-info-box {
+        width: 45%;
+        border: 1px solid #ccc;
+        padding: 20px;
+        box-sizing: border-box;
+        margin: 10px;
+      }
+
+      .game-info-box p {
+        text-align: justify;
+      }
+
       .game-title {
         text-align: center;
         font-size: 2em;
         margin-top: 20px;
       }
+
       .game-image {
         display: block;
         margin: 20px auto;
         max-width: 100%;
       }
-      .game-details,
+
       .game-gallery {
         display: flex;
         justify-content: space-around;
         margin: 20px 0;
       }
+
       .game-description,
       .game-requirements {
         width: 50%;
       }
+
       .game-info,
       .game-specialist {
         width: 40%;
       }
+
       .game-info p,
       .game-info h1 {
         margin: 10px 0;
       }
+
+      .game-details {
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid #ccc;
+        padding: 20px;
+        box-sizing: border-box;
+        margin: 10px;
+      }
+
+      .game-requirements,
+      .game-specialist {
+        width: 45%;
+      }
+
       .add-to-cart {
         display: block;
         background-color: #007bff;
@@ -53,6 +99,7 @@
         text-decoration: none;
         width: fit-content;
       }
+
       .game-gallery {
         display: flex;
         justify-content: space-around;
@@ -60,18 +107,18 @@
         max-width: 30%;
         height: auto;
       }
+
       .card .card-img-top {
         width: 50%;
         height: auto;
       }
+
       .game-gallery img {
         width: 100px;
         height: 100px;
         object-fit: cover;
       }
-      .game-details p {
-        text-align: justify;
-      }
+
       .alert {
         position: fixed;
         top: 10px;
@@ -178,25 +225,29 @@
       </div>
     </nav>
 
-    <h1 class="game-title">{{ game.title }}</h1>
-    <img class="game-image" src="{{ game.images[0] }}" alt="{{ game.title }}" />
-    <div class="text-center">
-      <a class="btn btn-primary id" id="addToCartBtn">ADD TO CART</a>
-    </div>
-    <div class="game-details">
-      <div class="game-description">
-        <h3>Description</h3>
-        <p>{{ game.description }}</p>
+    <div class="game-header">
+      <div class="game-title-image">
+        <h1 class="game-title">{{ game.title }}</h1>
+        <img
+          class="game-image"
+          src="{{ game.images[0] }}"
+          alt="{{ game.title }}"
+        />
+        <div class="text-center">
+          <a class="btn btn-primary id" id="addToCartBtn">ADD TO CART</a>
+        </div>
       </div>
-      <div class="game-info">
-        <p>Price: {{ game.price }}€</p>
-        <p>Genre: {{ game.genre }}</p>
-        <p>Age Rating: {{ game.agerating }}</p>
-        <p>Platform: {{ game.platform }}</p>
-        <p>Rating: {{ game.rating }}</p>
-        <p>Publisher: {{ game.publisher }}</p>
+      <div class="game-info-box">
+        <p><strong>Publisher:</strong> {{ game.publisher }}</p>
+        <p><strong>Description:</strong> {{ game.description }}</p>
+        <p><strong>Price:</strong> {{ game.price }}€</p>
+        <p><strong>Genre:</strong> {{ game.genre }}</p>
+        <p><strong>Age Rating:</strong> {{ game.agerating }}</p>
+        <p><strong>Platform:</strong> {{ game.platform }}</p>
+        <p><strong>Rating:</strong> {{ game.rating }}</p>
       </div>
     </div>
+
     <div class="game-details">
       <div class="game-requirements">
         <h3>Requirements</h3>
@@ -208,6 +259,7 @@
         <p>{{ game.specialistanalysis }}</p>
       </div>
     </div>
+
     <div class="game-details">
       <div class="row">
         <div class="col-md-6">
@@ -242,7 +294,7 @@
           var card = document.createElement("div");
           card.classList.add("mx-auto", "my-2");
           card.innerHTML = `
-    <div class="card">
+    <div class="a">
       <img src="${livestream.thumbnail}" class="card-img-top" alt="${livestream.title}">
       <div class="card-body">
           <h5 class="card-title">${livestream.title}</h5>
