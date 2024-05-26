@@ -1,246 +1,205 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-    <title>Game Vault Keys</title>
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='style.css') }}"
-    />
-  </head>
-  
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="{{ url_for('index') }}"
-          ><img
-            src="{{ url_for('static', filename='logo.png') }}"
-            alt=""
-            width="60"
-            height="45"
-            class="d-inline-block align-text-top"
-        /></a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+  <title>Game Vault Keys</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+</head>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="{{ url_for('index') }}"
-                >Store</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('missions') }}">Quizzes</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('livestreams') }}"
-                >Livestreams</a
-              >
-            </li>
-          </ul>
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item active">
-              <a class="nav-link d-inline-block" aria-current="page" href="{{ url_for('cart') }}"
-                >Cart</a
-              >
-            </li>
-            <li class="nav-item">
-              {% if current_user %}
-              <a
-                class="nav-link d-inline-block"
-                href="{{ url_for('profile') }}"
-              >
-                Profile
-              </a>
-              <a class="nav-link d-inline-block" href="{{ url_for('logout') }}"
-                >Logout</a
-              >
-              {% else %}
-              <a class="nav-link d-inline-block" href="{{ url_for('login') }}"
-                >Login</a
-              >
-              {% endif %}
-            </li>
-          </ul>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{{ url_for('index') }}">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="" width="60" height="45" class="d-inline-block align-text-top"/>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('index') }}">Store</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('missions') }}">Quizzes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('livestreams') }}">Livestreams</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item active">
+            <a class="nav-link d-inline-block" aria-current="page" href="{{ url_for('cart') }}">Cart</a>
+          </li>
+          <li class="nav-item">
+            {% if current_user %}
+              <a class="nav-link d-inline-block" href="{{ url_for('profile') }}">Profile</a>
+              <a class="nav-link d-inline-block" href="{{ url_for('logout') }}">Logout</a>
+            {% else %}
+              <a class="nav-link d-inline-block" href="{{ url_for('login') }}">Login</a>
+            {% endif %}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="row mt-4 ms-4">
+    <div class="col">
+      <h3>Payment Method</h3>
+      <div class="col-7 mt-4">
+        <ul type="circle">
+          <li>
+            <input type="checkbox" id="cardCheckbox"> Cartão
+          </li>
+          <div class="row mt-4 cardFields">
+            <div class="col-5 mx-2">
+              <div class="row">
+                <input type="text" class="form-control" id="cardNumber" placeholder="Nº Cartão"/>
+              </div>
+              <div class="row">
+                <input type="text" class="form-control" id="cardName" placeholder="Nome do Titular"/>
+              </div>
+            </div>
+            <div class="col-5 mx-2">
+              <div class="row">
+                <input type="text" class="form-control" id="cardExpiration" placeholder="Data de validade (MM/YY)"/>
+              </div>
+              <div class="row">
+                <input type="text" class="form-control" id="cardCVC" placeholder="CVC"/>
+              </div>
+            </div>
+          </div>
+          <li>
+            <input type="checkbox" id="mbWayCheckbox"> MBWay
+          </li>
+          <div class="row mt-4 mbWayFields">
+            <div class="col-4 mx-2">
+              <div class="row">
+                <input type="text" class="form-control" id="mbWayNumber" placeholder="Nº telemóvel"/>
+              </div>
+            </div>
+          </div>
+        </ul>
+      </div>
+      <button type="button" class="btn btn-outline-dark mt-2" id="confirmPaymentBtn" data-bs-toggle="modal" data-bs-target="#PaymentModal">Confirm Payment</button>
+    </div>
+  </div>
+
+  <div class="modal fade" id="PaymentModal" tabindex="-1" aria-labelledby="PaymentModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="PaymentModalLabel">Pagamento Completo</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          O seu pagamento foi efetuado. Pode fechar esta janela para ser redirecionado à página inicial.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" id="closeModalButton" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
-    </nav>
+    </div>
+  </div>
 
-      <div class ="row mt-4 ms-4">
-        <div class="col">
-          <h3>Payment Method</h3>
-          <div class="col-7 mt-4">  
-            <ul type="circle">
-                <li>
-                  <input type="checkbox" id="cardCheckbox"> Cartão
-                </li>
-                <div class="row mt-4 cardFields">
-                    <div class="col-5 mx-2">
-                        <div class="row">
-                            <input
-                                type="text"
-                                class="form-control"
-                                id="cardNumber"
-                                placeholder="Nº Cartão"
-                            />
-                        </div>
-                        <div class="row">
-                            <input
-                                type="text"
-                                class="form-control"
-                                id="cardName"
-                                placeholder="Nome do Titular"
-                            />
-                        </div>    
-                    </div>
-                    <div class="col-5 mx-2">
-                        <div class="row">
-                            <input
-                                type="text"
-                                class="form-control"
-                                id="cardExpiration"
-                                placeholder="Data de validade (MM/YY)"
-                            />
-                        </div>
-                        <div class="row">
-                            <input
-                                type="text"
-                                class="form-control"
-                                id="cardCVC"
-                                placeholder="CVC"
-                            />
-                        </div>    
-                    </div>
-                </div>
-                <li>
-                  <input type="checkbox" id="mbWayCheckbox"> MBWay
-                </li>
-                <div class="row mt-4 mbWayFields">
-                    <div class="col-4 mx-2">
-                        <div class="row">
-                            <input
-                                type="text"
-                                class="form-control"
-                                id="mbWayNumber"
-                                placeholder="Nº telemóvel"
-                            />
-                        </div>
-                    </div>
-                </div>    
-            </ul>
-          </div> 
-          <button type="button" class="btn btn-outline-dark mt-2" id="confirmPaymentBtn">
-            Confirm Payment
-          </button>            
-        </div> 
-      </div>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl7K2E/COxzAqjWnG/xPOd1rW8hg1tD1SJAd/r9ObfQyyP8uHVtEGeW4Z7z" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cAo8HNGiN4D3pp9A4qjmVZHH3qqD6tXcgUdiAuMXm7llsY6E6HnD/AAmKXn9H5GF" crossorigin="anonymous"></script>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const cardCheckbox = document.getElementById("cardCheckbox");
+      const mbWayCheckbox = document.getElementById("mbWayCheckbox");
+      const cardFields = document.querySelector(".cardFields");
+      const mbWayFields = document.querySelector(".mbWayFields");
 
+      cardFields.style.display = "none";
+      mbWayFields.style.display = "none";
 
-      <script>
-        document.addEventListener("DOMContentLoaded", function() {
-          const cardCheckbox = document.getElementById("cardCheckbox");
-          const mbWayCheckbox = document.getElementById("mbWayCheckbox");
-          const cardFields = document.querySelector(".cardFields");
-          const mbWayFields = document.querySelector(".mbWayFields");
-          
-          // Ocultar campos de cartão e MBWay por padrão
-          cardFields.style.display = "none";
+      cardCheckbox.addEventListener("click", function() {
+        if (cardCheckbox.checked) {
+          cardFields.style.display = "block";
           mbWayFields.style.display = "none";
-          
-          // Adicionar eventos de clique às checkboxes
-          cardCheckbox.addEventListener("click", function() {
-              if (cardCheckbox.checked) {
-                  cardFields.style.display = "block";
-                  mbWayFields.style.display = "none";
-                  mbWayCheckbox.checked = false; // Desmarcar a opção de MBWay se o cartão estiver selecionado
-              } else {
-                  cardFields.style.display = "none";
-              }
-          });
-          
-          mbWayCheckbox.addEventListener("click", function() {
-              if (mbWayCheckbox.checked) {
-                  mbWayFields.style.display = "block";
-                  cardFields.style.display = "none";
-                  cardCheckbox.checked = false; // Desmarcar a opção de cartão se o MBWay estiver selecionado
-              } else {
-                  mbWayFields.style.display = "none";
-              }
-          });
-          
-          document.getElementById('confirmPaymentBtn').addEventListener('click', function() {
-            var cardNumber = document.getElementById('cardNumber').value;
-            var cardName = document.getElementById('cardName').value;
-            var cardExpiration = document.getElementById('cardExpiration').value;
-            var cardCVC = document.getElementById('cardCVC').value;
-            var mbWayNumber = document.getElementById('mbWayNumber').value;
-
-            // Expressões regulares para validação
-            var cardNumberRegex = /^\d{16}$/; // Aceita exatamente 16 dígitos
-            var cardExpirationRegex = /^(0[1-9]|1[0-2])\/\d{2}$/; // Aceita MM/YY
-            var cardNameRegex = /^[a-zA-Z\s]+$/; // Aceita apenas letras e espaços
-            var mbWayNumberRegex = /^\d{9}$/; 
-
-
-
-            if (cardCheckbox.checked) {
-              // Validar número do cartão
-              if (!cardNumber.match(cardNumberRegex)) {
-                showAlert('Número do cartão inválido!', 'alert-danger');
-                return;
-              }
-              // Validar nome do titular
-              if (!cardName.match(cardNameRegex)) {
-                showAlert('Nome do titular inválido!', 'alert-danger');
-                return;
-              }
-              // Validar data de validade
-              if (!cardExpiration.match(cardExpirationRegex)) {
-                showAlert('Data de validade inválida!', 'alert-danger');
-                return;
-              }
-              // Validar CVC (pode adicionar validações adicionais se necessário)
-              if (cardCVC === '') {
-                showAlert('Por favor, insira o CVC!', 'alert-danger');
-                return;
-              }
-            } else if (mbWayCheckbox.checked && !mbWayNumber.match(mbWayNumberRegex)) {
-              showAlert('Por favor, insira o número de telemóvel MBWay!', 'alert-danger');
-              return;
-            }
-
-            showAlert('Pagamento completo!', 'alert-success');
-          });
-
-          function showAlert(message, alertClass) {
-            var alertDiv = document.createElement('div');
-            alertDiv.textContent = message;
-            alertDiv.classList.add('alert', 'position-fixed', 'top-0', 'start-50', 'translate-middle-x', alertClass);
-            alertDiv.setAttribute('role', 'alert');
-
-            document.body.appendChild(alertDiv);
-
-            setTimeout(function() {alertDiv.remove();}, 3000);
-          }
+          mbWayCheckbox.checked = false;
+        } else {
+          cardFields.style.display = "none";
+        }
       });
-      </script>
 
-  </body>
+      mbWayCheckbox.addEventListener("click", function() {
+        if (mbWayCheckbox.checked) {
+          mbWayFields.style.display = "block";
+          cardFields.style.display = "none";
+          cardCheckbox.checked = false;
+        } else {
+          mbWayFields.style.display = "none";
+        }
+      });
+      
+
+      document.getElementById('confirmPaymentBtn').addEventListener('click', function() {
+        var cardNumber = document.getElementById('cardNumber').value;
+        var cardName = document.getElementById('cardName').value;
+        var cardExpiration = document.getElementById('cardExpiration').value;
+        var cardCVC = document.getElementById('cardCVC').value;
+        var mbWayNumber = document.getElementById('mbWayNumber').value;
+
+        var cardNumberRegex = /^\d{16}$/;
+        var cardExpirationRegex = /^(0[1-9]|1[0-2])\/\d{2}$/;
+        var cardNameRegex = /^[a-zA-Z\s]+$/;
+        var mbWayNumberRegex = /^\d{9}$/;
+
+        // const paymentModal = document.getElementById('PaymentModal');
+        // const modalInstance = new bootstrap.Modal(paymentModal);
+
+        if (cardCheckbox.checked) {
+          if (!cardNumber.match(cardNumberRegex)) {
+            showAlert('Número do cartão inválido!', 'alert-danger');
+            return;
+          }
+          if (!cardName.match(cardNameRegex)) {
+            showAlert('Nome do titular inválido!', 'alert-danger');
+            return;
+          }
+          if (!cardExpiration.match(cardExpirationRegex)) {
+            showAlert('Data de validade inválida!', 'alert-danger');
+            return;
+          }
+          if (cardCVC === '') {
+            showAlert('Por favor, insira o CVC!', 'alert-danger');
+            return;
+          }
+          // modalInstance.show();
+
+        } else if (mbWayCheckbox.checked && !mbWayNumber.match(mbWayNumberRegex)) {
+          showAlert('Por favor, insira o número de telemóvel MBWay!', 'alert-danger');
+          return;
+        } else {
+          modalInstance.show();
+        }
+        // modalInstance.show();
+
+      showAlert('Pagamento completo!', 'alert-success');
+      });
+
+      document.getElementById('closeModalButton').addEventListener('click', function() {
+        window.location.href = '{{ url_for("index") }}';
+      });
+
+      function showAlert(message, alertClass) {
+        var alertDiv = document.createElement('div');
+        alertDiv.textContent = message;
+        alertDiv.classList.add('alert', 'position-fixed', 'top-0', 'start-50', 'translate-middle-x', alertClass);
+        alertDiv.setAttribute('role', 'alert');
+
+        document.body.appendChild(alertDiv);
+
+        setTimeout(function() {
+          alertDiv.remove();
+        }, 3000);
+      }
+    });
+  </script>
+</body>
 </html>
