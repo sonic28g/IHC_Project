@@ -12,15 +12,6 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='style.css') }}"
     />
-    <style>
-      body{
-        background-image: url('static/bg2.jpg');
-        background-color: rgb(129, 192, 206);
-        background-blend-mode: luminosity;
-      }
-
-
-    </style>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -48,12 +39,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="{{ url_for('index') }}"
-                >Store</a
-              >
+              <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="{{ url_for('store') }}">Store</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ url_for('missions') }}">Quizzes</a>
@@ -92,36 +81,36 @@
       </div>
     </nav>
 
-    <div class="container mt-4 bg-light opacity-50 ">
+    <div class="container mt-4">
       <div class="row">
-        <div class="col-md-12">
-          <h3>
-            KeyVault Games is an idea of ​​an online platform designed to be a one-stop shop for gamers to purchase digital game <u>keys</u>
-            with interactive functions. 
-            Our goal is to have a platform for both casual and hardcore gamers to use and decide which games to buy, or not.
-          </h3>          
+        <div class="col-md-4">
+          <input
+            type="text"
+            class="form-control"
+            id="searchInput"
+            placeholder="Search by game title"
+            style="text-align: left;"
+          />
         </div>
-      </div>
-    </div>  
-
-    <div class="container mt-5 bg-light opacity-50 ">
-      <div class="row">
-        <div class="col-md-12">
-          <h5>
-            TIP: You can receive discounts on your purchases by completing quizzes. Check out the Quizzes page for more information.
-          </h5>            
+        <div class="col-md-4">
+          <select class="form-select" id="sortSelect">
+            <option selected>Sort by...</option>
+            <option value="1">Alphabetical</option>
+            <option value="2">Price</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <select class="form-select" id="genreSelect">
+            <option selected>Show All Genres</option>
+          </select>
         </div>
       </div>
     </div>
 
-    <div class="container mt-5">
-      <img
-        src="{{ url_for('static', filename='logo.png') }}"
-        alt=""
-        width="500"
-        height="300"
-      />  
+    <div class="container mt-4">
+      <div class="row" id="gameCardsContainer"></div>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
   </body>
 </html>

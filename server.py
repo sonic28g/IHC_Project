@@ -121,10 +121,10 @@ def index():
     current_user = session.get('username')
     return render_template('index.html', current_user=current_user)
 
-@app.route('/home')
-def home():
+@app.route('/store')
+def store():
     current_user = session.get('username')
-    return render_template('home.html', current_user=current_user)
+    return render_template('store.html', current_user=current_user)
 
 @app.route('/missions')
 def missions():
