@@ -83,25 +83,47 @@
     </nav>
 
     <div class="row mt-4 ms-4">
-      <div class="col-6">
+      <div class="col-10">
         <div class="col border border-3 pb-5">
           <div class="row">
             <div class="col-md-4">Game Title</div>
-            <div class="col-md-4">Quantity</div>
-          <!--  <div class="col-md-2">Price per unit</div>  -->
-            <div class="col-md-4">Total Price</div>
+            <div class="col-md-2">Quantity</div>
+            <div class="col-md-3">Price per unit</div>
+            <div class="col-md-3">Price per game</div>
           </div>
           <div class="row mt-2" id="cartItemsContainer">
             <!-- Cart items will be displayed here -->
             {% for cart_item in cart_items %}
             <div class="row mb-3 mt-3">
               <div class="col-md-4">{{ cart_item.title }}</div>
-              <div class="col-md-4">{{ cart_item.quantity }}</div>
-              <div class="col-md-4">{{ cart_item.price }}€</div>
-              <span id="basePrice">0€</span>
+              <div class="col-md-2">{{ cart_item.quantity }}</div>
+              <div class="col-md-3">{{ cart_item.price }}€</div>
+              <div class="col-md-3">{{ cart_item.price * cart_item.quantity }}€</div>
             </div>
             {% endfor %}
           </div>
+          <hr style="height:3px;border-width:0;color:rgb(0, 0, 0);background-color:rgb(0, 0, 0)">
+
+          <div class="row mb-3">
+              <div class="col ">Base Price</div>
+              <div class="col text-end me-4">
+                <span id="basePrice">0€</span>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col">Discount</div>
+              <div class="col text-end me-4" >
+                <span id="discountAmount">- 0€</span>
+                <span id="discount"> (0%)</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">Total</div>
+              <div class="col text-end me-4">
+                <span id="totalPrice">0€</span>
+              </div>
+            </div>
+
         </div>
         <br />
         <input type="text" id="promoCode" placeholder="Enter promo code" />
@@ -112,77 +134,76 @@
         >
           Apply promo code
         </button>
-      </div>
 
-      <div class="col-4 mx-4">
-        <div class="border border-3 pb-5">
-          <div class="row mb-3">
-            <div class="col align-content-end"></div>
-            <div class="col align-content-end">
-              <span id="basePrice">0€</span>
+        <!--
+          <div class="mt-4">
+          <div class="border border-3 pb-5">
+            <div class="row mb-3">
+              <div class="col align-content-end">Base Price</div>
+              <div class="col align-content-end">
+                <span id="basePrice">0€</span>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col align-content-end">Discount</div>
+              <div class="col align-content-end">
+                <span id="discountAmount">- 0€</span>
+                <span id="discount"> (0%)</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col align-content-end">Total</div>
+              <div class="col align-content-end">
+                <span id="totalPrice">0€</span>
+              </div>
             </div>
           </div>
-          <div class="row mb-3">
-            <div class="col align-content-end">Discount</div>
-            <div class="col align-content-end">
-              <span id="discountAmount">- 0€</span>
-              <span id="discount"> (0%)</span>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col align-content-end">Total</div>
-            <div class="col align-content-end">
-              <span id="totalPrice">0€</span>
-            </div>
-          </div>
+          <a href="{{ url_for('payment') }}" class="btn btn-primary mt-2">Check Out</a>
         </div>
-        <a href="{{ url_for('payment') }}" class="btn btn-primary mt-2">Check Out</a>
       </div>
+    </div>
+
+  -->
 
     <script>
       window.onload = function () {
         fetch("/get_cart_items")
           .then((response) => response.json())
           .then((data) => {
-            displaycartItems(data);
+            displayCartItems(data);
           })
           .catch((error) => {
             console.error("Error:", error);
           });
       };
 
-      function updateCartItemQuantity(index, quantity) {
-        var quantityElement = document.getElementById("quantity_" + index);
-        if (quantityElement) {
-          quantityElement.textContent = quantity;
-        }
-      }
-
-      function displaycartItems(cartItem) {
+      function displayCartItems(cartItems) {
         var cartContainer = document.getElementById("cartItemsContainer");
         cartContainer.innerHTML = "";
 
-        cartItem.forEach(function (item) {
+        cartItems.forEach(function (item) {
+          var totalPriceForItem = item.price * item.quantity;
           var cartItemElement = document.createElement("div");
           cartItemElement.classList.add("row", "mb-3", "mt-3");
 
           cartItemElement.innerHTML = `
               <div class="col-md-4">${item.title}</div>
-              <div class="col-md-4">${item.quantity}</div>
-              <div class="col-md-4">${item.price}€</div>
+              <div class="col-md-2">${item.quantity}</div>
+              <div class="col-md-3">${item.price.toFixed(2)}€</div>
+              <div class="col-md-3">${totalPriceForItem.toFixed(2)}€</div>
             `;
 
           cartContainer.appendChild(cartItemElement);
-
-          var totalPrice = calculateTotal(cartItem);
-          var totalElement = document.getElementById("totalPrice");
-          totalElement.textContent = totalPrice.toFixed(2) + "€";
         });
+
+        var total = calculateTotal(cartItems);
+        var totalElement = document.getElementById("totalPrice");
+        totalElement.textContent = total.toFixed(2) + "€";
       }
 
-      function calculateTotal(cartItem) {
+      function calculateTotal(cartItems) {
         var total = 0;
-        cartItem.forEach(function (item) {
+        cartItems.forEach(function (item) {
           total += item.price * item.quantity;
         });
         var basePriceElement = document.getElementById("basePrice");
@@ -203,7 +224,7 @@
             "alert-danger"
           );
           return;
-        }
+        } 
 
         var promoCodes = ["C39N-Q8YB-Q37B", "B45D-C7GH-M5EW"];
         if (promoCodes.includes(promoCode) && !promoCodeApplied) {
@@ -223,6 +244,7 @@
           discountAmountElement.textContent = "-" + discount.toFixed(2) + "€";
 
           promoCodeApplied = true;
+          showAlert("20% Discount applied!","alert-success");
         } else {
           if (promoCodeApplied) {
             showAlert(

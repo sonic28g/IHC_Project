@@ -234,17 +234,18 @@
           alt="{{ game.title }}"
         />
         <div class="text-center">
-          <a class="btn btn-primary id" id="addToCartBtn">ADD TO CART</a>
+          <a class="btn btn-primary id" id="addToCartBtn">Add key to cart</a>
+          <a href="https://twitch.tv" class="btn btn-primary" target="_blank">Watch</a>
         </div>
       </div>
       <div class="game-info-box">
         <p><strong>Publisher:</strong> {{ game.publisher }}</p>
         <p><strong>Description:</strong> {{ game.description }}</p>
-        <p><strong>Price:</strong> {{ game.price }}€</p>
         <p><strong>Genre:</strong> {{ game.genre }}</p>
         <p><strong>Age Rating:</strong> {{ game.agerating }}</p>
         <p><strong>Platform:</strong> {{ game.platform }}</p>
         <p><strong>Rating:</strong> {{ game.rating }}</p>
+        <h3><strong>Price:</strong> {{ game.price }}€</h3>
       </div>
     </div>
 
@@ -257,23 +258,6 @@
       <div class="game-specialist">
         <h3>Specialist Analysis</h3>
         <p>{{ game.specialistanalysis }}</p>
-      </div>
-    </div>
-
-    <div class="game-details">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="game-gallery">
-            {% for image in game.images %}
-            <img src="{{ image }}" alt="{{ game.title }}" />
-            {% endfor %}
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div
-            class="livestreams d-flex justify-content-center align-items-center flex-wrap"
-          ></div>
-        </div>
       </div>
     </div>
 
@@ -294,14 +278,14 @@
           var card = document.createElement("div");
           card.classList.add("mx-auto", "my-2");
           card.innerHTML = `
-    <div class="a">
-      <img src="${livestream.thumbnail}" class="card-img-top" alt="${livestream.title}">
-      <div class="card-body">
-          <h5 class="card-title">${livestream.title}</h5>
-          <a href="${livestream.url}" class="btn btn-primary" target="_blank">Watch</a>
-      </div>
-    </div>
-  `;
+              <div class="a">
+                <img src="${livestream.thumbnail}" class="card-img-top" alt="${livestream.title}">
+                <div class="card-body">
+                    <h5 class="card-title">${livestream.title}</h5>
+                    <a href="${livestream.url}" class="btn btn-primary" target="_blank">Watch</a>
+                </div>
+              </div>
+            `;
           container.appendChild(card);
         });
       }

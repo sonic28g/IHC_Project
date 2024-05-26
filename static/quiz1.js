@@ -114,10 +114,40 @@ function showScore() {
     messageElement.textContent = "Better luck next time!";
   } else {
     if (finalScore === 10) {
-     showAlert("Promotional Code: C39N-Q8YB-Q37B", "alert-success");
-}
+      const promoCode = "C39N-Q8YB-Q37B";
+      showAlert(`Promotional Code: ${promoCode}`, "alert-success");
+      
+      // Cria um botão para copiar o código promocional
+      const copyButton = document.createElement("button");
+      copyButton.textContent = "Copy Code";
+      copyButton.classList.add("btn", "btn-primary", "mt-2", "copy-button");
+      copyButton.onclick = () => copyPromoCode(promoCode);
+
+      // Adiciona o botão de cópia ao alerta
+      const alertDiv = document.querySelector(".alert-success");
+      alertDiv.appendChild(copyButton);
+    }
   }
 }
+
+function copyPromoCode(promoCode) {
+  // Cria um elemento temporário para armazenar o código promocional
+  const tempInput = document.createElement("input");
+  tempInput.value = promoCode;
+  document.body.appendChild(tempInput);
+
+  // Seleciona e copia o texto do elemento temporário
+  tempInput.select();
+  tempInput.setSelectionRange(0, 99999); // Para dispositivos móveis
+  document.execCommand("copy");
+
+  // Remove o elemento temporário
+  document.body.removeChild(tempInput);
+
+  // Exibe um alerta indicando que o código foi copiado
+  showAlert("Promo code copied to clipboard!", "alert-success");
+}
+
 
 // Inicialização do quiz
 initializeQuiz();

@@ -93,6 +93,10 @@ input[type="text"], input[type="password"], input[type="submit"] {
     padding: 20px;
 }
 
+.copy-button {
+    margin: 30px
+}
+
 /* QUIZ */
 
 #quiz-container{
