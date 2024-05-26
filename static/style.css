@@ -1,157 +1,166 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
+  background: url("background.png");
+  background-size: cover;
+  background-repeat: repeat;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-
 .navbar {
-    background-color: #333;
-    color: #fff;
+  background-color: #333;
+  color: #fff;
 }
 
 form {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-input[type="text"], input[type="password"] {
-    display: block;
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+input[type="text"],
+input[type="password"] {
+  display: block;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
 input[type="submit"] {
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    color: #fff;
-    background-color: #007bff;
-    cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  background-color: #007bff;
+  cursor: pointer;
 }
 
-input[type="text"], input[type="password"], input[type="submit"] {
-    text-align: center;
+input[type="text"],
+input[type="password"],
+input[type="submit"] {
+  text-align: center;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    transition: transform 0.3s ease;
-  }
-  
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+}
+
 .quizz_bar {
-    border: #333 2px solid;
-    border-radius: 5px;
-    margin-right: 60%;
-    margin-left: 2%;
-    margin-top: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    display: flex;
-    justify-content: center; /* Isso distribuirá o conteúdo horizontalmente */
-    align-items: center; /* Isso centralizará verticalmente o conteúdo */
-    background-color: #f0f0f0;
+  border: #333 2px solid;
+  border-radius: 5px;
+  margin-right: 60%;
+  margin-left: 2%;
+  margin-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  justify-content: center; /* Isso distribuirá o conteúdo horizontalmente */
+  align-items: center; /* Isso centralizará verticalmente o conteúdo */
+  background-color: #f0f0f0;
 }
 
 .quizz_bar p {
-    margin: 0;
-    padding: 10px 0;
+  margin: 0;
+  padding: 10px 0;
 }
-  
+
 .play_button {
-    margin-left: auto; /* Alinha o botão à direita */
-    font-size: 18px;
-    color: #ffffff;
-    background-color: rgb(29, 134, 29);
-    border-radius: 5px;
-    border: 1px solid;
-    border-color: rgb(36, 115, 36);
-    transition: 0.3s;
-    opacity: 0.6;
+  margin-left: auto; /* Alinha o botão à direita */
+  font-size: 18px;
+  color: #ffffff;
+  background-color: rgb(29, 134, 29);
+  border-radius: 5px;
+  border: 1px solid;
+  border-color: rgb(36, 115, 36);
+  transition: 0.3s;
+  opacity: 0.6;
 }
 
-
-.play_button:hover{
-    opacity: 1;
+.play_button:hover {
+  opacity: 1;
 }
 
-.missions_menu{
-    border: 1px solid;
-    border-color: #ccc;
-    border-radius: 5px;
-    background-color:#fff;
-    padding: 20px;
+.missions_menu {
+  border: 1px solid;
+  border-color: #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 20px;
 }
 
 .copy-button {
-    margin: 30px
+  margin: 30px;
 }
 
 /* QUIZ */
 
-#quiz-container{
-    margin: 20px;
+#quiz-container {
+  margin: 20px;
 }
 
 .option-button {
-    width: 300px; /* Define o comprimento fixo dos botões */
-    margin-right: 10px; /* Adiciona espaçamento entre os botões */
+  width: 300px; /* Define o comprimento fixo dos botões */
+  margin-right: 10px; /* Adiciona espaçamento entre os botões */
 }
 
 #options-container {
-    display: flex; /* Permite que os botões sejam exibidos em uma linha */
-    flex-wrap: wrap; /* Permite que os botões quebrem para a próxima linha se não houver espaço suficiente */
-    justify-content: center; /* Centraliza os botões horizontalmente */
+  display: flex; /* Permite que os botões sejam exibidos em uma linha */
+  flex-wrap: wrap; /* Permite que os botões quebrem para a próxima linha se não houver espaço suficiente */
+  justify-content: center; /* Centraliza os botões horizontalmente */
 }
 
 #error-message {
-    color: red;
-    font-size: 14px;
-    margin-top: 10px;
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
 }
 
-#next-button, #missions_back{
-    background-color: #28a745;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 8px 20px;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: 0.5s;
+#next-button,
+#missions_back {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 20px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.5s;
 }
 
-#next-button:hover, #missions_back:hover{
-    background-color: #1c7330;
+#next-button:hover,
+#missions_back:hover {
+  background-color: #1c7330;
 }
 
 #score-container {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px; /* Defina a largura desejada */
-    height: 200px; /* Defina a altura desejada */
-    text-align: center; /* Centraliza o texto horizontalmente */
-    border: 1px solid;
-    border-color: #ccc;
-    border-radius: 5px;
-    background-color:#fff;
-    padding: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px; /* Defina a largura desejada */
+  height: 200px; /* Defina a altura desejada */
+  text-align: center; /* Centraliza o texto horizontalmente */
+  border: 1px solid;
+  border-color: #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 20px;
 }
 
 #missions_back {
-    margin-top: -20px; /* Ajusta a posição do botão para cima */
+  margin-top: -20px; /* Ajusta a posição do botão para cima */
 }
-

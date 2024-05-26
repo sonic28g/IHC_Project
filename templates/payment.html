@@ -12,6 +12,14 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='style.css') }}"
     />
+    <style>
+      .bg-white {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+    </style>
   </head>
 
   <body>
@@ -83,77 +91,79 @@
       </div>
     </nav>
 
-    <div class="row mt-4 ms-4">
-      <div class="col">
-        <h3>Payment Method</h3>
-        <div class="col-7 mt-4">
-          <ul type="circle">
-            <li><input type="checkbox" id="cardCheckbox" /> Cartão</li>
-            <div class="row mt-4 cardFields">
-              <div class="col-5 mx-2">
-                <div class="row">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="cardNumber"
-                    placeholder="Nº Cartão"
-                  />
+    <div class="container mt-4 bg-white">
+      <div class="row mt-4 ms-4">
+        <div class="col">
+          <h3>Payment Method</h3>
+          <div class="col-7 mt-4">
+            <ul type="circle">
+              <li><input type="checkbox" id="cardCheckbox" /> Cartão</li>
+              <div class="row mt-4 cardFields">
+                <div class="col-5 mx-2">
+                  <div class="row">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="cardNumber"
+                      placeholder="Nº Cartão"
+                    />
+                  </div>
+                  <div class="row">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="cardName"
+                      placeholder="Nome do Titular"
+                    />
+                  </div>
                 </div>
-                <div class="row">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="cardName"
-                    placeholder="Nome do Titular"
-                  />
-                </div>
-              </div>
-              <div class="col-5 mx-2">
-                <div class="row">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="cardExpiration"
-                    placeholder="Data de validade (MM/YY)"
-                  />
-                </div>
-                <div class="row">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="cardCVC"
-                    placeholder="CVC"
-                  />
-                </div>
-              </div>
-            </div>
-            <li><input type="checkbox" id="mbWayCheckbox" /> MBWay</li>
-            <div class="row mt-4 mbWayFields">
-              <div class="col-4 mx-2">
-                <div class="row">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="mbWayNumber"
-                    placeholder="Nº telemóvel"
-                  />
+                <div class="col-5 mx-2">
+                  <div class="row">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="cardExpiration"
+                      placeholder="Data de validade (MM/YY)"
+                    />
+                  </div>
+                  <div class="row">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="cardCVC"
+                      placeholder="CVC"
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
-          </ul>
+              <li><input type="checkbox" id="mbWayCheckbox" /> MBWay</li>
+              <div class="row mt-4 mbWayFields">
+                <div class="col-4 mx-2">
+                  <div class="row">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="mbWayNumber"
+                      placeholder="Nº telemóvel"
+                    />
+                  </div>
+                </div>
+              </div>
+            </ul>
+          </div>
+          <button
+            type="button"
+            class="btn btn-outline-dark mt-2"
+            id="confirmPaymentBtn"
+            data-bs-toggle="modal"
+            data-bs-target="#PaymentModal"
+          >
+            Confirm Payment
+          </button>
         </div>
-        <button
-          type="button"
-          class="btn btn-outline-dark mt-2"
-          id="confirmPaymentBtn"
-          data-bs-toggle="modal"
-          data-bs-target="#PaymentModal"
-        >
-          Confirm Payment
-        </button>
       </div>
     </div>
-
+    
     <div
       class="modal fade"
       id="PaymentModal"

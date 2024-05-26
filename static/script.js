@@ -28,15 +28,16 @@ document.addEventListener("DOMContentLoaded", function () {
       var card = document.createElement("div");
       card.classList.add("col-md-3", "mb-3");
       card.innerHTML = `
-      <div class="card">
-          <img src="${game[4]}" class="card-img-top" alt="${game[1]}">
-          <div class="card-body">
-              <h5 class="card-title">${game[1]}</h5>
-              <p class="card-text">${game[2]}€</p>
-              <a href="/game/${game[0]}" class="btn btn-primary">More</a>
+        <a href="/game/${game[0]}" style="text-decoration: none; color: inherit;">
+          <div class="card">
+              <img src="${game[4]}" class="card-img-top" alt="${game[1]}">
+              <div class="card-body">
+                  <h5 class="card-title">${game[1]}</h5>
+                  <p class="card-text">${game[2]}€</p>
+              </div>
           </div>
-      </div>
-  `;
+        </a>
+        `;
       row.appendChild(card);
     });
   }
@@ -74,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Filter and sort games by genre and price
   function filterAndSortGames(genre, sortOption) {
     var filteredGames;
-    
+
     if (genre && genre !== "Show All Genres") {
       filteredGames = gamesData.filter(function (game) {
         return game[3].includes(genre);

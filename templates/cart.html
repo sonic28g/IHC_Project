@@ -12,6 +12,14 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='style.css') }}"
     />
+    <style>
+      .bg-white {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+    </style>
   </head>
 
   <body>
@@ -85,37 +93,47 @@
       </div>
     </nav>
 
-    <div class="row mt-4 ms-4">
-      <div class="col-10">
-        <div class="col border border-3 pb-5">
-          <div class="row">
-            <div class="col-md-4">Game Title</div>
-            <div class="col-md-2">Quantity</div>
-            <div class="col-md-3">Price per unit</div>
-            <div class="col-md-3">Price per game</div>
-          </div>
-          <div class="row mt-2" id="cartItemsContainer">
-            <!-- Cart items will be displayed here -->
-            {% for cart_item in cart_items %}
-            <div class="row mb-3 mt-3">
-              <div class="col-md-4">{{ cart_item.title }}</div>
-              <div class="col-md-2">{{ cart_item.quantity }}</div>
-              <div class="col-md-3">{{ cart_item.price }}€</div>
-              <div class="col-md-3">{{ cart_item.price * cart_item.quantity }}€</div>
-            </div>
-            {% endfor %}
-          </div>
-          <hr style="height:3px;border-width:0;color:rgb(0, 0, 0);background-color:rgb(0, 0, 0)">
+    <div class="container mt-4 bg-white">
+      <div class="row mt-4 ms-4">
 
-          <div class="row mb-3">
-              <div class="col ">Base Price</div>
+          <div class="col pb-5">
+            <div class="row">
+              <div class="col-md-4">Game Title</div>
+              <div class="col-md-2">Quantity</div>
+              <div class="col-md-3">Price per unit</div>
+              <div class="col-md-3">Price per game</div>
+            </div>
+            <div class="row mt-2" id="cartItemsContainer">
+              <!-- Cart items will be displayed here -->
+              {% for cart_item in cart_items %}
+              <div class="row mb-3 mt-3">
+                <div class="col-md-4">{{ cart_item.title }}</div>
+                <div class="col-md-2">{{ cart_item.quantity }}</div>
+                <div class="col-md-3">{{ cart_item.price }}€</div>
+                <div class="col-md-3">
+                  {{ cart_item.price * cart_item.quantity }}€
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+            <hr
+              style="
+                height: 3px;
+                border-width: 0;
+                color: rgb(0, 0, 0);
+                background-color: rgb(0, 0, 0);
+              "
+            />
+
+            <div class="row mb-3">
+              <div class="col">Base Price</div>
               <div class="col text-end me-4">
                 <span id="basePrice">0€</span>
               </div>
             </div>
             <div class="row mb-3">
               <div class="col">Discount</div>
-              <div class="col text-end me-4" >
+              <div class="col text-end me-4">
                 <span id="discountAmount">- 0€</span>
                 <span id="discount"> (0%)</span>
               </div>
@@ -128,47 +146,20 @@
             </div>
 
         </div>
-        <br />
-        <input type="text" id="promoCode" placeholder="Enter promo code" />
-        <button
-          type="button"
-          class="btn btn-primary mt-2"
-          onclick="applyPromoCode()"
-        >
-          Apply promo code
-        </button>
-        <a href="{{ url_for('payment') }}" class="btn btn-primary mt-2">Check Out</a>
-
-        <!--
-          <div class="mt-4">
-          <div class="border border-3 pb-5">
-            <div class="row mb-3">
-              <div class="col align-content-end">Base Price</div>
-              <div class="col align-content-end">
-                <span id="basePrice">0€</span>
-              </div>
-            </div>
-            <div class="row mb-3">
-              <div class="col align-content-end">Discount</div>
-              <div class="col align-content-end">
-                <span id="discountAmount">- 0€</span>
-                <span id="discount"> (0%)</span>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col align-content-end">Total</div>
-              <div class="col align-content-end">
-                <span id="totalPrice">0€</span>
-              </div>
-            </div>
-          </div>
-          
-        </div>
       </div>
+      <br />
+      <input type="text" id="promoCode" placeholder="Enter promo code" />
+      <button
+        type="button"
+        class="btn btn-primary mt-2"
+        onclick="applyPromoCode()"
+      >
+        Apply promo code
+      </button>
+      <a href="{{ url_for('payment') }}" class="btn btn-primary mt-2"
+        >Check Out</a
+      >
     </div>
-
-  -->
-
     <script>
       window.onload = function () {
         fetch("/get_cart_items")
@@ -228,7 +219,7 @@
             "alert-danger"
           );
           return;
-        } 
+        }
 
         var promoCodes = ["C39N-Q8YB-Q37B", "B45D-C7GH-M5EW"];
         if (promoCodes.includes(promoCode) && !promoCodeApplied) {
@@ -248,7 +239,7 @@
           discountAmountElement.textContent = "-" + discount.toFixed(2) + "€";
 
           promoCodeApplied = true;
-          showAlert("20% Discount applied!","alert-success");
+          showAlert("20% Discount applied!", "alert-success");
         } else {
           if (promoCodeApplied) {
             showAlert(
