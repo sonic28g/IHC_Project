@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template, redirect, url_for, session, jsonify, flash, send_from_directory
+from werkzeug.utils import secure_filename 
 import sqlite3
 import os
 import json
@@ -23,6 +24,7 @@ class DatabaseWrappers:
     def update_user(self, username, email, image):
         self.cursor.execute("UPDATE users SET email = ?, image = ? WHERE username = ?", (email, image, username))
         self.conn.commit()
+
             
     def register_user(self, username, email, password):
         if not self.user_exists(username):
@@ -192,7 +194,8 @@ def profile():
     if 'username' in session:
         username = session['username']
         current_user = db.get_user(username)
-        return render_template('profile.html', current_user=current_user)
+        print(current_user )
+        return render_template('profile.html', username=username, email=current_user[2], image=current_user[4])
     else:
         return redirect(url_for('login'))
     
@@ -201,19 +204,29 @@ def update_profile():
     if 'username' in session:
         username = session['username']
         email = request.form['email']
-        image = request.files['image']
-        
-        if not image.filename.lower().endswith('.png'):
+        image_file = request.files['image']
+
+        image_filename = secure_filename(image_file.filename)       
+        if not image_filename.lower().endswith('.png'):
             flash('Apenas imagens PNG são permitidas')
             return redirect(url_for('profile'))
 
-        image_path = os.path.join('static/images', image.filename)
-        image.save(image_path)
+        image_path = os.path.join('static/images', image_filename)
+
+        image_file.save(image_path)
+
         db.update_user(username, email, image_path)
+
+        session['email'] = email
+        session['image'] = image_path
+
         flash('Perfil atualizado com sucesso')
         return redirect(url_for('profile'))
     else:
         return redirect(url_for('login'))
+    
+
+
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -295,6 +308,37 @@ def get_cart_items():
         return jsonify(cartItem)
     else:
         return jsonify([])
+    
+@app.route('/remove_cart_item/<int:item_id>', methods=['DELETE'])
+def remove_cart_item(item_id):
+    if 'cart' in session:
+        cart_items = session['cart']
+        cart_items = [item for item in cart_items if item['id'] != item_id]
+        session['cart'] = cart_items
+        return jsonify(cart_items)
+    return jsonify([])
+
+@app.route('/reduce_cart_item/<int:item_id>', methods=['POST'])
+def reduce_cart_item(item_id):
+    if 'cart' in session:
+        cart_items = session['cart']
+        for item in cart_items:
+            if item['id'] == item_id:
+                if item['quantity'] > 1:
+                    item['quantity'] -= 1
+                else:
+                    cart_items = [i for i in cart_items if i['id'] != item_id]
+                break
+        session['cart'] = cart_items
+        return jsonify(cart_items)
+    return jsonify([])   
+
+@app.route('/clear_cart', methods=['POST'])
+def clear_cart():
+    if 'cart' in session:
+        session.pop('cart', None)
+        return jsonify({'message': 'Cart cleared successfully'})
+    return jsonify({'message': 'Cart already empty'})
     
 # ======================================================================================== #
 

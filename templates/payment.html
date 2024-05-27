@@ -155,7 +155,6 @@
             type="button"
             class="btn btn-outline-dark mt-2"
             id="confirmPaymentBtn"
-            data-bs-toggle="modal"
             data-bs-target="#PaymentModal"
           >
             Confirm Payment
@@ -207,11 +206,12 @@
       integrity="sha384-IQsoLXl7K2E/COxzAqjWnG/xPOd1rW8hg1tD1SJAd/r9ObfQyyP8uHVtEGeW4Z7z"
       crossorigin="anonymous"
     ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-      integrity="sha384-cAo8HNGiN4D3pp9A4qjmVZHH3qqD6tXcgUdiAuMXm7llsY6E6HnD/AAmKXn9H5GF"
-      crossorigin="anonymous"
-    ></script>
+
+      <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous">
+    </script>
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
@@ -258,9 +258,6 @@
             var cardNameRegex = /^[a-zA-Z\s]+$/;
             var mbWayNumberRegex = /^\d{9}$/;
 
-            // const paymentModal = document.getElementById('PaymentModal');
-            // const modalInstance = new bootstrap.Modal(paymentModal);
-
             if (cardCheckbox.checked) {
               if (!cardNumber.match(cardNumberRegex)) {
                 showAlert("Número do cartão inválido!", "alert-danger");
@@ -278,22 +275,23 @@
                 showAlert("Por favor, insira o CVC!", "alert-danger");
                 return;
               }
-              // modalInstance.show();
-            } else if (
-              mbWayCheckbox.checked &&
-              !mbWayNumber.match(mbWayNumberRegex)
-            ) {
-              showAlert(
-                "Por favor, insira o número de telemóvel MBWay!",
-                "alert-danger"
-              );
+              //showAlert("Pagamento completo!", "alert-success");
+              //showModal();
+            }else if (mbWayCheckbox.checked) {
+              if (!mbWayNumber.match(mbWayNumberRegex)) {
+                showAlert("Por favor, insira o número de telemóvel MBWay!", "alert-danger");
+                return;
+              }
+              //showAlert("Pagamento completo!", "alert-success");
+              //showModal();
+            }else {
+              showAlert("Selecione um método de pagamento!", "alert-danger");
               return;
-            } else {
-              modalInstance.show();
             }
-            // modalInstance.show();
 
             showAlert("Pagamento completo!", "alert-success");
+             showModal();
+
           });
 
         document
@@ -321,7 +319,33 @@
             alertDiv.remove();
           }, 3000);
         }
+
+        function showModal() {
+          const paymentModal = new bootstrap.Modal(document.getElementById('PaymentModal'));
+         paymentModal.show();
+        }
+
       });
+
+      document.getElementById("PaymentModal").addEventListener("hidden.bs.modal", function () {
+        fetch('/clear_cart', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({}) // Se necessário, pode enviar dados adicionais aqui
+        })
+        .then(response => response.json())
+        .then(data => {
+          // Aqui você pode lidar com a resposta, se necessário
+          console.log("Carrinho limpo com sucesso:", data);
+        })
+        .catch(error => {
+          console.error('Erro ao limpar o carrinho:', error);
+        });
+        window.location.href = '{{ url_for("index") }}'; // Redireciona para a página inicial
+      });
+
     </script>
   </body>
 </html>

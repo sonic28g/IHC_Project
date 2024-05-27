@@ -103,6 +103,7 @@
               <div class="col-md-3">Price per unit</div>
               <div class="col-md-3">Price per game</div>
             </div>
+            <hr />
             <div class="row mt-2" id="cartItemsContainer">
               <!-- Cart items will be displayed here -->
               {% for cart_item in cart_items %}
@@ -112,6 +113,10 @@
                 <div class="col-md-3">{{ cart_item.price }}€</div>
                 <div class="col-md-3">
                   {{ cart_item.price * cart_item.quantity }}€
+                </div>
+                <div class="col-md-2">
+                  <button class="btn btn-danger" onclick="removeItem('{{ cart_item.id }}')">Remove</button>
+                  <button class="btn btn-warning" onclick="reduceQuantity('{{ cart_item.id }}')">-</button>
                 </div>
               </div>
               {% endfor %}
@@ -171,31 +176,35 @@
             console.error("Error:", error);
           });
       };
-
+    
       function displayCartItems(cartItems) {
         var cartContainer = document.getElementById("cartItemsContainer");
         cartContainer.innerHTML = "";
-
+    
         cartItems.forEach(function (item) {
           var totalPriceForItem = item.price * item.quantity;
           var cartItemElement = document.createElement("div");
           cartItemElement.classList.add("row", "mb-3", "mt-3");
-
+    
           cartItemElement.innerHTML = `
               <div class="col-md-4">${item.title}</div>
               <div class="col-md-2">${item.quantity}</div>
               <div class="col-md-3">${item.price.toFixed(2)}€</div>
               <div class="col-md-3">${totalPriceForItem.toFixed(2)}€</div>
+              <div class="col-md-2">
+                <button class="btn btn-danger" onclick="removeItem(${item.id})">Remove</button>
+                <button class="btn btn-warning" onclick="reduceQuantity(${item.id})">-</button>
+              </div>
             `;
-
+    
           cartContainer.appendChild(cartItemElement);
         });
-
+    
         var total = calculateTotal(cartItems);
         var totalElement = document.getElementById("totalPrice");
         totalElement.textContent = total.toFixed(2) + "€";
       }
-
+    
       function calculateTotal(cartItems) {
         var total = 0;
         cartItems.forEach(function (item) {
@@ -205,13 +214,13 @@
         basePriceElement.textContent = total.toFixed(2) + "€";
         return total;
       }
-
+    
       var promoCodeApplied = false;
-
+    
       function applyPromoCode() {
         var promoCodeInput = document.getElementById("promoCode");
         var promoCode = promoCodeInput.value.toUpperCase();
-
+    
         var promoCodeFormat = /^[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}$/;
         if (!promoCodeFormat.test(promoCode)) {
           showAlert(
@@ -220,7 +229,7 @@
           );
           return;
         }
-
+    
         var promoCodes = ["C39N-Q8YB-Q37B", "B45D-C7GH-M5EW"];
         if (promoCodes.includes(promoCode) && !promoCodeApplied) {
           var totalElement = document.getElementById("totalPrice");
@@ -231,13 +240,13 @@
           var total = basePrice - discount;
           totalElement.textContent = total.toFixed(2) + "€";
           promoCodeInput.value = "";
-
+    
           var discountElement = document.getElementById("discount");
           discountElement.textContent = "(20%)";
-
+    
           var discountAmountElement = document.getElementById("discountAmount");
           discountAmountElement.textContent = "-" + discount.toFixed(2) + "€";
-
+    
           promoCodeApplied = true;
           showAlert("20% Discount applied!", "alert-success");
         } else {
@@ -251,19 +260,46 @@
           }
         }
       }
-
+    
       function showAlert(message, alertClass) {
         var alertDiv = document.createElement("div");
         alertDiv.textContent = message;
         alertDiv.classList.add("alert", alertClass);
         alertDiv.setAttribute("role", "alert");
-
+    
         document.body.appendChild(alertDiv);
-
+    
         setTimeout(function () {
           alertDiv.remove();
         }, 2000);
       }
+    
+      function removeItem(itemId) {
+        fetch(`/remove_cart_item/${itemId}`, {
+          method: 'DELETE'
+        })
+        .then(response => response.json())
+        .then(data => {
+          displayCartItems(data);
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+      }
+    
+      function reduceQuantity(itemId) {
+        fetch(`/reduce_cart_item/${itemId}`, {
+          method: 'POST'
+        })
+        .then(response => response.json())
+        .then(data => {
+          displayCartItems(data);
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+      }
     </script>
+    
   </body>
 </html>
