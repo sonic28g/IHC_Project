@@ -12,15 +12,13 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='style.css') }}"
     />
-    <style>
-      .bg-white {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-    </style>
   </head>
+  <style>
+    body{
+      background: none;
+      background-color: white;
+    }
+  </style>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
@@ -88,30 +86,22 @@
         </div>
       </div>
     </nav>
-
-    <div class="container mt-4 bg-white">
-      <div id="quiz-container">
+    
+    <div id="quiz-container">
         <h3 id="question"></h3>
         <div id="options-container"></div>
-        <button id="next-button" onclick="nextQuestion()">
-          Next Question >>
-        </button>
-        <p id="error-message" style="color: red; display: none">
-          You must select an option!
-        </p>
+        <button id="next-button" onclick="nextQuestion()">Next Question >></button>
+        <p id="error-message" style="color: red; display: none;">You must select an option!</p>
       </div>
-      <div id="score-container" style="display: none">
+      <div id="score-container" style="display: none;">
         <h3>Your Score:</h3>
         <h4 id="score"></h4>
-        <p id="message"></p>
-        <p>
-          <a href="{{ url_for('missions') }}">
-            <button id="missions_back">Missions</button>
-          </a>
-        </p>
+        <p id="message"><p>
+        <a href="{{ url_for('missions') }}">
+          <button id="missions_back" >Missions</button>
+        </a>
       </div>
-    </div>
-
+    
     <script src="{{ url_for('static', filename='quiz1.js') }}"></script>
   </body>
 </html>
