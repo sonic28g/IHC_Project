@@ -109,14 +109,18 @@
               {% for cart_item in cart_items %}
               <div class="row mb-3 mt-3">
                 <div class="col-md-4">{{ cart_item.title }}</div>
-                <div class="col-md-2">{{ cart_item.quantity }}</div>
+                <div class="col-md-2">
+                  {{ cart_item.quantity }}
+                  <button class="btn btn-dark btn-sm" onclick="reduceQuantity('{{ cart_item.id }}')">-</button>
+                </div>
+                 
                 <div class="col-md-3">{{ cart_item.price }}€</div>
                 <div class="col-md-3">
                   {{ cart_item.price * cart_item.quantity }}€
                 </div>
                 <div class="col-md-2">
                   <button class="btn btn-danger" onclick="removeItem('{{ cart_item.id }}')">Remove</button>
-                  <button class="btn btn-warning" onclick="reduceQuantity('{{ cart_item.id }}')">-</button>
+                  
                 </div>
               </div>
               {% endfor %}
@@ -188,12 +192,15 @@
     
           cartItemElement.innerHTML = `
               <div class="col-md-4">${item.title}</div>
-              <div class="col-md-2">${item.quantity}</div>
+              <div class="col-md-2">
+                ${item.quantity}
+                <button class="btn btn-dark btn-sm" onclick="reduceQuantity(${item.id})">-</button>
+              </div>
               <div class="col-md-3">${item.price.toFixed(2)}€</div>
               <div class="col-md-3">${totalPriceForItem.toFixed(2)}€</div>
               <div class="col-md-2">
                 <button class="btn btn-danger" onclick="removeItem(${item.id})">Remove</button>
-                <button class="btn btn-warning" onclick="reduceQuantity(${item.id})">-</button>
+                
               </div>
             `;
     
