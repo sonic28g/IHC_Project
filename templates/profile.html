@@ -19,6 +19,16 @@
         border-radius: 5px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       }
+
+      .form-container {
+            background-color: white; /* Garante que o formulário tenha um fundo branco */
+            display: flex; /* Usa flexbox para posicionar os elementos */
+            flex-direction: column; /* Organiza os elementos em coluna */
+            justify-content: center; /* Centraliza verticalmente os elementos */
+            align-items: center; /* Centraliza horizontalmente os elementos */
+            gap: 20px; /* Espaçamento entre os elementos */
+        }
+
     </style>
   </head>
 
@@ -95,67 +105,14 @@
     </nav>
 
     <div class="container mt-4 bg-white">
-
-      <!--
-
-      <form
-        method="POST"
-        action="{{ url_for('update_profile') }}"
-        enctype="multipart/form-data"
-        style="display: none"
-        id="profileForm"
-      >
-        <div class="mb-3 mt-3">
-          <label for="username" class="form-label">Change Username:</label>
-          <input
-            type="text"
-            class="form-control"
-            id="username"
-            placeholder="Enter new Username"
-            name="username"
-          />
-        </div>
-        <div class="mb-3 mt-3">
-          <label for="email" class="form-label">Change Email:</label>
-          <input
-            type="email"
-            class="form-control"
-            id="email"
-            placeholder="Enter email"
-            name="email"
-          />
-        </div>
-        <div class="mb-3">
-          <label for="pwd" class="form-label">Change Password:</label>
-          <input
-            type="password"
-            class="form-control"
-            id="pwd"
-            placeholder="Enter password"
-            name="password"
-          />
-        </div>
-        <div class="mb-3">
-          <label for="image" class="form-label">Choose file</label>
-          <input
-            type="file"
-            class="form-control"
-            name="image"
-            id="image"
-            onchange="displaySelectedImage(event)"
-          />
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-
-      -->
-
+      <div class="form-container">
         <form 
           action="{{ url_for('update_profile') }}"
           method="POST" 
           enctype="multipart/form-data"
           id="profileForm"
           style="display: none;"
+
         >
           <div class="mb-3">
               <label for="username" class="form-label">Change Username</label>
@@ -177,6 +134,7 @@
                 name="email" 
                 value="{{ email }}"
                 placeholder="Enter email"
+                required
               />
           </div>
           <div class="mb-3">
@@ -197,10 +155,13 @@
                 id="image" 
                 name="image"
                 onchange="displaySelectedImage(event)"
+                value="image"
               />
           </div>
           <button type="submit" class="btn btn-primary" >Update Profile</button>
-        </form>
+          <button type="button" class="btn btn-secondary" onclick="toggleFormVisibility()">Fechar</button>
+        </div>  
+      </form>
   
 
       <div class="container mt-4">
@@ -234,6 +195,16 @@
 
 
   <script>
+
+    function toggleFormVisibility() {
+        var form = document.getElementById("profileForm");
+        if (form.style.display === "none") {
+            form.style.display = "block";
+        } else {
+            form.style.display = "none";
+        }
+    }
+
     function displaySelectedImage(event) {
       const selectedImage = document.getElementById("ProfileImage");
       const fileInput = event.target;
@@ -253,6 +224,27 @@
       .getElementById("editProfileBtn")
       .addEventListener("click", function () {
         document.getElementById("profileForm").style.display = "block";
+      });
+
+      document.getElementById("profileForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Previne o comportamento padrão de recarga da página
+
+        var formData = new FormData(document.getElementById('profileForm'));
+        fetch("/update_profile", { // Envia os dados para a rota /update_profile
+          method: "POST",
+          body: formData
+        })
+        .then(response => {
+          if (!response.ok) {
+              throw new Error("Erro ao atualizar o perfil.");
+          }
+          return response.json(); // Converte a resposta para JSON
+        })
+      }).then(data => {
+          console.log(data.message)
+      }).catch(error => {
+          console.error("Erro:", error);
+          alert("Erro ao atualizar o perfil.");
       });
   </script>
 </html>

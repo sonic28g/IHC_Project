@@ -203,8 +203,12 @@ def profile():
 def update_profile():
     if 'username' in session:
         username = session['username']
-        email = request.form['email']
-        image_file = request.files['image']
+        email = request.form.get('email','')
+        image_file = request.files.get('image', None)
+
+        if not image_file:
+            flash('Por favor, selecione uma imagem.')
+            return redirect(url_for('profile'))
 
         image_filename = secure_filename(image_file.filename)       
         if not image_filename.lower().endswith('.png'):
@@ -221,10 +225,9 @@ def update_profile():
         session['image'] = image_path
 
         flash('Perfil atualizado com sucesso')
-        return redirect(url_for('profile'))
+        return jsonify({'message': 'Perfil atualizado com sucesso'}), 200
     else:
-        return redirect(url_for('login'))
-    
+        return jsonify({'error': 'Usuário não logado'}), 401
 
 
 
