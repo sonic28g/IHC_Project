@@ -195,7 +195,7 @@ def profile():
         username = session['username']
         current_user = db.get_user(username)
         print(current_user )
-        return render_template('profile.html', username=username, email=current_user[2], image=current_user[4])
+        return render_template('profile.html', current_user=current_user, username=username, email=current_user[2], image=current_user[4])
     else:
         return redirect(url_for('login'))
     
